@@ -26,33 +26,30 @@ const GStore = inject('GStore')
           <li>
             <RouterLink
               :to="{ name: 'Home' }"
-              >Home</RouterLink>|
+              >Home</RouterLink>
           </li>
           <li>
             <RouterLink
               :to="{ name: 'about' }"
               >About</RouterLink
             >
-            |
           </li>
           <li>
             <RouterLink
               :to="{ name: 'Contacts' }"
-              >Contacts</RouterLink>|
+              >Contacts</RouterLink>
           </li>
           <li>
             <RouterLink
               :to="{ name: 'EventList' }"
               >Events Pagination</RouterLink
             >
-            |
           </li>
           <li>
             <RouterLink
               :to="{ name: 'EventListPinia' }"
               >Events using store pinia</RouterLink
             >
-            |
           </li>
           <li>
             <RouterLink
