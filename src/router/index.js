@@ -92,6 +92,16 @@ const router = createRouter({
       redirect: { name: 'about' }
     },
     {
+      path: '/home',
+      name: 'Home',
+      component: () => import('../views/HomeView.vue')
+    },
+    {
+      path: '/contacts',
+      name: 'Contacts',
+      component: () => import('../views/ContactsView.vue')
+    },
+    {
       name: 'about',
       path: '/about-us',
       alias: '/about-who',
