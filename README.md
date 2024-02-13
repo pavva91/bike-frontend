@@ -40,6 +40,9 @@ npm run lint
 
 # Multi-lingual
 
+Guide: 
+- [https://lokalise.com/blog/vue-i18n/](https://lokalise.com/blog/vue-i18n/)
+
 ```sh
 npm install vue-i18n@9 @intlify/unplugin-vue-i18n
 ```

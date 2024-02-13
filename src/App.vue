@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { inject } from 'vue'
-import FooterView from './views/FooterView.vue';
+import FooterView from './views/FooterView.vue'
 const GStore = inject('GStore')
 </script>
 
@@ -12,7 +12,8 @@ const GStore = inject('GStore')
         <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" />
         <!-- TODO: My company name -->
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-          >Company name</span>
+          >Company name</span
+        >
       </a>
       <div
         class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
@@ -22,38 +23,22 @@ const GStore = inject('GStore')
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
-            <RouterLink
-              :to="{ name: 'Home' }"
-              >Home</RouterLink>
+            <RouterLink :to="{ name: 'Home' }">{{ $t('nav.home') }}</RouterLink>
           </li>
           <li>
-            <RouterLink
-              :to="{ name: 'about' }"
-              >About</RouterLink
-            >
+            <RouterLink :to="{ name: 'about' }">{{ $t('nav.about') }}</RouterLink>
           </li>
           <li>
-            <RouterLink
-              :to="{ name: 'Contacts' }"
-              >Contacts</RouterLink>
+            <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
           </li>
           <li>
-            <RouterLink
-              :to="{ name: 'EventList' }"
-              >Events Pagination</RouterLink
-            >
+            <RouterLink :to="{ name: 'EventList' }">Events Pagination</RouterLink>
           </li>
           <li>
-            <RouterLink
-              :to="{ name: 'EventListPinia' }"
-              >Events using store pinia</RouterLink
-            >
+            <RouterLink :to="{ name: 'EventListPinia' }">Events using store pinia</RouterLink>
           </li>
           <li>
-            <RouterLink
-              :to="{ name: 'EventCreate' }"
-              >Create Event</RouterLink
-            >
+            <RouterLink :to="{ name: 'EventCreate' }">Create Event</RouterLink>
           </li>
         </ul>
       </div>
