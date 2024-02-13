@@ -1,8 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { inject } from 'vue'
-import { useUserStore } from './stores/UserStore.js'
-const userStore = useUserStore()
+import FooterView from './views/FooterView.vue';
 const GStore = inject('GStore')
 </script>
 
@@ -10,11 +9,10 @@ const GStore = inject('GStore')
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <!-- TODO: my logo -->
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+        <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" />
+        <!-- TODO: My company name -->
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-          >Flowbite</span
-        >
+          >Company name</span>
       </a>
       <div
         class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
@@ -68,21 +66,14 @@ const GStore = inject('GStore')
     </div>
     <header>
       <div class="wrapper">
-        <!-- <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"> -->
         <nav>
-          <!-- <nav class="bg-white border-gray-200 dark:bg-gray-900"> -->
-
-          <!-- <RouterLink to="/">Events</RouterLink> | -->
-          <!-- <RouterLink :to="{ name: 'EventList' }">Events Pagination</RouterLink> | -->
-          <!-- <RouterLink :to="{ name: 'EventListPinia' }">Events using store pinia</RouterLink> | -->
-          <!-- <RouterLink :to="{ name: 'about' }">About</RouterLink> | -->
-          <!-- <RouterLink :to="{ name: 'EventCreate' }">Create Event</RouterLink> -->
-          <p>(Store) Logged in as {{ userStore.user }}</p>
-          <p>(Getter) Logged in as {{ userStore.firstName }}</p>
+          <!-- <p>(Store) Logged in as {{ userStore.user }}</p> -->
+          <!-- <p>(Getter) Logged in as {{ userStore.firstName }}</p> -->
         </nav>
       </div>
     </header>
     <RouterView />
+    <FooterView></FooterView>
   </div>
 </template>
 

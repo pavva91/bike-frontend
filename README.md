@@ -1,6 +1,10 @@
-# real-world-vue
+# Bike Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+frontend of website.
+
+## Flowbite (Tailwind CSS)
+
+[https://flowbite.com/docs/getting-started/vue/](https://flowbite.com/docs/getting-started/vue/)
 
 ## Recommended IDE Setup
 
@@ -32,4 +36,10 @@ npm run build
 
 ```sh
 npm run lint
+```
+
+# Multi-lingual
+
+```sh
+npm install vue-i18n@9 @intlify/unplugin-vue-i18n
 ```
