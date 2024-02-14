@@ -2,6 +2,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { inject } from 'vue'
 import FooterView from './views/FooterView.vue'
+import LanguageSwitcher from './components/LanguageSwitcher.vue'
+
 const GStore = inject('GStore')
 </script>
 
@@ -31,14 +33,17 @@ const GStore = inject('GStore')
           <li>
             <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
           </li>
+          <!-- <li> -->
+          <!--   <RouterLink :to="{ name: 'EventList' }">Events Pagination</RouterLink> -->
+          <!-- </li> -->
+          <!-- <li> -->
+          <!--   <RouterLink :to="{ name: 'EventListPinia' }">Events using store pinia</RouterLink> -->
+          <!-- </li> -->
+          <!-- <li> -->
+          <!--   <RouterLink :to="{ name: 'EventCreate' }">Create Event</RouterLink> -->
+          <!-- </li> -->
           <li>
-            <RouterLink :to="{ name: 'EventList' }">Events Pagination</RouterLink>
-          </li>
-          <li>
-            <RouterLink :to="{ name: 'EventListPinia' }">Events using store pinia</RouterLink>
-          </li>
-          <li>
-            <RouterLink :to="{ name: 'EventCreate' }">Create Event</RouterLink>
+            <LanguageSwitcher></LanguageSwitcher>
           </li>
         </ul>
       </div>
