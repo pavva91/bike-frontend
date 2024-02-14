@@ -1,0 +1,20 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "Chi siamo",
+        "contacts": "Contatti"
+    },
+    "home": {
+        "header": "Buongiorno a tutti",
+        "created_by": "Create da lokalize"
+    },
+    "about": {
+        "header": "A proposito di noi"
+    },
+    "contacts": {
+        "header": "Contatti"
+    },
+    "footer": {
+        "title": "Questo é un piè di pagina"
+    }
+}

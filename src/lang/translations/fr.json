@@ -1,6 +1,20 @@
 {
-    "hello":"Bonjour Techvblogs",
-    "homePage":"Page d'accueil",
-    "aboutPage":"À propos de la page",
-    "welcome": "Bonjour {name}"
+    "nav": {
+        "home": "Page d'accueil",
+        "about": "À propos",
+        "contacts": "Contacts"
+    },
+    "home": {
+        "header": "Bonjour a tous",
+        "created_by": "Crée par lokalize"
+    },
+    "about": {
+        "header": "à propos de nous"
+    },
+    "contacts": {
+        "header": "Contacts"
+    },
+    "footer": {
+        "title": "il s'agit d'un pied de page"
+    }
 }
