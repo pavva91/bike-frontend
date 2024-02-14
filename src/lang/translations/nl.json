@@ -1,0 +1,24 @@
+{
+    "hello": "Hallo jonge",
+    "homePage": "Thijs",
+    "aboutPage": "Over ons",
+    "welcome": "Welkom {name}",
+    "nav": {
+        "home": "Homepagina",
+        "about": "Over ons",
+        "contacts": "Contact"
+    },
+    "home": {
+        "header": "Welkom alemaal",
+        "created_by": "Dit is een"
+    },
+    "about": {
+        "title": "Over ons"
+    },
+    "contacts": {
+        "title": "Contact"
+    },
+    "footer": {
+        "title": "Heel belang footer"
+    }
+}
