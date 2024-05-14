@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="72px" viewBox="0 0 70 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group 12</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.673100573 0.395831162 52.4894633 0.395831162 52.4894633 52.2127566 0.673100573 52.2127566"/>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico/big/info-tecniche" transform="translate(-4.000000, -4.000000)">
+            <g id="Group-12" transform="translate(5.600000, 4.000000)">
+                <g id="Group-3" transform="translate(15.007817, 0.130005)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"/>
+                    </mask>
+                    <g id="Clip-2"/>
+                    <path d="M52.4894633,26.3036373 C52.4894633,40.6117144 40.890297,52.2127566 26.5803439,52.2127566 C12.2722668,52.2127566 0.673100573,40.6117144 0.673100573,26.3036373 C0.673100573,11.9955602 12.2722668,0.394517978 26.5803439,0.394517978 C40.890297,0.394517978 52.4894633,11.9955602 52.4894633,26.3036373" id="Fill-1" fill="#D6D3EB" mask="url(#mask-2)"/>
+                </g>
+                <path d="M56.1654403,37.4668265 C56.1654403,52.9774049 43.592642,65.5502032 28.0820636,65.5502032 C12.5733611,65.5502032 0.000562793121,52.9774049 0.000562793121,37.4668265 C0.000562793121,21.956248 12.5733611,9.38344971 28.0820636,9.38344971 C43.592642,9.38344971 56.1654403,21.956248 56.1654403,37.4668265 Z" id="Stroke-4" stroke="#222222" stroke-width="2"/>
+                <line x1="47.4871704" y1="56.9090776" x2="61.8702866" y2="71.2921939" id="Stroke-6" stroke="#222222" stroke-width="2"/>
+                <line x1="28.0824388" y1="33.7717144" x2="28.0824388" y2="52.5314851" id="Stroke-8" stroke="#222222" stroke-width="2"/>
+                <circle id="Oval" stroke="#222222" stroke-width="2" cx="28.3647733" cy="23.6373111" r="2.70140698"/>
+            </g>
+        </g>
+    </g>
+</svg>

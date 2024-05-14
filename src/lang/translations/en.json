@@ -1,20 +1,28 @@
 {
-    "nav": {
-        "home": "Home",
-        "about": "About",
-        "contacts": "Contacts"
-    },
-    "home": {
-        "header": "Welcome to the Vue 3 I18n tutorial!",
-        "created_by": "This tutorial was brought to you by Lokalise."
-    },
-    "about": {
-        "header": "About us"
-    },
-    "contacts": {
-        "header": "Contacts"
-    },
-    "footer": {
-        "title": "This is a footer"
-    }
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contacts": "Contacts",
+    "tours": "Tours"
+  },
+  "home": {
+    "header": "Welcome to the Vue 3 I18n tutorial!",
+    "created_by": "This tutorial was brought to you by Lokalise."
+  },
+  "about": {
+    "header": "About us"
+  },
+  "contacts": {
+    "header": "Contacts"
+  },
+  "tours": {
+    "title": "Bike Tours",
+    "info": "Technical Information",
+    "profile": "Profile",
+    "strava": "Strava Route",
+    "routename": "TODO: Name of the route fetched from backend"
+  },
+  "footer": {
+    "title": "This is a footer"
+  }
 }

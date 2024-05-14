@@ -24,8 +24,8 @@ export default {
 </script>
 
 <style>
-
 .custom-select select {
+  float: right;
   border: 0Q;
   padding-top: 0Q;
   padding-bottom: 0Q;
