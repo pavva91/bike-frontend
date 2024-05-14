@@ -21,9 +21,18 @@
   box-shadow: 0 7px 36px -6px rgba(0, 0, 0, 0.1);
 }
 
+.dark-pink {
+  color: #b4003b;
+}
+
+.light-pink {
+  color: #ff3577;
+}
+
 nav {
   /* font-family: Ubuntu,sans-serif; */
   /* padding: 30px; */
+  z-index: 1000;
 }
 
 nav li {
@@ -34,7 +43,8 @@ nav li {
 
 nav a:hover {
   /* color: #3b82f6; */
-  color: #ed2429;
+  /* color: #ed2429; */
+  color: #b4003b;
 }
 
 h1 {
@@ -59,7 +69,8 @@ h2 {
 
 nav a.router-link-exact-active {
   /* color: #3b82f6; */
-  color: #ed2429;
+  /* color: #ed2429; */
+  color: #b4003b;
 }
 
 img.home-background-img {

@@ -1,10 +1,11 @@
 <script setup>
+import TourImage from '../components/TourImage.vue'
 import ToursCarousel from '../components/ToursCarousel.vue'
 </script>
 <template>
   <div class="tours">
     <!-- <h1>{{ $t('tours.title') }}</h1> -->
-    <img src="../assets/img/tours/route01.jpg" alt="image route" />
+    <TourImage></TourImage>
     <ToursCarousel></ToursCarousel>
     <h2>{{ $t('tours.tourist-title') }}</h2>
     <p>{{ $t('tours.tourist') }}</p>
