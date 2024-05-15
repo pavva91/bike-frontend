@@ -1,10 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { inject } from 'vue'
+import { inject, ref } from 'vue'
 import FooterView from './views/FooterView.vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 
 const GStore = inject('GStore')
+const hover = ref(false)
 </script>
 
 <template>
@@ -34,8 +35,19 @@ const GStore = inject('GStore')
             <li>
               <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
             </li>
-            <li>
-              <RouterLink :to="{ name: 'Tours' }">{{ $t('nav.tours') }}</RouterLink>
+            <li @mouseover="hover = true" @mouseleave="hover = false">
+              {{ $t('nav.tours') }}
+              <ul v-if="hover">
+                <li>
+                  <RouterLink :to="{ name: 'Tours' }">{{ $t('nav.types.road')}}</RouterLink>
+                </li>
+                <li>
+                  <RouterLink :to="{ name: 'Tours' }">{{ $t('nav.types.mtb')}}</RouterLink>
+                </li>
+                <li>
+                  <RouterLink :to="{ name: 'Tours' }">{{ $t('nav.types.gravel')}}</RouterLink>
+                </li>
+              </ul>
             </li>
             <!-- <li> -->
             <!--   <RouterLink :to="{ name: 'EventList' }">Events Pagination</RouterLink> -->

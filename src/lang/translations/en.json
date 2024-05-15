@@ -3,7 +3,12 @@
     "home": "Home",
     "about": "About",
     "contacts": "Contacts",
-    "tours": "Tours"
+    "tours": "Tours",
+    "types":{
+      "road":"Road",
+      "mtb":"MTB",
+      "gravel":"gravel/cyclocross"
+    }
   },
   "home": {
     "header": "Welcome to the Vue 3 I18n tutorial!",

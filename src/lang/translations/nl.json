@@ -8,6 +8,11 @@
     "about": "Over ons",
     "contacts": "Contact",
     "tours": "Rondleidingen",
+    "types":{
+      "road":"Wielrennen",
+      "mtb":"MTB",
+      "gravel":"gravel/veldrijden"
+    },
     "bike-fitting": "Fiets Montage"
   },
   "home": {
