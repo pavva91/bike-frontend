@@ -3,6 +3,7 @@
   "homePage": "Thijs",
   "aboutPage": "Over ons",
   "welcome": "Welkom {name}",
+  "company": "bedrijfsnaam",
   "nav": {
     "home": "Homepagina",
     "about": "Over ons",

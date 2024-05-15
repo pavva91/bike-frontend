@@ -111,9 +111,28 @@ const router = createRouter({
       component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
     },
     {
-      path: '/tours',
-      name: 'Tours',
-      component: () => import('../views/ToursView.vue')
+      path: '/tours/road',
+      name: 'ToursRoad',
+      component: () => import('../views/ToursView.vue'),
+      props: () => ({
+        biketype: 'road'
+      })
+    },
+    {
+      path: '/tours/mtb',
+      name: 'ToursMtb',
+      component: () => import('../views/ToursView.vue'),
+      props: () => ({
+        biketype: 'mtb'
+      })
+    },
+    {
+      path: '/tours/mtb/gravel',
+      name: 'ToursGravel',
+      component: () => import('../views/ToursView.vue'),
+      props: () => ({
+        biketype: 'gravel'
+      })
     }
   ]
 })

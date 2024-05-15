@@ -1,6 +1,16 @@
 <script setup>
 import TourImage from '../components/TourImage.vue'
 import ToursCarousel from '../components/ToursCarousel.vue'
+import { onMounted } from 'vue'
+const props = defineProps({
+  biketype: {
+    required: true
+  }
+})
+
+onMounted(() => {
+  // console.log(props.biketype)
+})
 </script>
 <template>
   <div class="tours">
@@ -13,6 +23,7 @@ import ToursCarousel from '../components/ToursCarousel.vue'
     <p>{{ $t('tours.info') }}</p>
     <h2>{{ $t('tours.strava') }}</h2>
     <p>TODO: Use strava API</p>
+    <p>{{props.biketype}}</p>
   </div>
 </template>
 

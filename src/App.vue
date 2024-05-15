@@ -16,7 +16,7 @@ const hover = ref(false)
           <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" />
           <!-- TODO: My company name -->
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >Company name</span
+          >{{ $t('company')}}</span
           >
         </a>
         <div
@@ -39,13 +39,13 @@ const hover = ref(false)
               {{ $t('nav.tours') }}
               <ul v-if="hover">
                 <li>
-                  <RouterLink :to="{ name: 'Tours' }">{{ $t('nav.types.road')}}</RouterLink>
+                  <RouterLink :to="{ name: 'ToursRoad' }">{{ $t('nav.types.road')}}</RouterLink>
                 </li>
                 <li>
-                  <RouterLink :to="{ name: 'Tours' }">{{ $t('nav.types.mtb')}}</RouterLink>
+                  <RouterLink :to="{ name: 'ToursMtb' }">{{ $t('nav.types.mtb')}}</RouterLink>
                 </li>
                 <li>
-                  <RouterLink :to="{ name: 'Tours' }">{{ $t('nav.types.gravel')}}</RouterLink>
+                  <RouterLink :to="{ name: 'ToursGravel' }">{{ $t('nav.types.gravel')}}</RouterLink>
                 </li>
               </ul>
             </li>
