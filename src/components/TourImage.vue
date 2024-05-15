@@ -1,16 +1,19 @@
 <script setup>
 import Rating4 from '../components/rating/Rating4.vue'
 </script>
+
 <template>
   <div class="tour-image">
     <img src="../assets/img/tours/route01.jpg" alt="image route" />
-    <div class="bottom-left uppercase red light-pink">
-      <h1>Marotta-Mondolfo</h1>
-    </div>
-    <div class="top-left">
+    <div class="bottom-left">
       <p>
         <span>{{ $t('tours.image.share') }}</span>
       </p>
+    </div>
+    <div class="top-left">
+      <!-- <p> -->
+      <!--   <span>{{ $t('tours.image.share') }}</span> -->
+      <!-- </p> -->
     </div>
     <div class="top-right">
       <p>
@@ -24,7 +27,9 @@ import Rating4 from '../components/rating/Rating4.vue'
       </p>
     </div>
     <!-- <div class="bottom-right">Bottom Right</div> -->
-    <!-- <div class="centered">Centered</div> -->
+    <div class="centered">
+      <h1>Marotta-Mondolfo</h1>
+    </div>
   </div>
 </template>
 
@@ -40,10 +45,8 @@ import Rating4 from '../components/rating/Rating4.vue'
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 3rem;
   letter-spacing: 0.4px;
-  padding-bottom: 3rem;
-  padding-left: 2rem;
 }
 
 .tour-image {
@@ -53,6 +56,7 @@ import Rating4 from '../components/rating/Rating4.vue'
 }
 
 .bottom-left {
+  display: none;
   position: absolute;
   bottom: 8px;
   left: 16px;
@@ -60,6 +64,8 @@ import Rating4 from '../components/rating/Rating4.vue'
   text-align: left;
   /* top: 2rem; */
   /* right: 2rem; */
+  padding-bottom: 3rem;
+  padding-left: 2rem;
 }
 
 .top-left {
@@ -76,6 +82,10 @@ import Rating4 from '../components/rating/Rating4.vue'
   right: 2rem;
   text-align: right;
   font-weight: 300;
+  display: none;
+}
+
+.top-right {
 }
 
 .bottom-right {
@@ -85,9 +95,22 @@ import Rating4 from '../components/rating/Rating4.vue'
 }
 
 .centered {
+  /* font-size: 3.2rem; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* NOTE: 50rem = 800px */
+/* NOTE: 80rem = 1280px */
+@media screen and (min-width: 50rem) {
+  .top-right {
+    display: block;
+  }
+
+  .bottom-left {
+    display: block;
+  }
 }
 </style>
