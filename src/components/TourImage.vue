@@ -1,5 +1,5 @@
 <script setup>
-import Rating4 from '../components/rating/4Rating.vue'
+import Rating4 from '../components/rating/Rating4.vue'
 </script>
 <template>
   <div class="tour-image">
