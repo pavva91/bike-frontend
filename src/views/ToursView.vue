@@ -3,7 +3,10 @@ import TourImage from '../components/TourImage.vue'
 import ToursCarousel from '../components/ToursCarousel.vue'
 import { onMounted } from 'vue'
 const props = defineProps({
-  biketype: {
+  type: {
+    required: true
+  },
+  id: {
     required: true
   }
 })
@@ -14,16 +17,16 @@ onMounted(() => {
 </script>
 <template>
   <div class="tours">
-    <!-- <h1>{{ $t('tours.title') }}</h1> -->
-    <TourImage></TourImage>
+    <TourImage v-bind="$props"></TourImage>
     <ToursCarousel></ToursCarousel>
-    <h2>{{ $t('tours.tourist-title') }}</h2>
-    <p>{{ $t('tours.tourist') }}</p>
-    <h2>{{ $t('tours.info-title') }}</h2>
-    <p>{{ $t('tours.info') }}</p>
+    <h2>{{ $t('tours.tourist-info-title') }}</h2>
+    <p>{{ $t('tours.' + props.type + '.' + props.id + '.tourist-info') }}</p>
+    <h2>{{ $t('tours.technical-info-title') }}</h2>
     <h2>{{ $t('tours.strava') }}</h2>
     <p>TODO: Use strava API</p>
-    <p>{{props.biketype}}</p>
+    <p>{{ props.type }}</p>
+    <p>{{ props.id }}</p>
+    <p>{{ $route.fullPath }}</p>
   </div>
 </template>
 

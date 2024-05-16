@@ -33,12 +33,39 @@
       "elevation": "Hoogteverschil",
       "distance":"Afstand"
     },
-    "tourist-title": "Touristische Informatie",
-    "tourist": "Touristic Information. TODO: how to have multilingual from DB. The stage begins calmly with the first part of the race as good as flat. After reaching the Via Appia, the road begins to climb gently to Montesarchio. We then tackle some uncategorised climbs followed by the Camposasuro ascent, which leads to the towns of Solopaca and Guardia Sanframondi. The road is of medium width with a sometimes worn-out surface and numerous bends. After Cerreto Sannita and the illuminated tunnel that leads into the Titerno valley, the long final climb to Cusano Mutri will be tackled, spanning 18km at 6% average gradient with pitches at 10%. The climb winds its way up the treeless slope to the last part of the stage, with wide bends and short straights.","info-title": "Technische Informatie",
-    "info": "The stage begins calmly with the first part of the race as good as flat. After reaching the Via Appia, the road begins to climb gently to Montesarchio. We then tackle some uncategorised climbs followed by the Camposasuro ascent, which leads to the towns of Solopaca and Guardia Sanframondi. The road is of medium width with a sometimes worn-out surface and numerous bends. After Cerreto Sannita and the illuminated tunnel that leads into the Titerno valley, the long final climb to Cusano Mutri will be tackled, spanning 18km at 6% average gradient with pitches at 10%. The climb winds its way up the treeless slope to the last part of the stage, with wide bends and short straights.",
-    "profile": "Profiel",
+    "tourist-info-title": "Touristische Informatie",
+    "technical-info-title": "Technische Informatie",
     "strava": "Strava Parcour",
-    "routename": "TODO: Name of the route fetched from backend"
+    "road": {
+      "1": {
+        "tourist-info":"asdf",
+        "technical-info":"asdf"
+      },
+      "2": {
+        "tourist-info":"asdf",
+        "technical-info":"asdf"
+      }
+    },
+    "mtb": {
+      "1": {
+        "tourist-info":"asdf",
+        "technical-info":"asdf"
+      },
+      "2": {
+        "tourist-info":"asdf",
+        "technical-info":"asdf"
+      }
+    },
+    "gravel": {
+      "1": {
+        "tourist-info":"asdf",
+        "technical-info":"asdf"
+      },
+      "2": {
+        "tourist-info":"asdf",
+        "technical-info":"asdf"
+      }
+    }
   },
   "bike-fit": {
     "title": "Fiets Passen"

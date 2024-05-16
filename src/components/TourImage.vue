@@ -1,19 +1,60 @@
 <script setup>
 import Rating4 from '../components/rating/Rating4.vue'
+
+import { ref, reactive, computed } from 'vue'
+import { filename } from 'pathe/utils'
+
+const props = defineProps({
+  type: {
+    required: true
+  },
+  id: {
+    required: true
+  }
+})
+
+const firstName = ref('John')
+const lastName = ref('Doe')
+
+const fullName = computed(() => {
+  return firstName.value + ' ' + lastName.value
+})
+
+const imagePath = computed(() => {
+  return '../assets/img/tours/gravel/01.jpg'
+})
+
+const routeType = ref(props.type)
+const imgId = ref('1')
+
+const imageName = computed(() => {
+  return props.type + props.id
+})
+
+const glob = import.meta.glob('@/assets/img/tours/**/*.jpg', { eager: true })
+const images = Object.fromEntries(
+  Object.entries(glob).map(([key, value]) => [filename(key), value.default])
+)
+console.log(images)
 </script>
 
 <template>
   <div class="tour-image">
-    <img src="../assets/img/tours/route01.jpg" alt="image route" />
+    <!-- <img src="../assets/img/tours/gravel/01.jpg" alt="image route" /> -->
+    <!-- <img :src="images[`${props.type}+${props.id}`]" alt="image route" /> -->
+    <img :src="images[`${imageName}`]" alt="image route" />
     <div class="bottom-left">
       <p>
-        <span>{{ $t('tours.image.share') }}</span>
+        <!-- <span>{{ images }}</span> -->
+        <span>{{ imageName }}</span>
+        <span>{{ props.type }}</span>
+        <span>{{ fullName }}</span>
       </p>
     </div>
     <div class="top-left">
-      <!-- <p> -->
-      <!--   <span>{{ $t('tours.image.share') }}</span> -->
-      <!-- </p> -->
+      <p>
+        <span>{{ $t('tours.image.share') }}</span>
+      </p>
     </div>
     <div class="top-right">
       <p>
