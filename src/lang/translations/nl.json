@@ -38,30 +38,36 @@
     "strava": "Strava Parcour",
     "road": {
       "1": {
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title":"I muri marchigiani",
+        "tourist-info":"touristinforoad1",
+        "technical-info":"technicalinforoad1"
       },
       "2": {
+        "title":"Urbino e Cesane",
         "tourist-info":"asdf",
         "technical-info":"asdf"
       }
     },
     "mtb": {
       "1": {
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title":"Monte Catria",
+        "tourist-info":"touristinfomtb1",
+        "technical-info":"technicalinfomtb1"
       },
       "2": {
+        "title":"Monte delle Cesane",
         "tourist-info":"asdf",
         "technical-info":"asdf"
       }
     },
     "gravel": {
       "1": {
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title":"Marotta-Mondolfo",
+        "tourist-info":"touristinfogravel1",
+        "technical-info":"technicalinfogravel1"
       },
       "2": {
+        "title":"Vencareto",
         "tourist-info":"asdf",
         "technical-info":"asdf"
       }

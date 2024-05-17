@@ -13,20 +13,6 @@ const props = defineProps({
   }
 })
 
-const firstName = ref('John')
-const lastName = ref('Doe')
-
-const fullName = computed(() => {
-  return firstName.value + ' ' + lastName.value
-})
-
-const imagePath = computed(() => {
-  return '../assets/img/tours/gravel/01.jpg'
-})
-
-const routeType = ref(props.type)
-const imgId = ref('1')
-
 const imageName = computed(() => {
   return props.type + props.id
 })
@@ -35,7 +21,6 @@ const glob = import.meta.glob('@/assets/img/tours/**/*.jpg', { eager: true })
 const images = Object.fromEntries(
   Object.entries(glob).map(([key, value]) => [filename(key), value.default])
 )
-console.log(images)
 </script>
 
 <template>
@@ -46,9 +31,8 @@ console.log(images)
     <div class="bottom-left">
       <p>
         <!-- <span>{{ images }}</span> -->
-        <span>{{ imageName }}</span>
-        <span>{{ props.type }}</span>
-        <span>{{ fullName }}</span>
+        <!-- <span>{{ imageName }}</span> -->
+        <!-- <span>{{ props.type }}</span> -->
       </p>
     </div>
     <div class="top-left">
@@ -69,7 +53,7 @@ console.log(images)
     </div>
     <!-- <div class="bottom-right">Bottom Right</div> -->
     <div class="centered">
-      <h1>Marotta-Mondolfo</h1>
+      <h1>{{ $t('tours.' + props.type + '.' + props.id + '.title') }}</h1>
     </div>
   </div>
 </template>
