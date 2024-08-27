@@ -37,7 +37,8 @@
         "tourist-info": "asdf",
         "technical-info": "asdf",
         "elevation": "2000m",
-        "distance": "120km"
+        "distance": "120km",
+        "rating": "4"
       },
       "2": {
         "title": "Urbino e Cesane",
@@ -53,7 +54,8 @@
         "tourist-info": "asdf",
         "technical-info": "asdf",
         "elevation": "1800m",
-        "distance": "45km"
+        "distance": "45km",
+        "rating": "5"
       },
       "2": {
         "title": "Monte delle Cesane",
@@ -66,8 +68,9 @@
         "title": "Marotta-Mondolfo",
         "tourist-info": "asdf",
         "technical-info": "asdf",
-        "elevation": "1500m",
-        "distance": "87km"
+        "elevation": "1255m",
+        "distance": "39km",
+        "rating": "2"
       },
       "2": {
         "title": "Vencareto",

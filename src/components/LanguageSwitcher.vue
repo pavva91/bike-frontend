@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-select" style="width: 200px">
+  <div class="custom-select">
     <select
       name="language-picker-select"
       id="language-picker-select"
@@ -29,5 +29,11 @@ export default {
   border: 0Q;
   padding-top: 0Q;
   padding-bottom: 0Q;
+}
+
+@media (min-width: 1024px) {
+  .custom-select {
+    width: 200px;
+  }
 }
 </style>

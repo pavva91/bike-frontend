@@ -5,7 +5,7 @@ import Rating3 from '../components/rating/Rating3.vue'
 import Rating4 from '../components/rating/Rating4.vue'
 import Rating5 from '../components/rating/Rating5.vue'
 
-import { ref, reactive, computed } from 'vue'
+import { computed } from 'vue'
 import { filename } from 'pathe/utils'
 
 const props = defineProps({
