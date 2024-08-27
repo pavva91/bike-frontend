@@ -1,5 +1,9 @@
 <script setup>
+import Rating1 from '../components/rating/Rating1.vue'
+import Rating2 from '../components/rating/Rating2.vue'
+import Rating3 from '../components/rating/Rating3.vue'
 import Rating4 from '../components/rating/Rating4.vue'
+import Rating5 from '../components/rating/Rating5.vue'
 
 import { ref, reactive, computed } from 'vue'
 import { filename } from 'pathe/utils'
@@ -53,7 +57,11 @@ const images = Object.fromEntries(
         >
         <br />
         <span>
-          <Rating4></Rating4>
+          <Rating1 v-if="$t('tours.' + props.type + '.' + props.id + '.rating') === '1'"></Rating1>
+          <Rating2 v-if="$t('tours.' + props.type + '.' + props.id + '.rating') === '2'"></Rating2>
+          <Rating3 v-if="$t('tours.' + props.type + '.' + props.id + '.rating') === '3'"></Rating3>
+          <Rating4 v-if="$t('tours.' + props.type + '.' + props.id + '.rating') === '4'"></Rating4>
+          <Rating5 v-if="$t('tours.' + props.type + '.' + props.id + '.rating') === '5'"></Rating5>
         </span>
       </p>
     </div>
