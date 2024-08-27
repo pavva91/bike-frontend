@@ -42,9 +42,15 @@ const images = Object.fromEntries(
     </div>
     <div class="top-right">
       <p>
-        <span>{{ $t('tours.image.distance') }}: 87km</span>
+        <span
+          >{{ $t('tours.image.distance') }}:
+          {{ $t('tours.' + props.type + '.' + props.id + '.distance') }}</span
+        >
         <br />
-        <span>{{ $t('tours.image.elevation') }}: 1500m</span>
+        <span
+          >{{ $t('tours.image.elevation') }}:
+          {{ $t('tours.' + props.type + '.' + props.id + '.elevation') }}</span
+        >
         <br />
         <span>
           <Rating4></Rating4>

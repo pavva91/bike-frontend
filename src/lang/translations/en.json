@@ -1,13 +1,14 @@
 {
+  "company": "company-name",
   "nav": {
     "home": "Home",
     "about": "About",
     "contacts": "Contacts",
     "tours": "Tours",
-    "types":{
-      "road":"Road",
-      "mtb":"MTB",
-      "gravel":"gravel/cyclocross"
+    "types": {
+      "road": "Road",
+      "mtb": "MTB",
+      "gravel": "gravel/cyclocross"
     }
   },
   "home": {
@@ -23,47 +24,55 @@
   "tours": {
     "title": "Bike Tours",
     "image": {
-      "share":"Share",
+      "share": "Share",
       "elevation": "Elevation Gain",
-      "distance":"Distance"
+      "distance": "Distance"
     },
     "tourist-info-title": "Touristic Informations",
     "technical-info-title": "Technical Informations",
     "strava": "Strava Route",
     "road": {
       "1": {
-        "title":"I muri marchigiani",
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title": "I muri marchigiani",
+        "tourist-info": "asdf",
+        "technical-info": "asdf",
+        "elevation": "2000m",
+        "distance": "120km"
       },
       "2": {
-        "title":"Urbino e Cesane",
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title": "Urbino e Cesane",
+        "tourist-info": "asdf",
+        "technical-info": "asdf",
+        "elevation": "2000m",
+        "distance": "120km"
       }
     },
     "mtb": {
       "1": {
-        "title":"Monte Catria",
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title": "Monte Catria",
+        "tourist-info": "asdf",
+        "technical-info": "asdf",
+        "elevation": "1800m",
+        "distance": "45km"
       },
       "2": {
-        "title":"Monte delle Cesane",
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title": "Monte delle Cesane",
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
       }
     },
     "gravel": {
       "1": {
-        "title":"Marotta-Mondolfo",
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title": "Marotta-Mondolfo",
+        "tourist-info": "asdf",
+        "technical-info": "asdf",
+        "elevation": "1500m",
+        "distance": "87km"
       },
       "2": {
-        "title":"Vencareto",
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title": "Vencareto",
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
       }
     }
   },

@@ -1,8 +1,15 @@
 {
+    "company": "nom-entreprise",
     "nav": {
         "home": "Page d'accueil",
         "about": "À propos",
-        "contacts": "Contacts"
+        "contacts": "Contacts",
+        "types": {
+            "road": "vélo de route",
+            "mtb": "VTT",
+            "gravel": "VTC"
+        },
+        "bike-fitting": "Fiets Montage"
     },
     "home": {
         "header": "Bonjour a tous",

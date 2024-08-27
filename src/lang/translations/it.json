@@ -1,9 +1,15 @@
 {
+  "company": "nome-azienda",
   "nav": {
     "home": "Home",
     "about": "Chi siamo",
     "contacts": "Contatti",
     "tours": "Percorsi",
+    "types":{
+      "road":"Strada",
+      "mtb":"MTB",
+      "gravel":"gravel/ciclocross"
+    },
     "bike-fitting": "Posizione Bici"
   },
   "home": {
@@ -15,6 +21,47 @@
   },
   "contacts": {
     "header": "Contatti"
+  },
+  "tours": {
+    "title": "Percorsi in bici",
+    "image": {
+      "share": "Condividi",
+      "elevation": "Dislivello",
+      "distance": "Distanza"
+    },
+    "tourist-info-title": "Informazioni Turistiche",
+    "technical-info-title": "Informazioni Tecniche",
+    "strava": "Percorso Strava",
+    "road": {
+      "1": {
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
+      },
+      "2": {
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
+      }
+    },
+    "mtb": {
+      "1": {
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
+      },
+      "2": {
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
+      }
+    },
+    "gravel": {
+      "1": {
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
+      },
+      "2": {
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
+      }
+    }
   },
   "footer": {
     "title": "Questo é un piè di pagina"

@@ -6,10 +6,10 @@
       v-model="$i18n.locale"
       @change="changeLanguage"
     >
-      <option value="nl">NL</option>
-      <option value="fr">FR</option>
       <option value="en">EN</option>
       <option value="it">IT</option>
+      <option value="fr">FR</option>
+      <option value="nl">NL</option>
     </select>
   </div>
 </template>
