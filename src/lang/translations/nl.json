@@ -38,24 +38,20 @@
     "strava": "Strava Parcour",
     "road": {
       "1": {
-        "title":"I muri marchigiani",
         "tourist-info":"touristinforoad1",
         "technical-info":"technicalinforoad1"
       },
       "2": {
-        "title":"Urbino e Cesane",
         "tourist-info":"asdf",
         "technical-info":"asdf"
       }
     },
     "mtb": {
       "1": {
-        "title":"Monte Catria",
         "tourist-info":"touristinfomtb1",
         "technical-info":"technicalinfomtb1"
       },
       "2": {
-        "title":"Monte delle Cesane",
         "tourist-info":"asdf",
         "technical-info":"asdf"
       }
