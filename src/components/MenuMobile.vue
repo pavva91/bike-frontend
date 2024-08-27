@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 
-const hover = ref(false)
+const showTours = ref(false)
 const showMenu = ref(false)
 </script>
 
@@ -57,9 +57,9 @@ const showMenu = ref(false)
           <li>
             <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
           </li>
-          <li @mouseover="hover = true" @mouseleave="hover = false">
+          <li @click="showTours = !showTours">
             {{ $t('nav.tours') }}
-            <ul v-if="hover">
+            <ul v-if="showTours">
               <li>
                 <RouterLink :to="{ name: 'Tours', params: { type: 'road', id: 1 } }"
                   >{{ $t('nav.types.road') }}
