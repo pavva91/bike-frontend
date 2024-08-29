@@ -45,33 +45,39 @@ const showMenu = ref(false)
         <ul
           class="items-center flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
         >
-          <li>
+          <li @click="showMenu = !showMenu">
             <LanguageSwitcher></LanguageSwitcher>
           </li>
-          <li>
+          <li @click="showMenu = !showMenu">
             <RouterLink :to="{ name: 'Home' }">{{ $t('nav.home') }}</RouterLink>
           </li>
-          <li>
+          <li @click="showMenu = !showMenu">
             <RouterLink :to="{ name: 'About' }">{{ $t('nav.about') }}</RouterLink>
           </li>
-          <li>
+          <li @click="showMenu = !showMenu">
             <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
           </li>
           <li @click="showTours = !showTours">
             {{ $t('nav.tours') }}
             <ul v-if="showTours">
               <li>
-                <RouterLink :to="{ name: 'Tours', params: { type: 'road', id: 1 } }"
+                <RouterLink
+                  @click="showMenu = !showMenu"
+                  :to="{ name: 'Tours', params: { type: 'road', id: 1 } }"
                   >{{ $t('nav.types.road') }}
                 </RouterLink>
               </li>
               <li>
-                <RouterLink :to="{ name: 'Tours', params: { type: 'mtb', id: 1 } }">{{
-                  $t('nav.types.mtb')
-                }}</RouterLink>
+                <RouterLink
+                  @click="showMenu = !showMenu"
+                  :to="{ name: 'Tours', params: { type: 'mtb', id: 1 } }"
+                  >{{ $t('nav.types.mtb') }}</RouterLink
+                >
               </li>
               <li>
-                <RouterLink :to="{ name: 'Tours', params: { type: 'gravel', id: 1 } }"
+                <RouterLink
+                  @click="showMenu = !showMenu"
+                  :to="{ name: 'Tours', params: { type: 'gravel', id: 1 } }"
                   >{{ $t('nav.types.gravel') }}
                 </RouterLink>
               </li>
