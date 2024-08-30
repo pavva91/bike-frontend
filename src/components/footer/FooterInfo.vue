@@ -21,17 +21,19 @@
 
         <div>
           <div>
+            <!-- TODO: copy this approach to policies -->
             <a
               href="https://www.iubenda.com/privacy-policy/99051779/cookie-policy"
-              class="iubenda-white no-brand iubenda-noiframe iubenda-embed iubenda-noiframe"
+              class="hover:underline me-4 md:me-6"
               title="Cookie Policy "
               >Cookie Policy</a
             >
           </div>
           <div>
+            <!-- TODO: copy this approach to policies -->
             <a
               href="https://www.iubenda.com/privacy-policy/99051779"
-              class="iubenda-white no-brand iubenda-noiframe iubenda-embed iubenda-noiframe"
+              class="hover:underline me-4 md:me-6"
               title="Privacy Policy "
               >Privacy Policy</a
             >

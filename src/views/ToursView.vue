@@ -1,6 +1,6 @@
 <script setup>
 import TourImage from '../components/TourImage.vue'
-import ToursCarousel from '../components/ToursCarousel.vue'
+import ToursCarousel from '../components/carousel/ToursCarousel.vue'
 import { onMounted } from 'vue'
 const props = defineProps({
   type: {

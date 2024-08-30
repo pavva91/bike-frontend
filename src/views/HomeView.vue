@@ -1,7 +1,7 @@
 <script setup>
-import CarouselHome from '../components/CarouselHome.vue'
-import FullScreenCarousel from '../components/FullScreenCarousel.vue'
-import TopCarousel from '../components/TopCarousel.vue'
+import CarouselHome from '../components/carousel/CarouselHome.vue'
+import FullScreenCarousel from '../components/carousel/FullScreenCarousel.vue'
+import TopCarousel from '../components/carousel/TopCarousel.vue'
 
 import SilderImg01 from '../assets/img/tours/road/road1.jpg'
 import SilderImg02 from '../assets/img/tours/mtb/mtb1.jpg'
@@ -51,7 +51,7 @@ const pictures = [
 ]
 </script>
 <template>
-  <TopCarousel :items="items" :noControls="false" :noIndicators="false" :duration="1000" />
+  <TopCarousel :items="items" :noControls="false" :noIndicators="false" :duration="5000" />
   <!-- <CarouselHome></CarouselHome> -->
   <!-- <FullScreenCarousel :pictures="pictures" slide :slide-interval="10000" /> -->
 </template>
