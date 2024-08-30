@@ -45,7 +45,7 @@ const showMenu = ref(false)
         <ul
           class="items-center flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
         >
-          <li @click="showMenu = !showMenu">
+          <li>
             <LanguageSwitcher></LanguageSwitcher>
           </li>
           <li @click="showMenu = !showMenu">
