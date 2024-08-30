@@ -2,39 +2,27 @@
 import { RouterLink } from 'vue-router'
 </script>
 <template>
-  <!-- <div class="footer"> -->
-  <!--   <div class="top"> -->
-  <!--     <div class="logo"> -->
-  <!--       <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" /> -->
-  <!--     </div> -->
-  <!--     <div class="address">BIKE SERVICE CORINALDO VIA NEVOLA, 5 60013 CORINALDO (AN)</div> -->
-  <!--     <div class="contacts">bikeservicecorinaldo@gmail.com T: +39 071 67 697</div> -->
-  <!--     <div class="policies">Cookie Policy Privacy Policy</div> -->
-  <!--   </div> -->
-  <!--   <div class="bottom"> -->
-  <!--     <p>© Bike Service | P.Iva 02803080429</p> -->
-  <!--   </div> -->
-  <!-- </div> -->
-
   <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
         <a
-          href="https://flowbite.com/"
-          class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          href="#"
+          class="flex flex-wrap items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse logo-footer"
         >
           <!-- <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" /> -->
-          <img src="@/assets/bikeservice.png" class="h-8" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{
-            $t('company')
-          }}</span>
+          <img src="@/assets/bikeservice.png" class="h-8" alt="Enterprise Logo" />
+          <span
+            class="logo-enterprise-name self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >{{ $t('company') }}</span
+          >
         </a>
         <ul
-          id="footer-ul"
-          class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 mr-0 ml-auto"
+          class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 mr-0 ml-auto footer-ul"
         >
           <li>
-            <RouterLink :to="{ name: 'About' }">{{ $t('nav.about') }}</RouterLink>
+            <RouterLink class="hover:underline me-4 md:me-6" :to="{ name: 'About' }">{{
+              $t('nav.about')
+            }}</RouterLink>
           </li>
           <li>
             <!-- TODO: Create Privacy Policy View -->
@@ -45,13 +33,15 @@ import { RouterLink } from 'vue-router'
             <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
           </li>
           <li>
-            <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
+            <RouterLink class="hover:underline me-4 md:me-6" :to="{ name: 'Contacts' }">{{
+              $t('nav.contacts')
+            }}</RouterLink>
           </li>
         </ul>
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
-        >© 2024 <a href="https://flowbite.com/" class="hover:underline">Valerio Mattioli™</a>. All
+        >© 2024 <a href="https://flowbite.com/" class="hover:underline">Valerio Mattioli</a>. All
         Rights Reserved.</span
       >
     </div>
@@ -59,7 +49,19 @@ import { RouterLink } from 'vue-router'
 </template>
 
 <style>
-#footer-ul li {
+.footer-ul li {
   padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-footer img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-footer span {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 </style>
