@@ -16,10 +16,13 @@
     "created_by": "This tutorial was brought to you by Lokalise."
   },
   "about": {
-    "header": "About us"
+    "title": "About us",
+    "paragraph1": "We are united by a passion for cycling, sport and the outdoors, and it is from here that we came up with the idea of opening our own shop, specialising in the sale and repair of bicycles. Courtesy and professionalism are our prerequisites for always making our customers satisfied, which is why we choose only the best brands and products.",
+    "paragraph2": "Our shop sells bicycles, both new and used, but also provides service for your pedal-powered vehicles! We have spare parts for the most famous brands, we repair all types of bikes from road bikes to mountain bikes, e-bikes to city bikes and many more! We also sell new and used bikes (the latter all in perfect condition).",
+    "paragraph3": "There is also a lot more in our shop, such as bike clothing, helmets and pre-, during and post-race products."
   },
   "contacts": {
-    "header": "Contacts"
+    "title": "Contacts"
   },
   "tours": {
     "title": "Bike Tours",
