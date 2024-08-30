@@ -83,6 +83,10 @@
     }
   },
   "footer": {
-    "title": "This is a footer"
+    "title": "This is a footer",
+    "year": "2024",
+    "copyright": "©",
+    "rights": "All Rights Reserved",
+    "agency": "Valerio Mattioli"
   }
 }

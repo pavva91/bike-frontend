@@ -67,6 +67,7 @@
     }
   },
   "footer": {
-    "title": "Questo é un piè di pagina"
+    "title": "Questo é un piè di pagina",
+    "rights": "Tutti i diritti riservati"
   }
 }

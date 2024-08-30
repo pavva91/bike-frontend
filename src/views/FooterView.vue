@@ -41,8 +41,9 @@ import { RouterLink } from 'vue-router'
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
-        >© 2024 <a href="https://flowbite.com/" class="hover:underline">Valerio Mattioli</a>. All
-        Rights Reserved.</span
+        >{{ $t('footer.copyright') }} {{ $t('footer.year') }}
+        <a href="https://flowbite.com/" class="hover:underline">{{ $t('footer.agency') }}</a> |
+        {{ $t('footer.rights') }}</span
       >
     </div>
   </footer>
