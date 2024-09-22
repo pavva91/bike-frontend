@@ -36,7 +36,7 @@ const router = createRouter({
       props: true
     },
     {
-      path: '/',
+      path: '/events',
       name: 'EventList',
       component: EventListView,
       props: (route) => ({ page: parseInt(route.query.page) || 1 })
@@ -92,7 +92,7 @@ const router = createRouter({
       redirect: { name: 'about' }
     },
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: () => import('../views/HomeView.vue')
     },
