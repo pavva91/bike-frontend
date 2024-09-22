@@ -1,6 +1,7 @@
 <script setup>
 import TourImage from '../components/TourImage.vue'
 import ToursCarousel from '../components/carousel/ToursCarousel.vue'
+import RollCarousel from '../components/rollcarousel/RollCarousel.vue'
 import { onMounted } from 'vue'
 const props = defineProps({
   type: {
@@ -17,8 +18,13 @@ onMounted(() => {
 </script>
 <template>
   <div class="tours">
+    <!-- NOTE: this works -->
     <TourImage v-bind="$props"></TourImage>
-    <ToursCarousel></ToursCarousel>
+
+    <!-- <ToursCarousel></ToursCarousel> -->
+
+    <RollCarousel></RollCarousel>
+
     <h2>{{ $t('tours.tourist-info-title') }}</h2>
     <p>{{ $t('tours.' + props.type + '.' + props.id + '.tourist-info') }}</p>
     <h2>{{ $t('tours.technical-info-title') }}</h2>
