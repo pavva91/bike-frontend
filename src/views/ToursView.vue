@@ -1,29 +1,62 @@
 <script setup>
 import TourImage from '../components/TourImage.vue'
-import ToursCarousel from '../components/carousel/ToursCarousel.vue'
-import RollCarousel from '../components/rollcarousel/RollCarousel.vue'
+import RollCarousel from '../components/carousel/roll/RollCarousel.vue'
 import { onMounted } from 'vue'
+
+import SilderImg01 from '../assets/img/tours/road/road1.jpg'
+import SilderImg02 from '../assets/img/tours/mtb/mtb1.jpg'
+import SilderImg03 from '../assets/img/tours/gravel/gravel1.jpg'
+
 const props = defineProps({
   type: {
-    required: true
+    required: true,
   },
   id: {
-    required: true
-  }
+    required: true,
+  },
 })
 
 onMounted(() => {
   // console.log(props.biketype)
 })
+
+const items = [
+  {
+    img: SilderImg01,
+    desc: 'Road',
+    url: '#',
+  },
+  {
+    img: SilderImg02,
+    desc: 'MTB',
+    url: '#',
+  },
+  {
+    img: SilderImg03,
+    desc: 'Gravel',
+    url: '#',
+  },
+  {
+    img: SilderImg01,
+    desc: 'Road',
+    url: '#',
+  },
+  {
+    img: SilderImg02,
+    desc: 'MTB',
+    url: '#',
+  },
+  {
+    img: SilderImg03,
+    desc: 'Gravel',
+    url: '#',
+  },
+]
 </script>
 <template>
   <div class="tours">
-    <!-- NOTE: this works -->
     <TourImage v-bind="$props"></TourImage>
-
-    <!-- <ToursCarousel></ToursCarousel> -->
-
-    <RollCarousel></RollCarousel>
+    <RollCarousel :items="items"></RollCarousel>
 
     <h2>{{ $t('tours.tourist-info-title') }}</h2>
     <p>{{ $t('tours.' + props.type + '.' + props.id + '.tourist-info') }}</p>
