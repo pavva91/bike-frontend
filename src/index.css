@@ -86,8 +86,8 @@ img.home-background-img {
 
 @media screen and (min-width: 80rem) {
   .tours {
-    margin-left: 23em;
-    margin-right: 23em;
+    margin-left: 15em;
+    margin-right: 15em;
   }
   .tours img {
     top: 0;

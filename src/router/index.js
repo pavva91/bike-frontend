@@ -20,31 +20,31 @@ const router = createRouter({
       name: 'NotFound',
       component: () => import('../views/NotFoundView.vue'),
       props: {
-        showExtra: false
-      }
+        showExtra: false,
+      },
     },
     {
       path: '/404/:resource',
       name: '404Resource',
       component: () => import('../views/NotFoundView.vue'),
-      props: true
+      props: true,
     },
     {
       path: '/network-error',
       name: 'NetworkError',
       component: () => import('../views/NetworkError.vue'),
-      props: true
+      props: true,
     },
     {
       path: '/events',
       name: 'EventList',
       component: EventListView,
-      props: (route) => ({ page: parseInt(route.query.page) || 1 })
+      props: (route) => ({ page: parseInt(route.query.page) || 1 }),
     },
     {
       path: '/list',
       name: 'EventListPinia',
-      component: () => import('../views/EventListStoreView.vue')
+      component: () => import('../views/EventListStoreView.vue'),
     },
     {
       path: '/events/:id',
@@ -52,54 +52,54 @@ const router = createRouter({
       // props: true,
       props: (route) => ({
         id: route.params.id,
-        showExtra: route.query.e
+        showExtra: route.query.e,
       }),
       component: () => import('../views/event/Layout.vue'),
       children: [
         {
           path: '',
           name: 'EventDetails',
-          component: () => import('../views/event/Details.vue')
+          component: () => import('../views/event/Details.vue'),
         },
         {
           path: 'register',
           name: 'EventRegister',
-          component: EventRegister
+          component: EventRegister,
         },
         {
           path: 'edit',
           name: 'EventEdit',
-          component: EventEdit
-        }
-      ]
+          component: EventEdit,
+        },
+      ],
     },
     {
       path: '/event/:id',
       redirect: (to) => {
         return {
           name: 'EventDetails',
-          params: { id: to.params.id }
+          params: { id: to.params.id },
         }
-      }
+      },
     },
     {
       path: '/event/create',
       name: 'EventCreate',
-      component: () => import('../views/EventCreateView.vue')
+      component: () => import('../views/EventCreateView.vue'),
     },
     {
       path: '/about',
-      redirect: { name: 'about' }
+      redirect: { name: 'about' },
     },
     {
       path: '/',
       name: 'Home',
-      component: () => import('../views/HomeView.vue')
+      component: () => import('../views/HomeView.vue'),
     },
     {
       path: '/contacts',
       name: 'Contacts',
-      component: () => import('../views/ContactsView.vue')
+      component: () => import('../views/ContactsView.vue'),
     },
     {
       name: 'About',
@@ -108,7 +108,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+      component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
     },
     {
       path: '/tours/:type/:id',
@@ -116,28 +116,10 @@ const router = createRouter({
       component: () => import('../views/ToursView.vue'),
       props: (route) => ({
         type: route.params.type,
-        id: route.params.id
-      })
+        id: route.params.id,
+      }),
     },
-    {
-      path: '/tours/mtb/1',
-      name: 'ToursMtb',
-      component: () => import('../views/ToursView.vue'),
-      props: () => ({
-        biketype: 'mtb',
-        tournumber: 1
-      })
-    },
-    {
-      path: '/tours/gravel/1',
-      name: 'ToursGravel',
-      component: () => import('../views/ToursView.vue'),
-      props: () => ({
-        biketype: 'gravel',
-        tournumber: 1
-      })
-    }
-  ]
+  ],
 })
 
 router.beforeEach(() => {

@@ -10,11 +10,11 @@ import { filename } from 'pathe/utils'
 
 const props = defineProps({
   type: {
-    required: true
+    required: true,
   },
   id: {
-    required: true
-  }
+    required: true,
+  },
 })
 
 const imageName = computed(() => {
@@ -23,7 +23,7 @@ const imageName = computed(() => {
 
 const glob = import.meta.glob('@/assets/img/tours/**/*.jpg', { eager: true })
 const images = Object.fromEntries(
-  Object.entries(glob).map(([key, value]) => [filename(key), value.default])
+  Object.entries(glob).map(([key, value]) => [filename(key), value.default]),
 )
 </script>
 
@@ -122,9 +122,6 @@ const images = Object.fromEntries(
   text-align: right;
   font-weight: 300;
   display: none;
-}
-
-.top-right {
 }
 
 .bottom-right {

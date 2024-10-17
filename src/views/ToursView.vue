@@ -19,41 +19,21 @@ const props = defineProps({
   },
 })
 
-// TODO: each type (road, mtb, gravel) has its own list
-let items = [
-  {
-    img: RoadImg01,
-    desc: 'Road',
-    url: 'http://localhost:5173/tours/road/1',
-  },
-  {
-    img: MtbImg01,
-    desc: 'MTB',
-    url: 'http://localhost:5173/tours/mtb/1',
-  },
-  {
-    img: GravelImg01,
-    desc: 'Gravel',
-    url: 'http://localhost:5173/tours/gravel/1',
-  },
-]
-
 const roadItems = [
   {
     img: RoadImg01,
-    // TODO: must be dynamic and translated
     desc: 'I muri marchigiani',
-    url: 'http://localhost:5173/tours/road/1',
+    id: 1,
   },
   {
     img: RoadImg02,
     desc: 'Cesane',
-    url: 'http://localhost:5173/tours/road/2',
+    id: 2,
   },
   {
     img: RoadImg03,
     desc: 'San Bartolo',
-    url: 'http://localhost:5173/tours/road/3',
+    id: 3,
   },
 ]
 
@@ -61,7 +41,7 @@ const mtbItems = [
   {
     img: MtbImg01,
     desc: 'MTB',
-    url: 'http://localhost:5173/tours/mtb/1',
+    id: 1,
   },
 ]
 
@@ -69,41 +49,9 @@ const gravelItems = [
   {
     img: GravelImg01,
     desc: 'GRAVEL',
-    url: 'http://localhost:5173/tours/gravel/1',
+    id: 1,
   },
 ]
-
-if (props.type == 'road') {
-  console.log('hello road')
-  items = [
-    {
-      img: RoadImg01,
-      desc: 'Road',
-      url: 'http://localhost:5173/tours/road/1',
-    },
-  ]
-} else {
-  if (props.type == 'mtb') {
-    console.log('hello mtb')
-    items = [
-      {
-        img: MtbImg01,
-        desc: 'MTB',
-        url: 'http://localhost:5173/tours/mtb/1',
-      },
-    ]
-  } else {
-    if (props.type == 'gravel') {
-      items = [
-        {
-          img: GravelImg01,
-          desc: 'Gravel',
-          url: 'http://localhost:5173/tours/gravel/1',
-        },
-      ]
-    }
-  }
-}
 
 onMounted(() => {
   // console.log('hello everyone')
@@ -112,10 +60,10 @@ onMounted(() => {
 <template>
   <div class="tours">
     <TourImage v-bind="$props"></TourImage>
-    <!-- <RollCarousel :items="items"></RollCarousel> -->
-    <RollCarousel v-if="$props.type == 'road'" :items="roadItems"></RollCarousel>
-    <RollCarousel v-if="$props.type == 'mtb'" :items="mtbItems"></RollCarousel>
-    <RollCarousel v-if="$props.type == 'gravel'" :items="gravelItems"></RollCarousel>
+
+    <RollCarousel v-if="$props.type == 'road'" type="road" :items="roadItems"></RollCarousel>
+    <RollCarousel v-if="$props.type == 'mtb'" type="mtb" :items="mtbItems"></RollCarousel>
+    <RollCarousel v-if="$props.type == 'gravel'" type="gravel" :items="gravelItems"></RollCarousel>
 
     <h2>{{ $t('tours.tourist-info-title') }}</h2>
     <p>{{ $t('tours.' + props.type + '.' + props.id + '.tourist-info') }}</p>
