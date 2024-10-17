@@ -19,6 +19,7 @@ const props = defineProps({
   },
 })
 
+// TODO: use i18n for descriptions
 const roadItems = [
   {
     img: RoadImg01,
@@ -27,7 +28,7 @@ const roadItems = [
   },
   {
     img: RoadImg02,
-    desc: 'Cesane',
+    desc: 'Urbino e Cesane',
     id: 2,
   },
   {
