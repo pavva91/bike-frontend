@@ -37,18 +37,27 @@
     "road": {
       "1": {
         "title": "I muri marchigiani",
-        "tourist-info": "asdf",
-        "technical-info": "asdf",
+        "tourist-info": "The muri marchigiani are a revival of the stage of the 2024 giro d'italia...",
+        "technical-info": "Being a giro d'italia stage is very hard...",
         "elevation": "2000m",
         "distance": "120km",
-        "rating": "4"
+        "rating": "5"
       },
       "2": {
         "title": "Urbino e Cesane",
-        "tourist-info": "asdf",
-        "technical-info": "asdf",
-        "elevation": "2000m",
-        "distance": "120km"
+        "tourist-info": "The Cesane mountain is a mountain between Urbino and Fossombrone....",
+        "technical-info": "A small mountain, intermediate level...",
+        "elevation": "1500m",
+        "distance": "100km",
+        "rating": "4"
+      },
+      "3": {
+        "title": "San Bartolo",
+        "tourist-info": "The San Bartolo nature park",
+        "technical-info": "There are a single-track and a downhill path, expert bikers...",
+        "elevation": "800m",
+        "distance": "70km",
+        "rating": "3"
       }
     },
     "mtb": {
