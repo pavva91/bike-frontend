@@ -52,12 +52,14 @@ const showMenu = ref(false)
             <RouterLink :to="{ name: 'Home' }">{{ $t('nav.home') }}</RouterLink>
           </li>
           <li @click="showMenu = !showMenu">
-            <RouterLink :to="{ name: 'About' }">{{ $t('nav.about') }}</RouterLink>
+            <RouterLink :to="{ name: 'Home', hash: '#about' }">{{ $t('nav.about') }}</RouterLink>
           </li>
           <li @click="showMenu = !showMenu">
-            <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
+            <RouterLink :to="{ name: 'Home', hash: '#contacts' }">{{
+              $t('nav.contacts')
+            }}</RouterLink>
           </li>
-          <li @click="showTours = !showTours">
+          <li id="nav-tours-mobile" @click="showTours = !showTours">
             {{ $t('nav.tours') }}
             <ul v-if="showTours">
               <li>
@@ -88,3 +90,13 @@ const showMenu = ref(false)
     </div>
   </nav>
 </template>
+
+<style>
+#nav-tours-mobile {
+  text-align: center;
+}
+
+li#nav-tours-mobile:hover {
+  color: #b4003b;
+}
+</style>

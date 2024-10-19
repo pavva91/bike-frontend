@@ -27,10 +27,12 @@ const hover = ref(false)
             <RouterLink :to="{ name: 'Home' }">{{ $t('nav.home') }}</RouterLink>
           </li>
           <li>
-            <RouterLink :to="{ name: 'About' }">{{ $t('nav.about') }}</RouterLink>
+            <RouterLink :to="{ name: 'Home', hash: '#about' }">{{ $t('nav.about') }}</RouterLink>
           </li>
           <li>
-            <RouterLink :to="{ name: 'Contacts' }">{{ $t('nav.contacts') }}</RouterLink>
+            <RouterLink :to="{ name: 'Home', hash: '#contacts' }">{{
+              $t('nav.contacts')
+            }}</RouterLink>
           </li>
           <li @mouseover="hover = true" @mouseleave="hover = false">
             {{ $t('nav.tours') }}
@@ -74,6 +76,7 @@ const hover = ref(false)
   position: absolute;
   top: 60%;
 }
+
 .sub-menu li {
   padding: 10px;
 }
