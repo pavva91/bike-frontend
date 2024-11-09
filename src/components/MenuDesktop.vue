@@ -8,7 +8,7 @@ const hover = ref(false)
 </script>
 
 <template>
-  <nav class="navbar-nav left-0 bg-white fixed w-full">
+  <nav class="desktop-navbar-nav left-0 bg-white fixed w-full">
     <div class="desktop-menu-div max-w-screen-xl flex flex-wrap justify-between mx-auto p-4">
       <a href="https://flowbite.com/" class="flex space-x-3 rtl:space-x-reverse">
         <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" />
@@ -79,7 +79,7 @@ const hover = ref(false)
 </template>
 
 <style scoped>
-.navbar-nav {
+.desktop-navbar-nav {
   background-color: var(--vt-c-bg);
 }
 

@@ -2,13 +2,14 @@
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
+import VTSwitchAppearance from '../core/components/VTSwitchAppearance.vue'
 
 const showTours = ref(false)
 const showMenu = ref(false)
 </script>
 
 <template>
-  <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+  <nav class="mobile-navbar-nav">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" />
@@ -20,7 +21,7 @@ const showMenu = ref(false)
         @click="showMenu = !showMenu"
         data-collapse-toggle="navbar-hamburger"
         type="button"
-        class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
         aria-controls="navbar-hamburger"
         aria-expanded="false"
       >
@@ -41,10 +42,13 @@ const showMenu = ref(false)
           />
         </svg>
       </button>
+
+      <div class="VPNavScreenAppearance">
+        <VTSwitchAppearance></VTSwitchAppearance>
+      </div>
+
       <div v-if="showMenu" class="w-full" id="navbar-hamburger">
-        <ul
-          class="items-center flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
-        >
+        <ul class="items-center flex flex-col font-medium mt-4 rounded-lg">
           <li>
             <LanguageSwitcher></LanguageSwitcher>
           </li>
@@ -92,6 +96,10 @@ const showMenu = ref(false)
 </template>
 
 <style>
+.mobile-navbar-nav {
+  background-color: var(--vt-c-bg);
+}
+
 #nav-tours-mobile {
   text-align: center;
 }
