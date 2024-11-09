@@ -1,14 +1,14 @@
 import { createApp, reactive } from 'vue'
 // import { createApp } from 'vue/dist/vue.esm-bundler' // <--- 1
 import { createPinia } from 'pinia'
-import i18n from "./i18n"
+import i18n from './i18n'
 
 import App from './App.vue'
 import router from './router'
 
-import './index.css'
+import './styles/index.css'
 
-const GStore = reactive({ flashMessage: ''})
+const GStore = reactive({ flashMessage: '' })
 
 const app = createApp(App)
 

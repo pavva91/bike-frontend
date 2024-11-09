@@ -1,3 +1,7 @@
+@import './variables.css';
+@import './vt-switch.css';
+@import './vt-switch-appearance.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,3 +101,4 @@ img.home-background-img {
     object-position: 55%;
   }
 }
+
