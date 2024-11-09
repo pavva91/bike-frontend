@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
+import VTSwitchAppearance from '../components/VTSwitchAppearance.vue'
 
 const hover = ref(false)
 </script>
@@ -65,13 +66,19 @@ const hover = ref(false)
           <!-- </li> -->
           <li>
             <LanguageSwitcher></LanguageSwitcher>
+            <!-- INFO: https://vitepress.dev/ -->
+            <!-- INFO: https://vuejs.org/ -->
+            <div class="VPNavScreenAppearance">
+              <VTSwitchAppearance></VTSwitchAppearance>
+            </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </template>
-<style>
+
+<style scoped>
 .sub-menu {
   position: absolute;
   top: 60%;
@@ -79,5 +86,23 @@ const hover = ref(false)
 
 .sub-menu li {
   padding: 10px;
+}
+
+.VPNavScreenAppearance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 12px 14px 12px 16px;
+  /* background-color: var(--vt-c-bg-soft); */
+  transition: background-color 0.5s;
+}
+
+.text {
+  line-height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vt-c-text-2);
+  transition: color 0.5s;
 }
 </style>
