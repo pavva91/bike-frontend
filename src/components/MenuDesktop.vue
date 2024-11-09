@@ -8,7 +8,7 @@ const hover = ref(false)
 </script>
 
 <template>
-  <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full">
+  <nav class="navbar-nav left-0 bg-white fixed w-full">
     <div class="desktop-menu-div max-w-screen-xl flex flex-wrap justify-between mx-auto p-4">
       <a href="https://flowbite.com/" class="flex space-x-3 rtl:space-x-reverse">
         <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" />
@@ -19,7 +19,7 @@ const hover = ref(false)
       </a>
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
         <ul
-          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
           id="navbar-ul"
         >
           <li>
@@ -79,6 +79,10 @@ const hover = ref(false)
 </template>
 
 <style scoped>
+.navbar-nav {
+  background-color: var(--vt-c-bg);
+}
+
 .desktop-menu-div {
   height: var(--vt-nav-height);
 }
@@ -86,6 +90,7 @@ const hover = ref(false)
 #navbar-ul {
   height: 35px;
 }
+
 .sub-menu {
   position: absolute;
   top: 60%;
