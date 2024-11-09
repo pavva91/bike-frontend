@@ -10,10 +10,12 @@ const props = defineProps<{
   items: Item[]
   noControls: {
     type: Boolean
+    required: false
     default: false
   }
   noIndicators: {
     type: Boolean
+    required: false
     default: false
   }
 }>()

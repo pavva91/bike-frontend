@@ -1,10 +1,12 @@
-<!-- TODO: https://github.com/vuejs/theme/blob/main/src/core/components/VTSwitchAppearance.vue -->
-<!-- TODO: https://vuejs.org/ -->
+<!-- INFO: https://github.com/vuejs/theme/blob/main/src/core/components/VTSwitchAppearance.vue -->
+<!-- INFO: https://vuejs.org/ -->
+<!-- INFO: ~/personal/vuetheme/theme/src/core/components/VTSwitchAppearance.vue -->
+
 <script lang="ts" setup>
 import { ref } from 'vue'
-import VTSwitch from '../core/components/VTSwitch.vue'
-import VTIconSun from '../core/components/icons/VTIconSun.vue'
-import VTIconMoon from '../core/components/icons/VTIconMoon.vue'
+import VTSwitch from './VTSwitch.vue'
+import VTIconSun from './icons/VTIconSun.vue'
+import VTIconMoon from './icons/VTIconMoon.vue'
 // import { useConfig } from '../../vitepress/composables/config'
 
 // const { config } = useConfig()

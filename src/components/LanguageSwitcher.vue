@@ -18,8 +18,8 @@ export default {
   methods: {
     changeLanguage(obj) {
       localStorage.setItem('language', obj.target.value)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -29,6 +29,7 @@ export default {
   border: 0Q;
   padding-top: 0Q;
   padding-bottom: 0Q;
+  background-color: var(--vt-c-bg);
 }
 
 @media (min-width: 1024px) {

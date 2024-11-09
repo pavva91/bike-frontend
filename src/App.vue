@@ -3,7 +3,8 @@ import { RouterView } from 'vue-router'
 import { computed, inject, ref, onMounted, onUnmounted } from 'vue'
 import MenuDesktop from './components/MenuDesktop.vue'
 import MenuMobile from './components/MenuMobile.vue'
-import FooterView from './views/FooterView.vue'
+import FooterLinks from './components/footer/FooterLinks.vue'
+import FooterInfo from './components/footer/FooterInfo.vue'
 
 const GStore = inject('GStore')
 
@@ -27,7 +28,7 @@ const breakpoints = {
   sm: 640,
   md: 768,
   lg: 1024,
-  xl: 1280
+  xl: 1280,
 }
 
 // Compute properties for each breakpoint
@@ -49,7 +50,9 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
       <MenuMobile></MenuMobile>
     </div>
     <div v-else-if="isExtraLarge">
-      <MenuDesktop></MenuDesktop>
+      <div class="MenuDesktop">
+        <MenuDesktop></MenuDesktop>
+      </div>
     </div>
     <div v-else>
       <MenuDesktop></MenuDesktop>
@@ -69,7 +72,8 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
       </div>
     </header>
     <RouterView />
-    <FooterView></FooterView>
+    <FooterLinks></FooterLinks>
+    <!-- <FooterInfo></FooterInfo> -->
   </div>
 </template>
 
@@ -87,5 +91,19 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
   to {
     background: transparent;
   }
+}
+
+.MenuDesktop {
+  position: relative;
+  border-bottom: 1px solid var(--vt-c-divider-light);
+  padding: 0 12px 0 24px;
+  /* height: var(--vt-nav-height); */
+  background-color: var(--vt-c-bg);
+  white-space: nowrap;
+  transition: border-color 0.5s, background-color 0.5s;
+}
+
+.MenuDesktop nav {
+  height: var(--vt-nav-height);
 }
 </style>

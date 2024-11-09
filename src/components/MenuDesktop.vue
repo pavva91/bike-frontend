@@ -2,27 +2,25 @@
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
-import VTSwitchAppearance from '../components/VTSwitchAppearance.vue'
+import VTSwitchAppearance from '../core/components/VTSwitchAppearance.vue'
 
 const hover = ref(false)
 </script>
 
 <template>
   <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <div class="desktop-menu-div max-w-screen-xl flex flex-wrap justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex space-x-3 rtl:space-x-reverse">
         <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" />
         <!-- TODO: My company name -->
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{
+        <span class="text-2xl font-semibold whitespace-nowrap dark:text-white">{{
           $t('company')
         }}</span>
       </a>
-      <div
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-        id="navbar-language"
-      >
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
         <ul
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          id="navbar-ul"
         >
           <li>
             <RouterLink :to="{ name: 'Home' }">{{ $t('nav.home') }}</RouterLink>
@@ -68,6 +66,8 @@ const hover = ref(false)
             <LanguageSwitcher></LanguageSwitcher>
             <!-- INFO: https://vitepress.dev/ -->
             <!-- INFO: https://vuejs.org/ -->
+          </li>
+          <li>
             <div class="VPNavScreenAppearance">
               <VTSwitchAppearance></VTSwitchAppearance>
             </div>
@@ -79,6 +79,13 @@ const hover = ref(false)
 </template>
 
 <style scoped>
+.desktop-menu-div {
+  height: var(--vt-nav-height);
+}
+
+#navbar-ul {
+  height: 35px;
+}
 .sub-menu {
   position: absolute;
   top: 60%;
@@ -93,7 +100,7 @@ const hover = ref(false)
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
-  padding: 12px 14px 12px 16px;
+  /* padding: 12px 14px 12px 16px; */
   /* background-color: var(--vt-c-bg-soft); */
   transition: background-color 0.5s;
 }
