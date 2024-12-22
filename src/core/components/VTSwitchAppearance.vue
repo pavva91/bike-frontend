@@ -7,48 +7,48 @@ import { ref } from 'vue'
 import VTSwitch from './VTSwitch.vue'
 import VTIconSun from './icons/VTIconSun.vue'
 import VTIconMoon from './icons/VTIconMoon.vue'
-// import { useConfig } from '../../vitepress/composables/config'
 
-// const { config } = useConfig()
+const storageKey = 'theme-appearance'
 
-const storageKey = 'vitepress-theme-appearance'
-const { isDark, toggle } =
-  typeof localStorage !== 'undefined' ? useAppearance() : { isDark: false, toggle: () => {} }
+const isDark = typeof localStorage !== 'undefined' ? useAppearance() : true
 
 function useAppearance() {
-  let userPreference = localStorage.getItem(storageKey) || 'auto'
+  let userPreference = localStorage.getItem(storageKey) || 'dark'
   const query = window.matchMedia(`(prefers-color-scheme: dark)`)
   const classList = document.documentElement.classList
-  const isDark = ref(userPreference === 'auto' ? query.matches : userPreference === 'dark')
-  const setClass = (dark: boolean) => classList[dark ? 'add' : 'remove']('dark')
+  const isDark = ref(userPreference === 'dark')
+  if (userPreference === 'dark') {
+    classList['add']('dark')
+  }
+  return isDark
+}
 
-  query.onchange = (e) => {
-    if (userPreference === 'auto') {
-      setClass((isDark.value = e.matches))
-    }
+function toggle() {
+  const classList = document.documentElement.classList
+  let userPreference = localStorage.getItem(storageKey) || 'dark'
+  isDark.value = !isDark.value
+  switch (isDark.value) {
+    case true:
+      userPreference = 'dark'
+      classList['add']('dark')
+      break
+    case false:
+      userPreference = 'light'
+      classList['remove']('dark')
+      break
+
+    default:
+      userPreference = 'dark'
+      classList['add']('dark')
+      break
   }
 
-  const toggle = () => {
-    setClass((isDark.value = !isDark.value))
-    localStorage.setItem(
-      storageKey,
-      (userPreference = isDark.value
-        ? query.matches
-          ? 'auto'
-          : 'dark'
-        : query.matches
-        ? 'light'
-        : 'auto'),
-    )
-  }
-
-  return { isDark, toggle }
+  localStorage.setItem(storageKey, userPreference)
 }
 </script>
 
 <template>
-  <!-- :aria-label="config.i18n?.ariaDarkMode ?? 'Toggle dark mode'" -->
-  <VTSwitch class="vt-switch-appearance" :aria-checked="isDark" @click="toggle">
+  <VTSwitch class="vt-switch-appearance" :aria-checked="isDark" @click="toggle()">
     <VTIconSun class="vt-switch-appearance-sun" />
     <VTIconMoon class="vt-switch-appearance-moon" />
   </VTSwitch>
