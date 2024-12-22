@@ -13,8 +13,21 @@
     </select>
   </div>
 </template>
-<script>
+
+<script lang="ts">
+import i18n from '../i18n'
+
+function getLocalStoreLanguage() {
+  let userLang = localStorage.getItem('language')
+  if (userLang != null) {
+    i18n.global.locale.value = userLang
+  }
+}
+
 export default {
+  mounted() {
+    getLocalStoreLanguage()
+  },
   methods: {
     changeLanguage(obj) {
       localStorage.setItem('language', obj.target.value)
