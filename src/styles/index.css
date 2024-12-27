@@ -34,7 +34,8 @@
 }
 
 .dark-pink {
-  color: #b4003b;
+  /* color: #b4003b; */
+  color: var(--vt-c-bg-selected)
 }
 
 .light-pink {
@@ -56,9 +57,9 @@ nav li {
 }
 
 nav a:hover {
-  /* color: #3b82f6; */
   /* color: #ed2429; */
-  color: #b4003b;
+  /* color: #b4003b; */
+  color: var(--vt-c-bg-selected)
 }
 
 h1 {
@@ -84,7 +85,7 @@ h2 {
 nav a.router-link-exact-active {
   /* color: #3b82f6; */
   /* color: #ed2429; */
-  color: #b4003b;
+  /* color: #b4003b; */
 }
 
 img.home-background-img {
@@ -100,7 +101,7 @@ img.home-background-img {
   .tours img {
     top: 0;
     width: 100%;
-    heigth: 20%;
+    height: 20%;
     object-fit: cover;
     object-position: 55%;
   }

@@ -5,6 +5,23 @@ import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import VTSwitchAppearance from '../core/components/VTSwitchAppearance.vue'
 
 const hover = ref(false)
+
+function changeSelectedMenuItem(event) {
+  let nav_ul = document.getElementById('navbar-ul')
+  for (const ch in nav_ul.children) {
+    if (nav_ul.children.hasOwnProperty(ch)) {
+      const element = nav_ul.children[ch]
+      if (element.children[0]) {
+        element.children[0].style.color = getComputedStyle(
+          document.documentElement,
+        ).getPropertyValue('--vt-c-text-1')
+      }
+    }
+  }
+  event.target.style.color = getComputedStyle(document.documentElement).getPropertyValue(
+    '--vt-c-text-selected',
+  )
+}
 </script>
 
 <template>
@@ -23,19 +40,27 @@ const hover = ref(false)
           id="navbar-ul"
         >
           <li>
-            <RouterLink :to="{ name: 'Home' }">{{ $t('nav.home') }}</RouterLink>
-          </li>
-          <li>
-            <RouterLink :to="{ name: 'Home', hash: '#about' }">{{ $t('nav.about') }}</RouterLink>
-          </li>
-          <li>
-            <RouterLink :to="{ name: 'Home', hash: '#contacts' }">{{
-              $t('nav.contacts')
+            <RouterLink @click="changeSelectedMenuItem($event)" :to="{ name: 'Home' }">{{
+              $t('nav.home')
             }}</RouterLink>
+          </li>
+          <li>
+            <RouterLink
+              @click="changeSelectedMenuItem($event)"
+              :to="{ name: 'Home', hash: '#about' }"
+              >{{ $t('nav.about') }}</RouterLink
+            >
+          </li>
+          <li>
+            <RouterLink
+              @click="changeSelectedMenuItem($event)"
+              :to="{ name: 'Home', hash: '#contacts' }"
+              >{{ $t('nav.contacts') }}</RouterLink
+            >
           </li>
           <li @mouseover="hover = true" @mouseleave="hover = false">
             {{ $t('nav.tours') }}
-            <ul class="sub-menu bg-white" v-if="hover">
+            <ul @click="changeSelectedMenuItem($event)" class="sub-menu bg-white" v-if="hover">
               <li>
                 <RouterLink :to="{ name: 'Tours', params: { type: 'road', id: 1 } }"
                   >{{ $t('nav.types.road') }}
