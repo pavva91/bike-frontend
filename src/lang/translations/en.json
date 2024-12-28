@@ -52,7 +52,16 @@
         "rating": "4"
       },
       "3": {
-        "title": "San Bartolo",
+        "title": "From Fano to San Bartolo Park",
+        "tourist-info": "The departure is from Fano, the city of Vitruvius. Here history takes center stage with its Roman roots still visible today: from the Arch of Augustus to the striking Roman walls. Start in the historic center, in front of the Teatro della Fortuna, pass by the former Church of San Francesco, a true open-air monument, and head north along the waterfront. Pedaling along the beautiful bike path that runs parallel to the coast, with the sea at your side you reach Pesaro, a paradise for bike lovers thanks to its Bicipolitana, the “two-wheel metro.” The city, which is the Italian Capital of Culture in 2024 and a UNESCO Creative City of Music since 2017, is the birthplace of Gioacchino Rossini, an immortal genius to whom the Rossini Opera Festival is dedicated. From museums to theaters, libraries to villas on the hills, the cultural heritage here is endless. From the port, cross the Foglia River and take the road uphill to one of the most beautiful experiences on Mount San Bartolo, from whose hills overlooking the Adriatic you can enjoy a wonderful panorama. Now a Regional Nature Park, it is a treasure where nature and culture blend together. The Panoramica has very little traffic and, between gentle curves and continuous ups and downs, offers a route that retains all the charm of both rural and coastal areas. A break is recommended at Fiorenzuola di Focara, a small village-balcony on the sea, whose name derives from the “fires” that were lit to send signals to boats, or at Casteldimezzo and the archaeological area of Colombarone. lThe route ends at Gabicce Monte, a village overlooking the sea, fascinating for its dual soul, where nature and seascape blend in perfect harmony. A little further on, you can reach the \"Pantani turn\" where a mural depicts the champion, a tribute to the cyclist who loved to train along this scenic route.",
+        "technical-info": "From Fano to Pesaro there is a bicycle path that runs along the sea, beware of pedestrian and bicycle tourist traffic, especially in high season. From Pesaro then up through San Bartolo Park, the road becomes winding, watch out for traffic.",
+        "elevation": "800m",
+        "distance": "70km",
+        "rating": "3",
+        "original": "https://www.marcheoutdoor.it/Itinerari/Dettagli/ciclovia_adriatica_da_fano_a_gabicce_mare_un_viaggio_tra_la_cultura_la_musica_e_la_natura?bike=true#"
+      },
+      "4": {
+        "title": "Fano",
         "tourist-info": "The San Bartolo nature park",
         "technical-info": "There are a single-track and a downhill path, expert bikers...",
         "elevation": "800m",
