@@ -28,16 +28,19 @@ const roadItems = [
     img: RoadImg01,
     desc: 'I muri marchigiani',
     id: 1,
+    type: 'road',
   },
   {
     img: RoadImg02,
     desc: 'Urbino e Cesane',
     id: 2,
+    type: 'road',
   },
   {
     img: RoadImg03,
     desc: 'San Bartolo',
     id: 3,
+    type: 'road',
   },
   {
     img: RoadImg03,
@@ -46,6 +49,7 @@ const roadItems = [
     komoot_url:
       '/tour/1855943062/embed?share_token=aRGOnN4ruECI61xrOwT3zHVc8es64DiVn5vLKdokP2f1RLRdWD&profile=1',
     // komoot_url: 'https://www.komoot.com/it-it/tour/1855943062/embed?share_token=aRGOnN4ruECI61xrOwT3zHVc8es64DiVn5vLKdokP2f1RLRdWD&profile=1',
+    type: 'road',
   },
 ]
 
@@ -54,6 +58,7 @@ const mtbItems = [
     img: MtbImg01,
     desc: 'MTB',
     id: 1,
+    type: 'mtb',
   },
 ]
 
@@ -62,6 +67,7 @@ const gravelItems = [
     img: GravelImg01,
     desc: 'GRAVEL',
     id: 1,
+    type: 'gravel',
   },
 ]
 

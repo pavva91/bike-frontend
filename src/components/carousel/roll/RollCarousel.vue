@@ -3,10 +3,10 @@ interface Item {
   img: string
   desc: string
   id: number
+  type: string
 }
 
 const props = defineProps<{
-  type: string
   items: Item[]
   noControls: {
     type: Boolean
@@ -21,13 +21,12 @@ const props = defineProps<{
 }>()
 
 const items = props.items
-const bikeType = props.type
 </script>
 
 <template>
   <div class="roll-container">
     <div v-for="(item, index) in items" :key="index" class="single">
-      <RouterLink :to="{ name: 'Tours', params: { type: bikeType, id: item.id } }">
+      <RouterLink :to="{ name: 'Tours', params: { type: item.type, id: item.id } }">
         <img :src="item.img" :alt="item.desc" />
       </RouterLink>
       <div>{{ item.desc }}</div>
