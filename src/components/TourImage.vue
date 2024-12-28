@@ -88,6 +88,13 @@ const images = Object.fromEntries(
   letter-spacing: 0.4px;
 }
 
+@media (max-width: 480px) {
+  .tour-image h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.3px;
+  }
+}
+
 .tour-image {
   position: relative;
   text-align: center;
