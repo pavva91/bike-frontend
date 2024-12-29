@@ -84,14 +84,23 @@ const pictures = [
 ]
 </script>
 <template>
-  <TopCarousel :items="items" :noControls="false" :noIndicators="true" :duration="5000" />
   <RollCarousel
-    class="mx-auto max-w-7xl"
+    class="mx-auto bg-img-footer"
     :withMaskGradient="false"
     :items="tourItems"
   ></RollCarousel>
   <!-- <CarouselHome></CarouselHome> -->
   <!-- <FullScreenCarousel :pictures="pictures" slide :slide-interval="10000" /> -->
   <AboutView id="about"></AboutView>
+  <TopCarousel :items="items" :noControls="false" :noIndicators="true" :duration="5000" />
   <ContactsView id="contacts"></ContactsView>
 </template>
+<style>
+@media (max-width: 480px) {
+  .bg-img-footer {
+    height: 10vh;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+}
+</style>
