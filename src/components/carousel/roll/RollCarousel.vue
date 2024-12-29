@@ -31,7 +31,7 @@ const items = props.items
 
 <style>
 .mask-gradient {
-  mask: radial-gradient(circle, white, transparent);
+  mask: radial-gradient(circle, white, 80%, transparent);
   mask-repeat: no-repeat;
 }
 
