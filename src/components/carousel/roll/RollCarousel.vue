@@ -8,12 +8,7 @@ interface Item {
 
 const props = defineProps<{
   items: Item[]
-  noControls: {
-    type: Boolean
-    required: false
-    default: false
-  }
-  noIndicators: {
+  withMaskGradient: {
     type: Boolean
     required: false
     default: false
@@ -24,7 +19,7 @@ const items = props.items
 </script>
 
 <template>
-  <div class="roll-container">
+  <div class="roll-container" :class="{ 'mask-gradient': props.withMaskGradient }">
     <div v-for="(item, index) in items" :key="index" class="single">
       <RouterLink :to="{ name: 'Tours', params: { type: item.type, id: item.id } }">
         <img :src="item.img" :alt="item.desc" />
@@ -35,6 +30,11 @@ const items = props.items
 </template>
 
 <style>
+.mask-gradient {
+  mask: radial-gradient(circle, white, transparent);
+  mask-repeat: no-repeat;
+}
+
 .roll-container {
   display: flex;
   overflow-x: auto;

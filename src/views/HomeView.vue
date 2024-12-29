@@ -85,7 +85,11 @@ const pictures = [
 </script>
 <template>
   <TopCarousel :items="items" :noControls="false" :noIndicators="true" :duration="5000" />
-  <RollCarousel class="mx-auto max-w-7xl" :items="tourItems"></RollCarousel>
+  <RollCarousel
+    class="mx-auto max-w-7xl"
+    :withMaskGradient="false"
+    :items="tourItems"
+  ></RollCarousel>
   <!-- <CarouselHome></CarouselHome> -->
   <!-- <FullScreenCarousel :pictures="pictures" slide :slide-interval="10000" /> -->
   <AboutView id="about"></AboutView>

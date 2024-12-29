@@ -198,9 +198,24 @@ async function getActivity() {
   <div class="tours">
     <TourImage v-bind="$props"></TourImage>
 
-    <RollCarousel v-if="$props.type == 'road'" type="road" :items="roadItems"></RollCarousel>
-    <RollCarousel v-if="$props.type == 'mtb'" type="mtb" :items="mtbItems"></RollCarousel>
-    <RollCarousel v-if="$props.type == 'gravel'" type="gravel" :items="gravelItems"></RollCarousel>
+    <RollCarousel
+      v-if="$props.type == 'road'"
+      type="road"
+      :withMaskGradient="true"
+      :items="roadItems"
+    ></RollCarousel>
+    <RollCarousel
+      v-if="$props.type == 'mtb'"
+      type="mtb"
+      :withMaskGradient="true"
+      :items="mtbItems"
+    ></RollCarousel>
+    <RollCarousel
+      v-if="$props.type == 'gravel'"
+      type="gravel"
+      :withMaskGradient="true"
+      :items="gravelItems"
+    ></RollCarousel>
 
     <h2>{{ $t('tours.tourist-info-title') }}</h2>
     <p v-html="$t('tours.' + props.type + '.' + props.id + '.tourist-info')"></p>
