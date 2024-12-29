@@ -9,7 +9,7 @@ const showMenu = ref(false)
 </script>
 
 <template>
-  <nav class="mobile-navbar-nav">
+  <nav class="mobile-navbar-nav fixed w-full">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" />
