@@ -78,6 +78,7 @@ const images = Object.fromEntries(
 .tour-image div {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
+  font-weight: bold;
 }
 
 .tour-image img {
@@ -86,11 +87,9 @@ const images = Object.fromEntries(
 }
 
 .tour-image h1 {
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: bold;
   font-size: 3rem;
   letter-spacing: 0.4px;
+  color: var(--vt-c-white-soft);
 }
 
 @media (max-width: 480px) {
@@ -107,11 +106,13 @@ const images = Object.fromEntries(
 .tour-image {
   position: relative;
   text-align: center;
-  color: white;
+  color: var(--vt-c-gray-light-3);
+  /* color: var(--vt-c-white-mute); */
+  /* color: var(--vt-c-black); */
 }
 
 .bottom-left {
-  display: none;
+  display: block;
   position: absolute;
   bottom: 8px;
   left: 16px;
@@ -137,7 +138,7 @@ const images = Object.fromEntries(
   right: 2rem;
   text-align: right;
   font-weight: 300;
-  display: none;
+  display: block;
 }
 
 .bottom-right {
@@ -156,13 +157,13 @@ const images = Object.fromEntries(
 
 /* NOTE: 50rem = 800px */
 /* NOTE: 80rem = 1280px */
-@media screen and (min-width: 50rem) {
+@media screen and (max-width: 50rem) {
   .top-right {
-    display: block;
+    display: none;
   }
 
   .bottom-left {
-    display: block;
+    display: none;
   }
 }
 </style>
