@@ -203,7 +203,7 @@ async function getActivity() {
     <RollCarousel v-if="$props.type == 'gravel'" type="gravel" :items="gravelItems"></RollCarousel>
 
     <h2>{{ $t('tours.tourist-info-title') }}</h2>
-    <p>{{ $t('tours.' + props.type + '.' + props.id + '.tourist-info') }}</p>
+    <p v-html="$t('tours.' + props.type + '.' + props.id + '.tourist-info')"></p>
     <h2>{{ $t('tours.technical-info-title') }}</h2>
     <p>{{ $t('tours.' + props.type + '.' + props.id + '.technical-info') }}</p>
     <h2>{{ $t('tours.strava') }}</h2>
