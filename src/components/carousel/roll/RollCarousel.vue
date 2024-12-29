@@ -48,6 +48,11 @@ const items = props.items
   min-height: 135px;
 }
 
+.roll-container img {
+  width: 100%;
+  height: 85%;
+}
+
 .roll-container div {
   padding: 4px;
   width: 400px;

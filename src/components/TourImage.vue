@@ -80,6 +80,11 @@ const images = Object.fromEntries(
   font-style: normal;
 }
 
+.tour-image img {
+  width: 100%;
+  max-height: 590px;
+}
+
 .tour-image h1 {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
@@ -92,6 +97,10 @@ const images = Object.fromEntries(
   .tour-image h1 {
     font-size: 2.5rem;
     letter-spacing: 0.3px;
+  }
+
+  .tour-image img {
+    max-height: 170px;
   }
 }
 

@@ -6,6 +6,7 @@ import { onMounted } from 'vue'
 import RoadImg01 from '../assets/img/tours/road/road1.jpg'
 import RoadImg02 from '../assets/img/tours/road/road2.jpg'
 import RoadImg03 from '../assets/img/tours/road/road3.jpg'
+import RoadImg04 from '../assets/img/tours/road/road4.jpg'
 
 import MtbImg01 from '../assets/img/tours/mtb/mtb1.jpg'
 import GravelImg01 from '../assets/img/tours/gravel/gravel1.jpg'
@@ -43,7 +44,7 @@ const roadItems = [
     type: 'road',
   },
   {
-    img: RoadImg03,
+    img: RoadImg04,
     desc: 'Fano tra onde e colline',
     id: 4,
     komoot_url:
