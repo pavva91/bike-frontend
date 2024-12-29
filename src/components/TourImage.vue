@@ -83,13 +83,19 @@ const images = Object.fromEntries(
 
 .tour-image img {
   width: 100%;
-  max-height: 590px;
+  height: 590px;
 }
 
 .tour-image h1 {
   font-size: 3rem;
   letter-spacing: 0.4px;
   color: var(--vt-c-white-soft);
+}
+
+@media (max-width: 1024px) {
+  .tour-image img {
+    height: 450px;
+  }
 }
 
 @media (max-width: 480px) {
