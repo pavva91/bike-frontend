@@ -92,9 +92,15 @@ const images = Object.fromEntries(
   color: var(--vt-c-white-soft);
 }
 
+@media (max-width: 1500px) {
+  .tour-image img {
+    height: 400px;
+  }
+}
+
 @media (max-width: 1024px) {
   .tour-image img {
-    height: 450px;
+    height: 310px;
   }
 }
 
