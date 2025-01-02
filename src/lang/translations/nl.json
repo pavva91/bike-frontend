@@ -37,6 +37,7 @@
     "tourist-info-title": "Touristische Informatie",
     "technical-info-title": "Technische Informatie",
     "route-title": "Parcour",
+    "download-gpx-cta": ".gpx track downloaden",
     "road": {
       "1": {
         "tourist-info":"touristinforoad1",

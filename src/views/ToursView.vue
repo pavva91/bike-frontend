@@ -241,6 +241,20 @@ async function getActivity() {
 
     <br />
     <LeafletMap v-bind="$props"></LeafletMap>
+
+    <button class="cta-dl-gpx bg-red-700 hover:bg-red-300 text-white font-bold py-2 px-4 rounded">
+      <a class="inline-flex items-center" :href="`/gpx/${props.type}/${props.type}${props.id}.gpx`">
+        <svg
+          class="fill-current w-4 h-4 mr-2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+        </svg>
+
+        <span>{{ $t('tours.download-gpx-cta') }}</span>
+      </a>
+    </button>
     <br />
 
     <div v-if="$props.type === 'road' && $props.id === '4'">
@@ -295,5 +309,19 @@ async function getActivity() {
 #komoot_iframe {
   width: 100%;
   height: 800px;
+}
+
+.cta-dl-gpx {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.cta-dl-gpx a {
+  vertical-align: middle;
+}
+
+.cta-dl-gpx:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 128 128 / var(--tw-bg-opacity));
 }
 </style>

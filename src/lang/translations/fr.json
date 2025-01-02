@@ -29,7 +29,8 @@
     },
     "tourist-info-title": "informations touristiques",
     "technical-info-title": "informations techniques",
-    "route-title": "itinéraire"
+    "route-title": "itinéraire",
+    "download-gpx-cta": "télécharger .gpx"
   },
   "footer": {
     "title": "il s'agit d'un pied de page"
