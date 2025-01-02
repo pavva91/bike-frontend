@@ -33,6 +33,7 @@ let mapContainer = null
 const createGpxMap = () => {
   mapContainer = map('mapContainer', {
     scrollWheelZoom: false,
+    dragging: false,
   })
 
   // mapContainer = map('mapContainer', {

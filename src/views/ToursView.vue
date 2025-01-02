@@ -261,26 +261,26 @@ async function getActivity() {
       <iframe id="komoot_iframe" :src="komoot_full" frameborder="0"></iframe>
     </div>
 
-    <div v-if="$props.type === 'road' && $props.id === '3'">
-      <iframe
-        height="405"
-        width="590"
-        frameborder="0"
-        allowtransparency="true"
-        scrolling="no"
-        src="https://www.strava.com/segments/7041089/embed"
-      ></iframe>
-    </div>
+    <!-- <div v-if="$props.type === 'road' && $props.id === '3'"> -->
+    <!--   <iframe -->
+    <!--     height="405" -->
+    <!--     width="590" -->
+    <!--     frameborder="0" -->
+    <!--     allowtransparency="true" -->
+    <!--     scrolling="no" -->
+    <!--     src="https://www.strava.com/segments/7041089/embed" -->
+    <!--   ></iframe> -->
+    <!-- </div> -->
 
-    <div v-if="$props.type === 'road' && $props.id === '2'">
-      <iframe
-        height="500px"
-        width="100%"
-        frameborder="0"
-        allowtransparency="true"
-        src="https://www.strava.com/routes/3216345703092077180"
-      ></iframe>
-    </div>
+    <!-- <div v-if="$props.type === 'road' && $props.id === '2'"> -->
+    <!--   <iframe -->
+    <!--     height="500px" -->
+    <!--     width="100%" -->
+    <!--     frameborder="0" -->
+    <!--     allowtransparency="true" -->
+    <!--     src="https://www.strava.com/routes/3216345703092077180" -->
+    <!--   ></iframe> -->
+    <!-- </div> -->
 
     <div v-if="$props.type === 'road' && $props.id === '1'">
       <iframe
