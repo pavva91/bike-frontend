@@ -1,16 +1,22 @@
 <script setup>
-import { RouterView, useRoute } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { computed, inject, ref, onMounted, onUnmounted } from 'vue'
 import MenuDesktop from './components/MenuDesktop.vue'
 import MenuMobile from './components/MenuMobile.vue'
-import BackgroundImageFullScreen from './components/background_image/BackgroundImageFullScreen.vue'
 import FooterLinks from './components/footer/FooterLinks.vue'
 import FooterInfo from './components/footer/FooterInfo.vue'
+
+const chartOptions = ref({
+  series: [
+    {
+      data: [1, 2, 3],
+    },
+  ],
+})
 
 const GStore = inject('GStore')
 
 const width = ref(window.innerWidth)
-const route = useRoute()
 
 // Update the width ref when the window is resized
 function onResize() {
@@ -61,7 +67,6 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
     </div>
   </div>
   <div id="layout">
-    <BackgroundImageFullScreen v-if="route.name === 'Home'"></BackgroundImageFullScreen>
     <div id="flashMessage" v-if="GStore.flashMessage">
       {{ GStore.flashMessage }}
     </div>
@@ -73,6 +78,8 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
         </nav>
       </div>
     </header>
+    <!-- <highcharts :options="chartOptions"></highcharts> -->
+
     <RouterView />
     <FooterLinks></FooterLinks>
     <!-- <FooterInfo></FooterInfo> -->
