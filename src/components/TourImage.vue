@@ -5,8 +5,10 @@ import Rating3 from '../components/rating/Rating3.vue'
 import Rating4 from '../components/rating/Rating4.vue'
 import Rating5 from '../components/rating/Rating5.vue'
 
-import { computed } from 'vue'
+import { ref, computed, onBeforeMount, onBeforeUpdate } from 'vue'
 import { filename } from 'pathe/utils'
+import * as L from 'leaflet'
+import 'leaflet-gpx'
 
 const props = defineProps({
   type: {
@@ -17,10 +19,31 @@ const props = defineProps({
   },
 })
 
+onBeforeUpdate(() => {
+  computeGpxTot()
+})
+
+onBeforeMount(() => {
+  computeGpxTot()
+})
+
+const computeGpxTot = () => {
+  url = '/gpx/' + props.type + '/' + props.type + props.id + '.gpx'
+  gpx = new L.GPX(url, {})
+
+  tot_distance = Number((gpx.get_distance() / 1000).toFixed(2))
+  el_gain = Number(gpx.get_elevation_gain().toFixed(2))
+}
 const imageName = computed(() => {
   return props.type + props.id
 })
 
+let url = '/gpx/' + props.type + '/' + props.type + props.id + '.gpx'
+let gpx = null
+// const tot_distance = ref(50)
+let tot_distance = 50
+let el_gain = 0
+console.log('distance:', tot_distance)
 const glob = import.meta.glob('@/assets/img/tours/**/*.jpg', { eager: true })
 const images = Object.fromEntries(
   Object.entries(glob).map(([key, value]) => [filename(key), value.default]),
@@ -46,15 +69,9 @@ const images = Object.fromEntries(
     </div>
     <div class="top-right">
       <p>
-        <span
-          >{{ $t('tours.image.distance') }}:
-          {{ $t('tours.' + props.type + '.' + props.id + '.distance') }}</span
-        >
+        <span>{{ $t('tours.image.distance') }}: {{ tot_distance }} km</span>
         <br />
-        <span
-          >{{ $t('tours.image.elevation') }}:
-          {{ $t('tours.' + props.type + '.' + props.id + '.elevation') }}</span
-        >
+        <span>{{ $t('tours.image.elevation') }}: {{ el_gain }} m</span>
         <br />
         <span>
           <Rating1 v-if="$t('tours.' + props.type + '.' + props.id + '.rating') === '1'"></Rating1>
