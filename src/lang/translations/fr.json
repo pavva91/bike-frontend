@@ -1,27 +1,37 @@
 {
-    "company": "nom-entreprise",
-    "nav": {
-        "home": "Page d'accueil",
-        "about": "À propos",
-        "contacts": "Contacts",
-        "types": {
-            "road": "vélo de route",
-            "mtb": "VTT",
-            "gravel": "VTC"
-        },
-        "bike-fitting": "Fiets Montage"
+  "company": "nom-entreprise",
+  "nav": {
+    "home": "Page d'accueil",
+    "about": "À propos",
+    "contacts": "Contacts",
+    "types": {
+      "road": "vélo de route",
+      "mtb": "VTT",
+      "gravel": "VTC"
     },
-    "home": {
-        "header": "Bonjour a tous",
-        "created_by": "Crée par lokalize"
+    "bike-fitting": "Fiets Montage"
+  },
+  "home": {
+    "header": "Bonjour a tous",
+    "created_by": "Crée par lokalize"
+  },
+  "about": {
+    "header": "à propos de nous"
+  },
+  "contacts": {
+    "header": "Contacts"
+  },
+  "tours": {
+    "image": {
+      "share": "Partager",
+      "elevation": "gain d'altitude",
+      "distance": "Distance"
     },
-    "about": {
-        "header": "à propos de nous"
-    },
-    "contacts": {
-        "header": "Contacts"
-    },
-    "footer": {
-        "title": "il s'agit d'un pied de page"
-    }
+    "tourist-info-title": "informations touristiques",
+    "technical-info-title": "informations techniques",
+    "route-title": "itinéraire"
+  },
+  "footer": {
+    "title": "il s'agit d'un pied de page"
+  }
 }

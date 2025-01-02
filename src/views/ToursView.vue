@@ -1,7 +1,7 @@
 <script setup>
 import TourImage from '../components/TourImage.vue'
 import RollCarousel from '../components/carousel/roll/RollCarousel.vue'
-import { onMounted } from 'vue'
+import { onMounted, onBeforeUpdate } from 'vue'
 
 import RoadImg01 from '../assets/img/tours/road/road1.jpg'
 import RoadImg02 from '../assets/img/tours/road/road2.jpg'
@@ -11,8 +11,23 @@ import RoadImg04 from '../assets/img/tours/road/road4.jpg'
 import MtbImg01 from '../assets/img/tours/mtb/mtb1.jpg'
 import GravelImg01 from '../assets/img/tours/gravel/gravel1.jpg'
 
+import LeafletMap from '../components/LeafletMap.vue'
+
 // import StravaApiService from '@/services/StravaApiService'
 import StravaApiService from '../services/StravaApiService.js'
+
+import Chart from '../components/Chart.vue'
+import ChartSimple from '../components/ChartSimple.vue'
+
+import { ref } from 'vue'
+
+const chartOptions = ref({
+  series: [
+    {
+      data: [1, 2, 3],
+    },
+  ],
+})
 
 const props = defineProps({
   type: {
@@ -215,23 +230,64 @@ async function getActivity() {
       type="gravel"
       :withMaskGradient="true"
       :items="gravelItems"
-    ></RollCarousel>
+    >
+    </RollCarousel>
 
     <h2>{{ $t('tours.tourist-info-title') }}</h2>
     <p v-html="$t('tours.' + props.type + '.' + props.id + '.tourist-info')"></p>
     <h2>{{ $t('tours.technical-info-title') }}</h2>
     <p>{{ $t('tours.' + props.type + '.' + props.id + '.technical-info') }}</p>
-    <h2>{{ $t('tours.strava') }}</h2>
-    <p>TODO: Use strava API</p>
-    <p>{{ props.type }}</p>
-    <p>{{ props.id }}</p>
-    <p>{{ $route.fullPath }}</p>
+    <h2>{{ $t('tours.route-title') }}</h2>
+
+    <br />
+    <LeafletMap v-bind="$props"></LeafletMap>
+    <br />
 
     <div v-if="$props.type === 'road' && $props.id === '4'">
       <iframe id="komoot_iframe" :src="komoot_full" frameborder="0"></iframe>
     </div>
 
-    <button @click="getActivity()">Get Activity</button>
+    <div v-if="$props.type === 'road' && $props.id === '3'">
+      <iframe
+        height="405"
+        width="590"
+        frameborder="0"
+        allowtransparency="true"
+        scrolling="no"
+        src="https://www.strava.com/segments/7041089/embed"
+      ></iframe>
+    </div>
+
+    <div v-if="$props.type === 'road' && $props.id === '2'">
+      <iframe
+        height="500px"
+        width="100%"
+        frameborder="0"
+        allowtransparency="true"
+        src="https://www.strava.com/routes/3216345703092077180"
+      ></iframe>
+    </div>
+
+    <div v-if="$props.type === 'road' && $props.id === '1'">
+      <iframe
+        height="800px"
+        width="100%"
+        frameborder="0"
+        allowtransparency="true"
+        src="https://www.outdooractive.com/it/route/cicloturismo/italia/cupramontana-e-le-sue-colline/236745013/embed.html?flexView=true"
+      ></iframe>
+    </div>
+
+    <!-- <div v-if="$props.type === 'road' && $props.id === '1'"> -->
+    <!--   <iframe height='500px' width='100%' frameborder='0' allowtransparency='true' src='src="https://staging.strava-embeds.com/route/3217800058174684208?fullWidth=true&style=hybrid&terrain=3d&clubId=176292&fromEmbed=true#ns=a51e121a-8908-4962-8fda-2a47bb66a13f&hostOrigin=https%3A%2F%2Fstories.strava.com&hostPath=%2Farticles%2F2024-giro-ditalia-preview&hostTitle=2024+Giro+d%E2%80%99Italia+Preview&mapHash=9.22/45.8357/11.9423/0/64"'></iframe> -->
+    <!-- </div> -->
+
+    <!-- <button @click="getActivity()">Get Activity</button> -->
+
+    <!-- <highcharts :options="chartOptions"></highcharts> -->
+
+    <!-- <Chart></Chart> -->
+    <!-- <ChartSimple></ChartSimple> -->
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 {
-  "company": "company-name",
+  "company": "company name",
+  "mission": "Walking, hiking and biking and biking trips",
   "nav": {
     "home": "Home",
     "about": "About",
@@ -31,7 +32,7 @@
     },
     "tourist-info-title": "Touristic Informations",
     "technical-info-title": "Technical Informations",
-    "strava": "Strava Route",
+    "route-title": "Route",
     "road": {
       "1": {
         "title": "I muri marchigiani",
@@ -60,7 +61,7 @@
       },
       "4": {
         "title": "Fano",
-        "tourist-info": "Hills around Fano",
+        "tourist-info": "The bicycle touring route from Fano is an invitation to discover a varied and fascinating landscape, where the Adriatic Sea embraces the rolling hills of the Marche. Pedaling along this route, one starts from the coast of Fano, with its historic beaches and salty air, and then climbs inland, where the hills offer rural vistas and ancient villages that hold centuries-old traditions.",
         "technical-info": "Traffic on the Flaminia",
         "elevation": "300m",
         "distance": "63km",

@@ -1,5 +1,6 @@
 {
-  "company": "nome-azienda",
+  "company": "nome azienda",
+  "mission": "Viaggi a piedi, trekking e biking e biking",
   "nav": {
     "home": "Home",
     "about": "Chi siamo",
@@ -18,9 +19,7 @@
   },
   "about": {
     "title": "A proposito di noi",
-    "paragraph1":"Ci unisce la passione quella del ciclismo, lo sport e la vita all’aria aperta ed è proprio da qui che nasce l’idea di aprire il nostro negozio, specializzato nella vendita e riparazione di biciclette. Cortesia e professionalità sono i nostri presupposti per rendere sempre soddisfatta la nostra clientela, per questo scegliamo solo i migliori marchi e prodotti.",
-    "paragraph2":"Il nostro negozio si occupa di vendita di bici, sia nuove che usate, ma anche di fornirvi assistenza per i vostri veicoli a pedali! Abbiamo pezzi di ricambio per le marche più famose, ripariamo tutti i tipi di bici dalle bici da strada alle mountain bike, dalle e-bike alle city-bike e molte altre! Vendiamo anche bici nuove e usate (queste ultime tutte quante in perfette condizioni).",
-    "paragraph3":"Nel nostro negozio c’è anche molto altro come ad esempio: abbigliamento da bici, caschi e prodotti per il pre, durante e post gara."
+    "text":"<p>Ci unisce la passione quella del ciclismo, lo sport e la vita all’aria aperta ed è proprio da qui che nasce l’idea di aprire il nostro negozio, specializzato nella vendita e riparazione di biciclette. Cortesia e professionalità sono i nostri presupposti per rendere sempre soddisfatta la nostra clientela, per questo scegliamo solo i migliori marchi e prodotti.</p><p>Il nostro negozio si occupa di vendita di bici, sia nuove che usate, ma anche di fornirvi assistenza per i vostri veicoli a pedali! Abbiamo pezzi di ricambio per le marche più famose, ripariamo tutti i tipi di bici dalle bici da strada alle mountain bike, dalle e-bike alle city-bike e molte altre! Vendiamo anche bici nuove e usate (queste ultime tutte quante in perfette condizioni).</p><p>Nel nostro negozio c’è anche molto altro come ad esempio: abbigliamento da bici, caschi e prodotti per il pre, durante e post gara.</p>"
   },
   "contacts": {
     "title": "Contatti"
@@ -34,7 +33,7 @@
     },
     "tourist-info-title": "Informazioni Turistiche",
     "technical-info-title": "Informazioni Tecniche",
-    "strava": "Percorso Strava",
+    "route-title": "Percorso",
     "road": {
       "1": {
         "tourist-info": "asdf",
@@ -53,7 +52,7 @@
         "rating": "3"
       },
       "4": {
-        "tourist-info": "asdf",
+        "tourist-info": "Il percorso cicloturistico che parte da Fano è un invito a scoprire un paesaggio variegato e affascinante, dove il mare Adriatico abbraccia le dolci colline marchigiane. Pedalando lungo questo itinerario, si parte dal litorale di Fano, con le sue spiagge storiche e l’aria salmastra, per poi salire verso l’entroterra, dove le colline offrono panorami rurali e antichi borghi che custodiscono tradizioni secolari.",
         "technical-info": "asdf"
       }
     },
