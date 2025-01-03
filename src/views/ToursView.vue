@@ -18,7 +18,7 @@ import StravaApiService from '../services/StravaApiService.js'
 
 import Chart from '../components/Chart.vue'
 import ChartSimple from '../components/ChartSimple.vue'
-import HighChartPure from '../components/HighChartPure.vue'
+import HighChartHeightProfile from '../components/HighChartHeightProfile.vue'
 
 import { ref } from 'vue'
 
@@ -243,25 +243,12 @@ async function getActivity() {
     <br />
     <LeafletMap v-bind="$props"></LeafletMap>
     <br />
-
-    <button class="cta-dl-gpx bg-red-700 hover:bg-red-300 text-white font-bold py-2 px-4 rounded">
-      <a class="inline-flex items-center" :href="`/gpx/${props.type}/${props.type}${props.id}.gpx`">
-        <svg
-          class="fill-current w-4 h-4 mr-2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-        >
-          <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-        </svg>
-
-        <span>{{ $t('tours.download-gpx-cta') }}</span>
-      </a>
-    </button>
     <br />
+    <HighChartHeightProfile v-bind="$props"></HighChartHeightProfile>
 
-    <div v-if="$props.type === 'road' && $props.id === '4'">
-      <iframe id="komoot_iframe" :src="komoot_full" frameborder="0"></iframe>
-    </div>
+    <!-- <div v-if="$props.type === 'road' && $props.id === '4'"> -->
+    <!--   <iframe id="komoot_iframe" :src="komoot_full" frameborder="0"></iframe> -->
+    <!-- </div> -->
 
     <!-- <div v-if="$props.type === 'road' && $props.id === '3'"> -->
     <!--   <iframe -->
@@ -284,15 +271,15 @@ async function getActivity() {
     <!--   ></iframe> -->
     <!-- </div> -->
 
-    <div v-if="$props.type === 'road' && $props.id === '1'">
-      <iframe
-        height="800px"
-        width="100%"
-        frameborder="0"
-        allowtransparency="true"
-        src="https://www.outdooractive.com/it/route/cicloturismo/italia/cupramontana-e-le-sue-colline/236745013/embed.html?flexView=true"
-      ></iframe>
-    </div>
+    <!-- <div v-if="$props.type === 'road' && $props.id === '1'"> -->
+    <!--   <iframe -->
+    <!--     height="800px" -->
+    <!--     width="100%" -->
+    <!--     frameborder="0" -->
+    <!--     allowtransparency="true" -->
+    <!--     src="https://www.outdooractive.com/it/route/cicloturismo/italia/cupramontana-e-le-sue-colline/236745013/embed.html?flexView=true" -->
+    <!--   ></iframe> -->
+    <!-- </div> -->
 
     <!-- <div v-if="$props.type === 'road' && $props.id === '1'"> -->
     <!--   <iframe height='500px' width='100%' frameborder='0' allowtransparency='true' src='src="https://staging.strava-embeds.com/route/3217800058174684208?fullWidth=true&style=hybrid&terrain=3d&clubId=176292&fromEmbed=true#ns=a51e121a-8908-4962-8fda-2a47bb66a13f&hostOrigin=https%3A%2F%2Fstories.strava.com&hostPath=%2Farticles%2F2024-giro-ditalia-preview&hostTitle=2024+Giro+d%E2%80%99Italia+Preview&mapHash=9.22/45.8357/11.9423/0/64"'></iframe> -->
@@ -306,7 +293,21 @@ async function getActivity() {
     <!-- <ChartSimple></ChartSimple> -->
 
     <br />
-    <HighChartPure></HighChartPure>
+
+    <button class="cta-dl-gpx bg-red-700 hover:bg-red-300 text-white font-bold py-2 px-4 rounded">
+      <a class="inline-flex items-center" :href="`/gpx/${props.type}/${props.type}${props.id}.gpx`">
+        <svg
+          class="fill-current w-4 h-4 mr-2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+        </svg>
+
+        <span>{{ $t('tours.download-gpx-cta') }}</span>
+      </a>
+    </button>
+    <br />
   </div>
 </template>
 
