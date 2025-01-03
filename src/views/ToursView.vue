@@ -18,6 +18,7 @@ import StravaApiService from '../services/StravaApiService.js'
 
 import Chart from '../components/Chart.vue'
 import ChartSimple from '../components/ChartSimple.vue'
+import HighChartPure from '../components/HighChartPure.vue'
 
 import { ref } from 'vue'
 
@@ -241,6 +242,7 @@ async function getActivity() {
 
     <br />
     <LeafletMap v-bind="$props"></LeafletMap>
+    <br />
 
     <button class="cta-dl-gpx bg-red-700 hover:bg-red-300 text-white font-bold py-2 px-4 rounded">
       <a class="inline-flex items-center" :href="`/gpx/${props.type}/${props.type}${props.id}.gpx`">
@@ -302,6 +304,9 @@ async function getActivity() {
 
     <!-- <Chart></Chart> -->
     <!-- <ChartSimple></ChartSimple> -->
+
+    <br />
+    <HighChartPure></HighChartPure>
   </div>
 </template>
 
