@@ -11,12 +11,16 @@ const showMenu = ref(false)
 <template>
   <nav class="mobile-navbar-nav fixed w-full">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" />
+      <RouterLink
+        @click="resetSelection()"
+        :to="{ name: 'Home' }"
+        class="flex items-center space-x-3 rtl:space-x-reverse monoton-regular"
+      >
+        <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{
           $t('company')
         }}</span>
-      </a>
+      </RouterLink>
       <div class="flex flex-wrap items-center justify-between gap-2">
         <button
           @click="showMenu = !showMenu"
@@ -28,6 +32,7 @@ const showMenu = ref(false)
         >
           <span class="sr-only">Open main menu</span>
           <svg
+            v-if="!showMenu"
             class="w-5 h-5"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +45,24 @@ const showMenu = ref(false)
               stroke-linejoin="round"
               stroke-width="2"
               d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+          <svg
+            v-else
+            class="w-6 h-6"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18 17.94 6M18 18 6.06 6"
             />
           </svg>
         </button>
