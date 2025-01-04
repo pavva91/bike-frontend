@@ -1,5 +1,5 @@
 <template>
-  <div id="highchart-container" style="width: 100%; height: 400px"></div>
+  <div id="height-profile-container"></div>
 </template>
 
 <script setup>
@@ -17,7 +17,6 @@ const props = defineProps({
 })
 
 onBeforeUpdate(() => {
-  // mapContainer.remove()
   createHeightChart()
 })
 
@@ -137,7 +136,7 @@ const createHeightChart = () => {
 
     lastPoint = point
   })
-  const chartHeightProfile = Highcharts.chart('highchart-container', {
+  const chartHeightProfile = Highcharts.chart('height-profile-container', {
     chart: {
       // type: 'area',
 
@@ -184,7 +183,7 @@ const createHeightChart = () => {
           // color: getComputedStyle(document.documentElement).getPropertyValue(
           //   'var(--vt-c-text-1)',
           // ),
-          color: 'blue',
+          // color: 'blue',
         },
       },
       labels: {
@@ -193,7 +192,7 @@ const createHeightChart = () => {
           // color: getComputedStyle(document.documentElement).getPropertyValue(
           //   'var(--vt-c-text-1)',
           // ),
-          color: '#ff00ff',
+          // color: '#ff00ff',
         },
         align: 'left',
         x: 0,
@@ -241,7 +240,52 @@ const createHeightChart = () => {
 }
 </script>
 <style>
-#highchart-container {
-  /* fill: var(--vt-c-text-1); */
+#height-profile-container {
+  width: 100%;
+  height: 400px;
+}
+
+@media (max-width: 480px) {
+  #height-profile-container {
+    height: 200px;
+  }
+}
+
+.highcharts-yaxis-grid .highcharts-grid-line {
+  stroke-width: 1px;
+  stroke: var(--vt-c-text-1);
+}
+
+.highcharts-axis-line {
+  stroke-width: 1px;
+  stroke: var(--vt-c-text-1);
+}
+
+.highcharts-axis-labels {
+  stroke-width: 1px;
+  stroke: var(--vt-c-text-1);
+}
+
+.highcharts-xaxis {
+  stroke-width: 1px;
+  stroke: var(--vt-c-text-1);
+}
+
+.highcharts-yaxis {
+  stroke-width: 1px;
+  stroke: var(--vt-c-text-1);
+}
+
+.highcharts-tick {
+  stroke-width: 1px;
+  stroke: var(--vt-c-text-1);
+}
+
+.highcharts-xaxis-grid .highcharts-grid-line {
+  stroke-width: 0px;
+}
+
+.highcharts-credits {
+  display: none;
 }
 </style>
