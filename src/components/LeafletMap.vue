@@ -64,11 +64,19 @@ const createGpxMap = () => {
 }
 </script>
 
-<style scoped>
+<style>
 #mapContainer {
   /* width: 40vw; */
   /* height: 40vh; */
   width: 100%;
   height: 500px;
+}
+
+.leaflet-attribution-flag {
+  display: none !important;
+}
+
+.leaflet-top {
+  z-index: inherit;
 }
 </style>

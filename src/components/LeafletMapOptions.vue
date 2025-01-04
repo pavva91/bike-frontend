@@ -115,4 +115,8 @@ export default {
   width: 100%;
   height: 500px;
 }
+
+.leaflet-attribution-flag {
+  display: none !important;
+}
 </style>
