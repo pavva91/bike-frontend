@@ -4,6 +4,8 @@ import { ref } from 'vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import VTSwitchAppearance from '../core/components/VTSwitchAppearance.vue'
 
+import resetSelection from '../utils/utils.js'
+
 const hover = ref(false)
 
 function changeSelectedMenuItem(event) {
@@ -14,7 +16,7 @@ function changeSelectedMenuItem(event) {
       if (element.children[0]) {
         element.children[0].style.color = getComputedStyle(
           document.documentElement,
-        ).getPropertyValue('--vt-c-text-1')
+        ).getPropertyValue('var(--vt-c-text-1)')
       }
     }
   }
@@ -22,19 +24,43 @@ function changeSelectedMenuItem(event) {
     '--vt-c-text-selected',
   )
 }
+
+// function resetSelection() {
+//   let nav_ul = document.getElementById('navbar-ul')
+//   for (const ch in nav_ul.children) {
+//     if (nav_ul.children.hasOwnProperty(ch)) {
+//       const element = nav_ul.children[ch]
+//       if (element.children[0]) {
+//         element.children[0].style.color = getComputedStyle(
+//           document.documentElement,
+//         ).getPropertyValue('var(--vt-c-text-1)')
+//       }
+//     }
+//   }
+// }
 </script>
 
 <template>
   <nav class="desktop-navbar-nav left-0 bg-white fixed w-full">
-    <div class="desktop-menu-div max-w-screen-xl flex flex-wrap justify-between mx-auto p-4">
-      <a href="https://flowbite.com/" class="flex space-x-3 rtl:space-x-reverse">
+    <div class="p-1 desktop-menu-div max-w-screen-xl flex flex-wrap justify-between mx-auto">
+      <!-- <a href="https://flowbite.com/" class="flex space-x-3 rtl:space-x-reverse"> -->
+
+      <RouterLink
+        @click="resetSelection()"
+        :to="{ name: 'Home' }"
+        class="flex items-center space-x-3 monoton-regular"
+      >
         <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" />
         <!-- TODO: My company name -->
         <span class="text-2xl font-semibold whitespace-nowrap dark:text-white">{{
           $t('company')
         }}</span>
-      </a>
-      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+      </RouterLink>
+
+      <!-- </a> -->
+      <div
+        class="tailwind-sucks items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      >
         <ul
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
           id="navbar-ul"
@@ -141,5 +167,10 @@ function changeSelectedMenuItem(event) {
   font-weight: 500;
   color: var(--vt-c-text-2);
   transition: color 0.5s;
+}
+
+/* NOTE: pt-3 does not work. pt-2 works, p-3 works */
+.tailwind-sucks {
+  padding-top: 12px;
 }
 </style>

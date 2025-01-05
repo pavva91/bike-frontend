@@ -19,6 +19,9 @@ import RoadImg04 from '../assets/img/tours/road/road4.jpg'
 import MtbImg01 from '../assets/img/tours/mtb/mtb1.jpg'
 
 import GravelImg01 from '../assets/img/tours/gravel/gravel1.jpg'
+
+import resetSelection from '../utils/utils.js'
+
 const items = [
   {
     img: SilderImg01,
@@ -82,10 +85,12 @@ const pictures = [
 <template>
   <BackgroundImageFullScreen></BackgroundImageFullScreen>
   <RollCarousel
+    @click="resetSelection()"
     class="mx-auto bg-img-footer"
     :withMaskGradient="false"
     :items="tourItems"
-  ></RollCarousel>
+  >
+  </RollCarousel>
   <!-- <CarouselHome></CarouselHome> -->
   <!-- <FullScreenCarousel :pictures="pictures" slide :slide-interval="10000" /> -->
   <AboutView id="about"></AboutView>
