@@ -44,9 +44,11 @@ onBeforeMount(() => {
           class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 mr-0 ml-auto footer-ul"
         >
           <li>
-            <RouterLink class="hover:underline me-4 md:me-6" :to="{ name: 'About' }">{{
-              $t('nav.about')
-            }}</RouterLink>
+            <RouterLink
+              class="hover:underline me-4 md:me-6"
+              :to="{ name: 'Home', hash: '#about' }"
+              >{{ $t('nav.about') }}</RouterLink
+            >
           </li>
           <li>
             <!-- TODO: Create Privacy Policy View -->
@@ -57,9 +59,11 @@ onBeforeMount(() => {
             <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
           </li>
           <li>
-            <RouterLink class="hover:underline me-4 md:me-6" :to="{ name: 'Contacts' }">{{
-              $t('nav.contacts')
-            }}</RouterLink>
+            <RouterLink
+              class="hover:underline me-4 md:me-6"
+              :to="{ name: 'Home', hash: '#contacts' }"
+              >{{ $t('nav.contacts') }}</RouterLink
+            >
           </li>
         </ul>
       </div>
