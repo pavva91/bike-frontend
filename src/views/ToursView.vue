@@ -248,8 +248,8 @@ async function getActivity() {
       v-bind="$props"
       :startLabel="$t('tours.gpx-height.start')"
       :finishLabel="$t('tours.gpx-height.finish')"
-      :xAxis="$t('tours.gpx-height.xaxis')"
-      :yAxis="$t('tours.gpx-height.yaxis')"
+      :xAxisLabel="$t('tours.gpx-height.xaxis')"
+      :yAxisLabel="$t('tours.gpx-height.yaxis')"
     ></HighChartHeightProfile>
 
     <!-- <div v-if="$props.type === 'road' && $props.id === '4'"> -->
