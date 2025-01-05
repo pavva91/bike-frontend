@@ -36,7 +36,9 @@
     "route-title": "Percorso",
     "gpx-height": {
       "start": "Partenza",
-      "finish": "Arrivo"
+      "finish": "Arrivo",
+      "xaxis": "Distanza",
+      "yaxis": "Altitudine"
     },
     "download-gpx-cta": "Scarica traccia GPX",
     "road": {

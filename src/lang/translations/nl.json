@@ -39,7 +39,9 @@
     "route-title": "Parcour",
     "gpx-height": {
       "start": "Vertrek",
-      "finish": "Aankomst"
+      "finish": "Aankomst",
+      "xaxis": "Afstand",
+      "yaxis": "Hoogte"
     },
     "download-gpx-cta": ".gpx track downloaden",
     "road": {

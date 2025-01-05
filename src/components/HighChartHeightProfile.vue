@@ -19,6 +19,12 @@ const props = defineProps({
   finishLabel: {
     required: true,
   },
+  xAxis: {
+    required: true,
+  },
+  yAxis: {
+    required: true,
+  },
 })
 
 onBeforeUpdate(() => {
@@ -185,7 +191,7 @@ const createHeightChart = () => {
 
     xAxis: {
       title: {
-        text: 'Distance (km)',
+        text: props.xAxis + ' (km)',
       },
       minPadding: 0.05,
     },
@@ -195,7 +201,7 @@ const createHeightChart = () => {
       endOnTick: false,
       minPadding: 0,
       title: {
-        text: 'Elevation ( m )',
+        text: props.yAxis + ' ( m )',
       },
       labels: {
         align: 'left',
@@ -206,7 +212,7 @@ const createHeightChart = () => {
 
     tooltip: {
       headerFormat: '',
-      pointFormat: 'Distance: {point.x} km<br/>{point.y} m a. s. l.',
+      pointFormat: props.xAxis + ': {point.x} km<br/>' + props.yAxis + ': {point.y} m',
       shared: true,
     },
 

@@ -32,7 +32,9 @@
     "route-title": "itinéraire",
     "gpx-height": {
       "start": "Départ",
-      "finish": "Arrivée"
+      "finish": "Arrivée",
+      "xaxis": "Distance",
+      "yaxis": "Altitude"
     },
     "download-gpx-cta": "télécharger .gpx"
   },

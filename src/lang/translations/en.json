@@ -35,7 +35,9 @@
     "route-title": "Route",
     "gpx-height": {
       "start": "Start",
-      "finish": "Finish"
+      "finish": "Finish",
+      "xaxis": "Distance",
+      "yaxis": "Elevation"
     },
     "download-gpx-cta": "Download GPX",
     "road": {
