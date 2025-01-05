@@ -1,12 +1,38 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import VTSwitchAppearance from '../core/components/VTSwitchAppearance.vue'
 
 import resetSelection from '../utils/utils.js'
 
 const hover = ref(false)
+let initialImageSrc = ''
+let userPreference = localStorage.getItem(storageKey) || 'dark'
+
+const storageKey = 'theme-appearance'
+
+const initLogo = () => {
+  let userPreference = localStorage.getItem(storageKey) || 'dark'
+  if (userPreference === 'light') {
+    initialImageSrc = '/src/assets/menu_logo_white.png'
+  } else {
+    initialImageSrc = '/src/assets/menu_logo.png'
+  }
+}
+
+const changeLogo = () => {
+  let userPreference = localStorage.getItem(storageKey) || 'dark'
+  if (userPreference === 'light') {
+    document.getElementById('enterprise-logo').src = '/src/assets/menu_logo_white.png'
+  } else {
+    document.getElementById('enterprise-logo').src = '/src/assets/menu_logo.png'
+  }
+}
+
+onBeforeMount(() => {
+  initLogo()
+})
 
 function changeSelectedMenuItem(event) {
   let nav_ul = document.getElementById('navbar-ul')
@@ -50,7 +76,8 @@ function changeSelectedMenuItem(event) {
         :to="{ name: 'Home' }"
         class="flex items-center space-x-3 monoton-regular"
       >
-        <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" />
+        <img id="enterprise-logo" :src="initialImageSrc" class="h-8" alt="Enterprise Logo" />
+        <!-- <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" /> -->
         <!-- TODO: My company name -->
         <span class="text-2xl font-semibold whitespace-nowrap dark:text-white">{{
           $t('company')
@@ -115,11 +142,9 @@ function changeSelectedMenuItem(event) {
           <!-- </li> -->
           <li>
             <LanguageSwitcher></LanguageSwitcher>
-            <!-- INFO: https://vitepress.dev/ -->
-            <!-- INFO: https://vuejs.org/ -->
           </li>
           <li>
-            <div class="VPNavScreenAppearance">
+            <div class="VPNavScreenAppearance" @click="changeLogo()">
               <VTSwitchAppearance></VTSwitchAppearance>
             </div>
           </li>

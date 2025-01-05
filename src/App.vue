@@ -18,6 +18,11 @@ const GStore = inject('GStore')
 
 const width = ref(window.innerWidth)
 
+const componentKey = ref(true)
+const forceRerenderFooter = () => {
+  componentKey.value = !componentKey.value
+}
+
 // Update the width ref when the window is resized
 function onResize() {
   width.value = window.innerWidth
@@ -47,7 +52,7 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
 </script>
 
 <template>
-  <div class="header-wrapper">
+  <div @click="forceRerenderFooter()" class="header-wrapper">
     <div v-if="isSmall">
       <MenuMobile></MenuMobile>
     </div>
@@ -81,7 +86,7 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
     <!-- <highcharts :options="chartOptions"></highcharts> -->
 
     <RouterView />
-    <FooterLinks></FooterLinks>
+    <FooterLinks :key="componentKey"></FooterLinks>
     <!-- <FooterInfo></FooterInfo> -->
   </div>
 </template>

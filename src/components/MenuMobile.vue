@@ -1,11 +1,36 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import VTSwitchAppearance from '../core/components/VTSwitchAppearance.vue'
 
 const showTours = ref(false)
 const showMenu = ref(false)
+let initialImageSrc = ''
+let userPreference = localStorage.getItem(storageKey) || 'dark'
+const storageKey = 'theme-appearance'
+
+const initLogo = () => {
+  let userPreference = localStorage.getItem(storageKey) || 'dark'
+  if (userPreference === 'light') {
+    initialImageSrc = '/src/assets/menu_logo_white.png'
+  } else {
+    initialImageSrc = '/src/assets/menu_logo.png'
+  }
+}
+
+const changeLogo = () => {
+  let userPreference = localStorage.getItem(storageKey) || 'dark'
+  if (userPreference === 'light') {
+    document.getElementById('enterprise-logo').src = '/src/assets/menu_logo_white.png'
+  } else {
+    document.getElementById('enterprise-logo').src = '/src/assets/menu_logo.png'
+  }
+}
+
+onBeforeMount(() => {
+  initLogo()
+})
 </script>
 
 <template>
@@ -16,7 +41,7 @@ const showMenu = ref(false)
         :to="{ name: 'Home' }"
         class="flex items-center space-x-3 rtl:space-x-reverse monoton-regular"
       >
-        <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" />
+        <img id="enterprise-logo" :src="initialImageSrc" class="h-8" alt="Enterprise Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{
           $t('company')
         }}</span>
@@ -67,7 +92,7 @@ const showMenu = ref(false)
           </svg>
         </button>
 
-        <div class="VPNavScreenAppearance">
+        <div class="VPNavScreenAppearance" @click="changeLogo()">
           <VTSwitchAppearance></VTSwitchAppearance>
         </div>
       </div>

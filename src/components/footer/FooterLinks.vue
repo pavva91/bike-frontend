@@ -1,5 +1,23 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { onBeforeMount, onBeforeUpdate } from 'vue'
+
+let initialImageSrc = ''
+let userPreference = localStorage.getItem(storageKey) || 'dark'
+const storageKey = 'theme-appearance'
+
+const initLogo = () => {
+  let userPreference = localStorage.getItem(storageKey) || 'dark'
+  if (userPreference === 'light') {
+    initialImageSrc = '/src/assets/menu_logo_white.png'
+  } else {
+    initialImageSrc = '/src/assets/menu_logo.png'
+  }
+}
+
+onBeforeMount(() => {
+  initLogo()
+})
 </script>
 <template>
   <footer class="rounded-lg shadow m-4">
@@ -10,7 +28,13 @@ import { RouterLink } from 'vue-router'
           class="flex flex-wrap items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse logo-footer"
         >
           <!-- <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" /> -->
-          <img src="@/assets/bikeservice.png" class="h-8" alt="Enterprise Logo" />
+          <!-- <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" /> -->
+          <img
+            id="enterprise-logo-footer"
+            :src="initialImageSrc"
+            class="h-8"
+            alt="Enterprise Logo"
+          />
           <span
             class="logo-enterprise-name self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
             >{{ $t('company') }}</span
@@ -40,9 +64,9 @@ import { RouterLink } from 'vue-router'
         </ul>
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 pt-4"
         >{{ $t('footer.copyright') }} {{ $t('footer.year') }}
-        <a href="https://flowbite.com/" class="hover:underline">{{ $t('footer.agency') }}</a> |
+        <a href="#" class="hover:underline">{{ $t('footer.agency') }}</a> |
         {{ $t('footer.rights') }}</span
       >
     </div>

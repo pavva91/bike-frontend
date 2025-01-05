@@ -6,10 +6,10 @@
     "about": "Chi siamo",
     "contacts": "Contatti",
     "tours": "Percorsi",
-    "types":{
-      "road":"Strada",
-      "mtb":"MTB",
-      "gravel":"gravel/ciclocross"
+    "types": {
+      "road": "Strada",
+      "mtb": "MTB",
+      "gravel": "gravel/ciclocross"
     },
     "bike-fitting": "Posizione Bici"
   },
@@ -19,7 +19,7 @@
   },
   "about": {
     "title": "A proposito di noi",
-    "text":"<p>Ci unisce la passione quella del ciclismo, lo sport e la vita all’aria aperta ed è proprio da qui che nasce l’idea di aprire il nostro negozio, specializzato nella vendita e riparazione di biciclette. Cortesia e professionalità sono i nostri presupposti per rendere sempre soddisfatta la nostra clientela, per questo scegliamo solo i migliori marchi e prodotti.</p><p>Il nostro negozio si occupa di vendita di bici, sia nuove che usate, ma anche di fornirvi assistenza per i vostri veicoli a pedali! Abbiamo pezzi di ricambio per le marche più famose, ripariamo tutti i tipi di bici dalle bici da strada alle mountain bike, dalle e-bike alle city-bike e molte altre! Vendiamo anche bici nuove e usate (queste ultime tutte quante in perfette condizioni).</p><p>Nel nostro negozio c’è anche molto altro come ad esempio: abbigliamento da bici, caschi e prodotti per il pre, durante e post gara.</p>"
+    "text": "<p>Ci unisce la passione quella del ciclismo, lo sport e la vita all’aria aperta ed è proprio da qui che nasce l’idea di aprire il nostro negozio, specializzato nella vendita e riparazione di biciclette. Cortesia e professionalità sono i nostri presupposti per rendere sempre soddisfatta la nostra clientela, per questo scegliamo solo i migliori marchi e prodotti.</p><p>Il nostro negozio si occupa di vendita di bici, sia nuove che usate, ma anche di fornirvi assistenza per i vostri veicoli a pedali! Abbiamo pezzi di ricambio per le marche più famose, ripariamo tutti i tipi di bici dalle bici da strada alle mountain bike, dalle e-bike alle city-bike e molte altre! Vendiamo anche bici nuove e usate (queste ultime tutte quante in perfette condizioni).</p><p>Nel nostro negozio c’è anche molto altro come ad esempio: abbigliamento da bici, caschi e prodotti per il pre, durante e post gara.</p>"
   },
   "contacts": {
     "title": "Contatti"
@@ -51,7 +51,7 @@
         "technical-info": "asdf"
       },
       "3": {
-        "title": "Da Fano al San Bartolo",
+        "title": "San Bartolo",
         "tourist-info": "<p>La partenza è da Fano, la città di Vitruvio. Qui la storia fa da padrona con le sue radici romane visibili ancora oggi: dall’Arco di Augusto alle suggestive mura romane. Partite dal centro storico, di fronte al Teatro della Fortuna, passate accanto all’ex Chiesa di San Francesco, un vero e proprio monumento a cielo aperto, e dirigetevi verso il lungomare in direzione nord.</p><br><p>Pedalando lungo la splendida pista ciclabile che corre parallela alla costa, con il mare al vostro fianco raggiungete Pesaro, un paradiso per gli amanti delle bici grazie alla sua Bicipolitana, la “metropolitana delle due ruote”. La città, che nel 2024 è la Capitale Italiana della Cultura e dal 2017 è Città Creativa della Musica UNESCO, è la patria di Gioacchino Rossini, genio immortale a cui è dedicato il Rossini Opera Festival. Dai musei ai teatri, dalle biblioteche alle ville sui colli, qui il patrimonio culturale è infinito.<br> Dal porto, attraversate il fiume Foglia, e imboccate la strada che in salita vi condurrà a fare una delle più belle esperienze sul Monte San Bartolo, dalle cui colline affacciate sull’Adriatico si può godere di un panorama meraviglioso. Diventato Parco Naturale Regionale, è un tesoro in cui natura e cultura si fondono insieme. La Panoramica è caratterizzata da un traffico molto ridotto e, tra curve dolci e continui saliscendi, offre un percorso che conserva tutto il fascino sia rurale che costiero.<br> Una pausa è consigliata a Fiorenzuola di Focara, un borghetto-balcone sul mare, il cui nome deriva dai “fuochi” che venivano accesi per inviare segnalazioni alle barche, oppure a Casteldimezzo e all’area archeologica di Colombarone.</p><br><p>Il percorso si conclude a Gabicce Monte, un borgo che si affaccia sul mare, affascinante per la sua doppia anima, dove natura e paesaggio marino si fondono in perfetta armonia. Poco più avanti, si può raggiunge la \"curva di Pantani\", dove un murale raffigura il campione, un omaggio al ciclista che amava allenarsi lungo questa panoramica via.</p>",
         "technical-info": "Da Fano a Pesaro vi e' una pista ciclabile che costeggia il mare, attenzione al traffico pedonale e di cicloturisti, soprattutto in alta stagione. Da Pesaro poi si sale per il Parco del San Bartolo, la strada diventa tortuosa, stare attenti al traffico.",
         "elevation": "800m",
