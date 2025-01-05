@@ -34,6 +34,10 @@
     "tourist-info-title": "Informazioni Turistiche",
     "technical-info-title": "Informazioni Tecniche",
     "route-title": "Percorso",
+    "gpx-height": {
+      "start": "Partenza",
+      "finish": "Arrivo"
+    },
     "download-gpx-cta": "Scarica traccia GPX",
     "road": {
       "1": {

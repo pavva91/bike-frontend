@@ -9,10 +9,10 @@
     "about": "Over ons",
     "contacts": "Contact",
     "tours": "Rondleidingen",
-    "types":{
-      "road":"Wielrennen",
-      "mtb":"MTB",
-      "gravel":"gravel/veldrijden"
+    "types": {
+      "road": "Wielrennen",
+      "mtb": "MTB",
+      "gravel": "gravel/veldrijden"
     },
     "bike-fitting": "Fiets Montage"
   },
@@ -30,44 +30,48 @@
   "tours": {
     "title": "Rondleidingen",
     "image": {
-      "share":"Aandeel",
+      "share": "Aandeel",
       "elevation": "Hoogteverschil",
-      "distance":"Afstand"
+      "distance": "Afstand"
     },
     "tourist-info-title": "Touristische Informatie",
     "technical-info-title": "Technische Informatie",
     "route-title": "Parcour",
+    "gpx-height": {
+      "start": "Vertrek",
+      "finish": "Aankomst"
+    },
     "download-gpx-cta": ".gpx track downloaden",
     "road": {
       "1": {
-        "tourist-info":"touristinforoad1",
-        "technical-info":"technicalinforoad1"
+        "tourist-info": "touristinforoad1",
+        "technical-info": "technicalinforoad1"
       },
       "2": {
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
       }
     },
     "mtb": {
       "1": {
-        "tourist-info":"touristinfomtb1",
-        "technical-info":"technicalinfomtb1"
+        "tourist-info": "touristinfomtb1",
+        "technical-info": "technicalinfomtb1"
       },
       "2": {
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
       }
     },
     "gravel": {
       "1": {
-        "title":"Marotta-Mondolfo",
-        "tourist-info":"touristinfogravel1",
-        "technical-info":"technicalinfogravel1"
+        "title": "Marotta-Mondolfo",
+        "tourist-info": "touristinfogravel1",
+        "technical-info": "technicalinfogravel1"
       },
       "2": {
-        "title":"Vencareto",
-        "tourist-info":"asdf",
-        "technical-info":"asdf"
+        "title": "Vencareto",
+        "tourist-info": "asdf",
+        "technical-info": "asdf"
       }
     }
   },

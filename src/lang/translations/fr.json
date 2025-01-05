@@ -30,6 +30,10 @@
     "tourist-info-title": "informations touristiques",
     "technical-info-title": "informations techniques",
     "route-title": "itinéraire",
+    "gpx-height": {
+      "start": "Départ",
+      "finish": "Arrivée"
+    },
     "download-gpx-cta": "télécharger .gpx"
   },
   "footer": {

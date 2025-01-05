@@ -33,6 +33,10 @@
     "tourist-info-title": "Touristic Informations",
     "technical-info-title": "Technical Informations",
     "route-title": "Route",
+    "gpx-height": {
+      "start": "Start",
+      "finish": "Finish"
+    },
     "download-gpx-cta": "Download GPX",
     "road": {
       "1": {

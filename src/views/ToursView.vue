@@ -244,7 +244,11 @@ async function getActivity() {
     <LeafletMap v-bind="$props"></LeafletMap>
     <br />
     <br />
-    <HighChartHeightProfile v-bind="$props"></HighChartHeightProfile>
+    <HighChartHeightProfile
+      v-bind="$props"
+      :startLabel="$t('tours.gpx-height.start')"
+      :finishLabel="$t('tours.gpx-height.finish')"
+    ></HighChartHeightProfile>
 
     <!-- <div v-if="$props.type === 'road' && $props.id === '4'"> -->
     <!--   <iframe id="komoot_iframe" :src="komoot_full" frameborder="0"></iframe> -->

@@ -4,7 +4,6 @@
 
 <script setup>
 import { onMounted, onBeforeUpdate } from 'vue'
-// import { Highcharts } from 'highcharts'
 import * as Highcharts from 'highcharts'
 
 const props = defineProps({
@@ -12,6 +11,12 @@ const props = defineProps({
     required: true,
   },
   id: {
+    required: true,
+  },
+  startLabel: {
+    required: true,
+  },
+  finishLabel: {
     required: true,
   },
 })
@@ -44,33 +49,7 @@ function getDistance(pt1, pt2) {
 }
 
 // 2. Optionally define data labels by the index of the track point
-const dl = {
-  2: {
-    enabled: true,
-    format: 'Start',
-    rotation: 0,
-    align: 'right',
-    crop: false,
-  },
-  1031: {
-    enabled: true,
-    format: 'End of road',
-    rotation: 45,
-    align: 'right',
-  },
-  98: {
-    enabled: true,
-    format: 'Drinking station',
-    rotation: 45,
-    align: 'right',
-  },
-  1300: {
-    enabled: true,
-    format: 'Finish',
-    rotation: 0,
-    align: 'right',
-  },
-}
+let wayPointLabels = {}
 
 function readXml(xmlFile) {
   var xmlDoc
@@ -79,7 +58,6 @@ function readXml(xmlFile) {
   if (xmlhttp.overrideMimeType) {
     xmlhttp.overrideMimeType('text/xml')
   }
-  console.log('xmlhttp:', xmlhttp)
   xmlhttp.send()
   xmlDoc = xmlhttp.responseXML
   return xmlDoc
@@ -93,12 +71,63 @@ const createHeightChart = () => {
   let lastPoint
   let totalDistance = 0
   let trackPoints = xml.getElementsByTagName('trkpt')
+  let trackPointsArr = Array.prototype.slice.call(trackPoints, 0)
 
-  // For this particular gpx, we want to reverse the points
-  trackPoints = Array.prototype.slice.call(trackPoints, 0)
+  let wayPoints = xml.getElementsByTagName('wpt')
+  // NOTE: Reset way points labels
+  wayPointLabels = {}
+  wayPointLabels[0] = {
+    enabled: true,
+    format: props.startLabel,
+    rotation: 0,
+    alight: 'right',
+  }
+  wayPointLabels[trackPointsArr.length - 1] = {
+    enabled: true,
+    format: props.finishLabel,
+    rotation: 0,
+    alight: 'right',
+  }
+
+  wayPoints = Array.prototype.slice.call(wayPoints, 0)
+  wayPoints.forEach((wp, i) => {
+    let k = 0
+    let label = wp.children[0].innerHTML
+    let lat = wp.getAttribute('lat')
+    let lon = wp.getAttribute('lon')
+    let point = {
+      lat: lat,
+      lon: lon,
+    }
+    trackPointsArr.forEach((trkpt, i) => {
+      // TODO: optimize it
+      // NOTE: <wpt lat="43.68796" lon="13.09904">
+      // NOTE: <trkpt lat="42.88873402030438" lon="13.906940016378616">
+      const tplat = parseFloat(trkpt.getAttribute('lat'))
+      const tplon = parseFloat(trkpt.getAttribute('lon'))
+      const t1 = tplat * 100000
+      const trlat = Math.trunc(t1) / 100000
+      const t2 = tplon * 100000
+      const trlon = Math.trunc(t2) / 100000
+      let j = 1
+      if (trlat.toString() === lat && trlon.toString() === lon) {
+        j = j + 1
+        k = i
+      }
+    })
+
+    wayPointLabels[k] = {
+      enabled: true,
+      format: label,
+      rotation: 0,
+      alight: 'right',
+    }
+  })
+
+  // trackPoints = Array.prototype.slice.call(trackPoints, 0)
 
   // Iterate over the track points, get cumulative distance and elevation
-  trackPoints.forEach((trkpt, i) => {
+  trackPointsArr.forEach((trkpt, i) => {
     const ele = parseInt(trkpt.getElementsByTagName('ele')[0].textContent, 10),
       lat = parseFloat(trkpt.getAttribute('lat')),
       lon = parseFloat(trkpt.getAttribute('lon')),
@@ -118,11 +147,12 @@ const createHeightChart = () => {
         'distance', distance,
         'totalDistance', totalDistance
     );*/
+
     data.push({
       x: Math.round(totalDistance * 100) / 100,
-      y: ele - 15,
-      dataLabels: dl[i],
-      marker: dl[i]
+      y: ele,
+      dataLabels: wayPointLabels[i],
+      marker: wayPointLabels[i]
         ? {
             enabled: true,
             // fillColor: '`var(--vt-c-text-1)`',
@@ -136,12 +166,10 @@ const createHeightChart = () => {
 
     lastPoint = point
   })
+
   const chartHeightProfile = Highcharts.chart('height-profile-container', {
     chart: {
       // type: 'area',
-
-      // NOTE: this works (why?)
-      // backgroundColor: 'black'
       backgroundColor: getComputedStyle(document.documentElement).getPropertyValue(
         'var(--vt-c-bg)',
       ),
@@ -149,16 +177,6 @@ const createHeightChart = () => {
 
     title: {
       text: '',
-      style: {
-        // TODO: fix this
-        // color: getComputedStyle(document.documentElement).getPropertyValue(
-        //   'var(--vt-c-text-1)',
-        // ),
-        // fill: getComputedStyle(document.documentElement).getPropertyValue(
-        //   'var(--vt-c-text-1)',
-        // ),
-        color: 'orange',
-      },
     },
 
     // subtitle: {
@@ -178,22 +196,8 @@ const createHeightChart = () => {
       minPadding: 0,
       title: {
         text: 'Elevation ( m )',
-        style: {
-          // TODO: fix this
-          // color: getComputedStyle(document.documentElement).getPropertyValue(
-          //   'var(--vt-c-text-1)',
-          // ),
-          // color: 'blue',
-        },
       },
       labels: {
-        style: {
-          // TODO: fix this
-          // color: getComputedStyle(document.documentElement).getPropertyValue(
-          //   'var(--vt-c-text-1)',
-          // ),
-          // color: '#ff00ff',
-        },
         align: 'left',
         x: 0,
         y: -2,
