@@ -17,16 +17,31 @@
 <script lang="ts">
 import i18n from '../i18n'
 
-function getLocalStoreLanguage() {
+function setLanguageFromLocalStorageOrBrowser() {
   let userLang = localStorage.getItem('language')
-  if (userLang != null) {
-    i18n.global.locale.value = userLang
+
+  if (userLang === null) {
+    const browserLang = navigator.language
+    if (browserLang.includes('it')) {
+      userLang = 'it'
+    }
+    if (browserLang.includes('fr')) {
+      userLang = 'fr'
+    }
+    if (browserLang.includes('nl')) {
+      userLang = 'nl'
+    }
+    if (browserLang.includes('en')) {
+      userLang = 'en'
+    }
   }
+
+  i18n.global.locale.value = userLang
 }
 
 export default {
   mounted() {
-    getLocalStoreLanguage()
+    setLanguageFromLocalStorageOrBrowser()
   },
   methods: {
     changeLanguage(obj) {
