@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted, onBeforeUnmount } from 'vue'
 import BackgroundImageFullScreen from '../components/background_image/BackgroundImageFullScreen.vue'
 import CarouselHome from '../components/carousel/CarouselHome.vue'
 import FullScreenCarousel from '../components/carousel/FullScreenCarousel.vue'
@@ -81,6 +82,19 @@ const pictures = [
   { src: '/img/tours/gravel/gravel1.jpg', alt: 'Image 2' },
   { src: '/img/tours/mtb/mtb1.jpg', alt: 'Image 3' },
 ]
+
+function handleScroll() {
+  let element = document.getElementById('about')
+  element.classList.add('bounceInRight')
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 <template>
   <BackgroundImageFullScreen></BackgroundImageFullScreen>
@@ -93,7 +107,7 @@ const pictures = [
   </RollCarousel>
   <!-- <CarouselHome></CarouselHome> -->
   <!-- <FullScreenCarousel :pictures="pictures" slide :slide-interval="10000" /> -->
-  <AboutView id="about"></AboutView>
+  <AboutView class="animated" id="about"></AboutView>
   <TopCarousel :items="items" :noControls="false" :noIndicators="true" :duration="5000" />
   <ContactsView id="contacts"></ContactsView>
 </template>
@@ -103,6 +117,66 @@ const pictures = [
     height: 10vh;
     margin-top: 0px;
     margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .animated {
+    /* background-image: url(/css/images/logo.png); */
+    /* background-repeat: no-repeat; */
+    /* background-position: left top; */
+
+    /* padding-top: 95px; */
+    /* margin-bottom: 60px; */
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  @-webkit-keyframes bounceInRight {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(2000px);
+    }
+
+    /* 60% { */
+    /*   opacity: 1; */
+    /*   -webkit-transform: translateX(-30px); */
+    /* } */
+
+    /* 80% { */
+    /*   -webkit-transform: translateX(10px); */
+    /* } */
+
+    100% {
+      -webkit-transform: translateX(0);
+    }
+  }
+
+  @keyframes bounceInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+
+    /* 60% { */
+    /*   opacity: 1; */
+    /*   transform: translateX(-30px); */
+    /* } */
+
+    /* 80% { */
+    /*   transform: translateX(10px); */
+    /* } */
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .bounceInRight {
+    -webkit-animation-name: bounceInRight;
+    animation-name: bounceInRight;
   }
 }
 </style>
