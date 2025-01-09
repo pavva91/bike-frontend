@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
   </RollCarousel>
   <!-- <CarouselHome></CarouselHome> -->
   <!-- <FullScreenCarousel :pictures="pictures" slide :slide-interval="10000" /> -->
-  <AboutView class="animated" id="about"></AboutView>
+  <AboutView id="about"></AboutView>
   <TopCarousel :items="items" :noControls="false" :noIndicators="true" :duration="5000" />
   <ContactsView id="contacts"></ContactsView>
 </template>
@@ -121,33 +121,11 @@ onBeforeUnmount(() => {
 }
 
 @media (min-width: 1024px) {
-  .animated {
-    /* background-image: url(/css/images/logo.png); */
-    /* background-repeat: no-repeat; */
-    /* background-position: left top; */
-
-    /* padding-top: 95px; */
-    /* margin-bottom: 60px; */
-    -webkit-animation-duration: 4s;
-    animation-duration: 4s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-
   @-webkit-keyframes bounceInRight {
     0% {
       opacity: 0;
       -webkit-transform: translateX(2000px);
     }
-
-    /* 60% { */
-    /*   opacity: 1; */
-    /*   -webkit-transform: translateX(-30px); */
-    /* } */
-
-    /* 80% { */
-    /*   -webkit-transform: translateX(10px); */
-    /* } */
 
     100% {
       -webkit-transform: translateX(0);
@@ -160,15 +138,6 @@ onBeforeUnmount(() => {
       transform: translateX(2000px);
     }
 
-    /* 60% { */
-    /*   opacity: 1; */
-    /*   transform: translateX(-30px); */
-    /* } */
-
-    /* 80% { */
-    /*   transform: translateX(10px); */
-    /* } */
-
     100% {
       transform: translateX(0);
     }
@@ -177,6 +146,11 @@ onBeforeUnmount(() => {
   .bounceInRight {
     -webkit-animation-name: bounceInRight;
     animation-name: bounceInRight;
+
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
   }
 }
 </style>
