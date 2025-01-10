@@ -25,8 +25,7 @@
 
 .background-image {
   /* The image used */
-  background: url('https://kilometroinverso.com/wp-content/uploads/2023/02/kilometro-inverso-trekking-toscana.jpg')
-    no-repeat center center fixed;
+  background: url('/public/img/home-background.jpg') no-repeat center center fixed;
 
   /* Full height minus menu */
   height: calc(100vh - var(--vt-nav-height));
@@ -41,7 +40,8 @@
 
   display: flex;
   align-items: center;
-  height: 100vh; /* or a fixed height */
+  height: 100vh;
+  /* or a fixed height */
   mask: linear-gradient(to top, transparent, 30%, white);
   mask-repeat: no-repeat;
 }
