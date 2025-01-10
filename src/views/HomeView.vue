@@ -102,6 +102,7 @@ onBeforeUnmount(() => {
     @click="resetSelection()"
     class="mx-auto bg-img-footer"
     :withMaskGradient="false"
+    :withZoomIn="true"
     :items="tourItems"
   >
   </RollCarousel>
@@ -117,40 +118,6 @@ onBeforeUnmount(() => {
     height: 10vh;
     margin-top: 0px;
     margin-bottom: 10px;
-  }
-}
-
-@media (min-width: 1024px) {
-  @-webkit-keyframes bounceInRight {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateX(2000px);
-    }
-
-    100% {
-      -webkit-transform: translateX(0);
-    }
-  }
-
-  @keyframes bounceInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(2000px);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  .bounceInRight {
-    -webkit-animation-name: bounceInRight;
-    animation-name: bounceInRight;
-
-    -webkit-animation-duration: 4s;
-    animation-duration: 4s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
   }
 }
 </style>

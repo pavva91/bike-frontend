@@ -13,6 +13,11 @@ const props = defineProps<{
     required: false
     default: false
   }
+  withZoomIn: {
+    type: Boolean
+    required: false
+    default: false
+  }
 }>()
 
 const items = props.items
@@ -21,8 +26,14 @@ const items = props.items
 <template>
   <div class="roll-container" :class="{ 'mask-gradient': props.withMaskGradient }">
     <div v-for="(item, index) in items" :key="index" class="single">
+      <!-- TODO: remove tour that is open from the carousel (getRouter, v-if) -->
       <RouterLink :to="{ name: 'Tours', params: { type: item.type, id: item.id } }">
-        <img :src="item.img" :alt="item.desc" />
+        <div
+          class="common"
+          :class="{ 'hover-zoom-in': props.withZoomIn, 'no-zoom': !props.withZoomIn }"
+        >
+          <img :src="item.img" :alt="item.desc" />
+        </div>
       </RouterLink>
       <div>{{ item.desc }}</div>
     </div>
@@ -50,30 +61,71 @@ const items = props.items
 
 .roll-container img {
   width: 100%;
-  height: 85%;
+  /* height: 85%; */
 }
 
-.roll-container div {
+.single {
   padding: 4px;
   width: 400px;
   height: 200px;
 }
 
+.common {
+  padding: 4px;
+  width: 400px;
+  height: 85%;
+}
+
+.hover-zoom-in {
+  overflow: hidden;
+}
+
+.hover-zoom-in img {
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.hover-zoom-in:hover img {
+  transform: scale(1.1);
+}
+
+.no-zoom img {
+  height: 100%;
+}
+
 @media (max-width: 768px) {
-  .roll-container div {
+  .single {
+    width: 300px;
+    height: 150px;
+  }
+
+  .common {
     width: 300px;
     height: 150px;
   }
 }
 
 @media (max-width: 480px) {
-  .roll-container div {
+  .single {
+    width: 250px;
+    height: 125px;
+  }
+
+  .common {
     width: 250px;
     height: 125px;
   }
 }
 
-.single:hover {
-  opacity: 0.6;
+/* TODO: fix hover remains on mobile */
+/* TODO: show click on mobile */
+@media (min-width: 768px) {
+  .hover-zoom-in:hover {
+    opacity: 0.6;
+  }
+
+  .no-zoom:hover {
+    opacity: 0.6;
+  }
 }
 </style>

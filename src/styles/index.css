@@ -1,7 +1,9 @@
 @import './variables.css';
+@import './fonts.css';
 @import './base.css';
 @import './vt-switch.css';
 @import './vt-switch-appearance.css';
+@import './animations.css';
 
 @tailwind base;
 @tailwind components;
@@ -35,12 +37,12 @@
 
 .dark-pink {
   /* color: #b4003b; */
-  color: var(--vt-c-text-selected)
+  color: var(--vt-c-text-selected);
 }
 
 .light-pink {
   /* color: #ff3577; */
-  color: var(--vt-c-pink-light)
+  color: var(--vt-c-pink-light);
 }
 
 nav {
@@ -60,7 +62,7 @@ nav li {
 nav a:hover {
   /* color: #ed2429; */
   /* color: #b4003b; */
-  color: var(--vt-c-text-selected)
+  color: var(--vt-c-text-selected);
 }
 
 h1 {
@@ -105,4 +107,3 @@ img.home-background-img {
     object-position: 55%;
   }
 }
-

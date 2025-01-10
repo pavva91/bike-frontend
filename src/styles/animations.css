@@ -1,0 +1,66 @@
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    scale: 100%;
+  }
+
+  50% {
+    scale: 150%;
+  }
+
+  100% {
+    scale: 100%;
+  }
+}
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bounceInRight {
+    -webkit-animation-name: bounceInRight;
+    animation-name: bounceInRight;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  .zoomOutAnimation {
+    animation: zoom-out 3s ease;
+  }
+
+  .zoomInZoomOut {
+    animation: zoom-in-zoom-out 10s ease infinite;
+  }
+}

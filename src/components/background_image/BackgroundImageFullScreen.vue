@@ -25,7 +25,6 @@
 
 .background-image {
   /* The image used */
-  background: url('https://www.w3schools.com/howto/img_girl.jpg') no-repeat center center fixed;
   background: url('https://kilometroinverso.com/wp-content/uploads/2023/02/kilometro-inverso-trekking-toscana.jpg')
     no-repeat center center fixed;
 
