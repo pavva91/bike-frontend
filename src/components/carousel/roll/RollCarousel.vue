@@ -56,7 +56,7 @@ const items = props.items
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  min-height: 135px;
+  min-height: 150px;
 }
 
 .roll-container img {
@@ -96,7 +96,7 @@ const items = props.items
 @media (max-width: 768px) {
   .single {
     width: 300px;
-    height: 150px;
+    height: 175px;
   }
 
   .common {
@@ -108,7 +108,7 @@ const items = props.items
 @media (max-width: 480px) {
   .single {
     width: 250px;
-    height: 125px;
+    height: 150px;
   }
 
   .common {
