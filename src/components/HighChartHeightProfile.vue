@@ -79,6 +79,7 @@ const createHeightChart = () => {
   let trackPoints = xml.getElementsByTagName('trkpt')
   let trackPointsArr = Array.prototype.slice.call(trackPoints, 0)
 
+  // NOTE: must be ordered in space to use optimized algorithm
   let wayPoints = xml.getElementsByTagName('wpt')
   // NOTE: Reset way points labels
   wayPointLabels = {}
@@ -95,18 +96,46 @@ const createHeightChart = () => {
     alight: 'right',
   }
 
-  wayPoints = Array.prototype.slice.call(wayPoints, 0)
-  wayPoints.forEach((wp, i) => {
-    let k = 0
-    let label = wp.children[0].innerHTML
-    let lat = wp.getAttribute('lat')
-    let lon = wp.getAttribute('lon')
-    let point = {
-      lat: lat,
-      lon: lon,
-    }
+  // NOTE: old, works
+  // wayPoints = Array.prototype.slice.call(wayPoints, 0)
+  // wayPoints.forEach((wp, i) => {
+  //   let k = 0
+  //   let label = wp.children[0].innerHTML
+  //   let lat = wp.getAttribute('lat')
+  //   let lon = wp.getAttribute('lon')
+  //   let point = {
+  //     lat: lat,
+  //     lon: lon,
+  //   }
+  //   trackPointsArr.forEach((trkpt, i) => {
+  //     // TODO: optimize it
+  //     // NOTE: <wpt lat="43.68796" lon="13.09904">
+  //     // NOTE: <trkpt lat="42.88873402030438" lon="13.906940016378616">
+  //     const tplat = parseFloat(trkpt.getAttribute('lat'))
+  //     const tplon = parseFloat(trkpt.getAttribute('lon'))
+  //     const t1 = tplat * 100000
+  //     const trlat = Math.trunc(t1) / 100000
+  //     const t2 = tplon * 100000
+  //     const trlon = Math.trunc(t2) / 100000
+  //     let j = 1
+  //     if (trlat.toString() === lat && trlon.toString() === lon) {
+  //       j = j + 1
+  //       k = i
+  //     }
+  //   })
+  //
+  //   wayPointLabels[k] = {
+  //     enabled: true,
+  //     format: label,
+  //     rotation: 0,
+  //     alight: 'right',
+  //   }
+  // })
+
+  // NOTE: new, optimized algorithm
+  if (wayPoints.length !== 0) {
+    let wayPointsArray = Array.prototype.slice.call(wayPoints, 0)
     trackPointsArr.forEach((trkpt, i) => {
-      // TODO: optimize it
       // NOTE: <wpt lat="43.68796" lon="13.09904">
       // NOTE: <trkpt lat="42.88873402030438" lon="13.906940016378616">
       const tplat = parseFloat(trkpt.getAttribute('lat'))
@@ -115,20 +144,28 @@ const createHeightChart = () => {
       const trlat = Math.trunc(t1) / 100000
       const t2 = tplon * 100000
       const trlon = Math.trunc(t2) / 100000
-      let j = 1
-      if (trlat.toString() === lat && trlon.toString() === lon) {
-        j = j + 1
-        k = i
-      }
+      wayPointsArray.every((wp, j) => {
+        let label = wp.children[0].innerHTML
+        let lat = wp.getAttribute('lat')
+        let lon = wp.getAttribute('lon')
+        let point = {
+          lat: lat,
+          lon: lon,
+        }
+        if (trlat.toString() === lat && trlon.toString() === lon) {
+          wayPointLabels[i] = {
+            enabled: true,
+            format: label,
+            rotation: 0,
+            alight: 'right',
+          }
+          wayPointsArray.splice(j, 1)
+          return false
+        }
+        return true
+      })
     })
-
-    wayPointLabels[k] = {
-      enabled: true,
-      format: label,
-      rotation: 0,
-      alight: 'right',
-    }
-  })
+  }
 
   // trackPoints = Array.prototype.slice.call(trackPoints, 0)
 
