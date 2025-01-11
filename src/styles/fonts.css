@@ -1,0 +1,61 @@
+/* lobster-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  /* NOTE: font downloaded from https://gwfh.mranftl.com/fonts */
+  src: url('/fonts/lobster-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* josefin-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  /* NOTE: font downloaded from https://gwfh.mranftl.com/fonts */
+  src: url('/fonts/josefin-sans-v32-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* josefin-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  /* NOTE: font downloaded from https://gwfh.mranftl.com/fonts */
+  src: url('/fonts/josefin-sans-v32-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* monoton-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Monoton';
+  font-style: normal;
+  font-weight: 400;
+  /* NOTE: font downloaded from https://gwfh.mranftl.com/fonts */
+  src: url('/fonts/monoton-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+.lobster-regular {
+  font-family: 'Lobster', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.josefin-sans-bg {
+  font-family: 'Josefin Sans', serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.monoton-regular {
+  font-family: 'Monoton', serif;
+  font-weight: 400;
+  font-style: normal;
+}
