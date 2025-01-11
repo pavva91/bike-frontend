@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "host": "vite --host",
+    "lan": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
@@ -18,7 +19,6 @@
     "flowbite": "^2.5.1",
     "flowbite-vue": "^0.1.6",
     "highcharts": "^12.1.2",
-    "highcharts-vue": "^2.0.1",
     "leaflet": "^1.9.4",
     "leaflet-gpx": "^2.1.2",
     "pathe": "^1.1.2",
