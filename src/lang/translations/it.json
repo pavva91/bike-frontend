@@ -84,6 +84,12 @@
       }
     }
   },
+  "not-found": {
+    "title": "404 - Risorsa non trovata",
+    "text": "La risorsa '{resource}' che stai cercando non e' qui",
+    "extra-text": "Mostra testo extra",
+    "back-home": "Torna alla pagina iniziale"
+  },
   "footer": {
     "title": "Questo é un piè di pagina",
     "rights": "Tutti i diritti riservati"

@@ -1,5 +1,5 @@
 {
-  "greeting":"hello, {name}",
+  "greeting": "hello, {name}",
   "company": "company name",
   "street": "via delle vie",
   "number": "12",
@@ -107,6 +107,12 @@
         "technical-info": "asdf"
       }
     }
+  },
+  "not-found": {
+    "title": "404 - Not Found",
+    "text": "The {resource} resource that you are looking for is not here",
+    "extra-text": "Show extra stuff",
+    "back-home": "Back to the home page"
   },
   "footer": {
     "title": "This is a footer",

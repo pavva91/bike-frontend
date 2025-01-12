@@ -6,12 +6,12 @@ const props = defineProps({
   resource: {
     type: String,
     required: true,
-    default: 'page'
+    default: 'page',
   },
   showExtra: {
     type: Boolean,
-    required: false
-  }
+    required: false,
+  },
 })
 onMounted(() => {
   EventService.getEvent(props.id)
@@ -27,10 +27,10 @@ onMounted(() => {
 </script>
 <template>
   <div class="about">
-    <h1>404 - Not Found</h1>
-    <h3>The {{ resource }} you are looking for is not here</h3>
-    <div v-if="showExtra">Show Extra Stuff</div>
-    <RouterLink :to="{ name: 'EventList' }">Back to the home page</RouterLink>
+    <h1>{{ $t('not-found.title') }}</h1>
+    <p>{{ $t('not-found.text', { resource: props.resource }) }}</p>
+    <div v-if="showExtra">{{ $t('not-found.extra-text') }}</div>
+    <RouterLink :to="{ name: 'Home' }">{{ $t('not-found.back-home') }}</RouterLink>
   </div>
 </template>
 

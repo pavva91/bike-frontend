@@ -17,7 +17,8 @@ import LeafletMap from '../components/LeafletMap.vue'
 
 import HighChartHeightProfile from '../components/HighChartHeightProfile.vue'
 
-import { ref, onBeforeUpdate } from 'vue'
+import { ref, onBeforeUpdate, onBeforeMount } from 'vue'
+import { useRouter } from 'vue-router'
 
 import { useI18n } from 'vue-i18n'
 
@@ -102,6 +103,32 @@ const gravelItems = [
     type: 'gravel',
   },
 ]
+
+const router = useRouter()
+
+onBeforeMount(() => {
+  if (props.id < 1 || props.id > 5) {
+    router.push({
+      name: '404Resource',
+      params: { resource: 'tour' },
+    })
+  }
+  switch (props.type) {
+    case 'road':
+      break
+    case 'mtb':
+      break
+    case 'gravel':
+      break
+
+    default:
+      router.push({
+        name: '404Resource',
+        params: { resource: 'tour' },
+      })
+      break
+  }
+})
 
 onBeforeUpdate(() => {
   console.log('length items update:', roadItems)

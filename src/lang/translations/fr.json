@@ -38,6 +38,12 @@
     },
     "download-gpx-cta": "télécharger .gpx"
   },
+  "not-found": {
+    "title": "404 - Not Found",
+    "text": "La page '{resource}' que vous recherchez n'est pas disponible ici.",
+    "extra-text": "Afficher des éléments supplémentaires",
+    "back-home": "Retour à la page d'accueil"
+  },
   "footer": {
     "title": "il s'agit d'un pied de page"
   }

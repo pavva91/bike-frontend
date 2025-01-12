@@ -80,6 +80,12 @@
   "bike-fit": {
     "title": "Fiets Passen"
   },
+  "not-found": {
+    "title": "404 - Niet gevonden",
+    "text": "De pagina '{resource}' die je zoekt is niet hier",
+    "extra-text": "Toon extra dingen",
+    "back-home": "Terug naar de startpagina"
+  },
   "footer": {
     "title": "Heel belang footer"
   }
