@@ -9,7 +9,7 @@ import RoadImg04 from '../assets/img/tours/road/road4.jpg'
 import RoadImg05 from '../assets/img/tours/road/road5.jpg'
 
 import MtbImg01 from '../assets/img/tours/mtb/mtb1.jpg'
-import MtbImg02 from '../assets/img/tours/mtb/mtb1.jpg'
+import MtbImg02 from '../assets/img/tours/mtb/mtb2.jpg'
 
 import GravelImg01 from '../assets/img/tours/gravel/gravel1.jpg'
 

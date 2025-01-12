@@ -58,15 +58,13 @@ function getDistance(pt1, pt2) {
 let wayPointLabels = {}
 
 function readXml(xmlFile) {
-  var xmlDoc
-  var xmlhttp = new XMLHttpRequest()
+  let xmlhttp = new XMLHttpRequest()
   xmlhttp.open('GET', xmlFile, false)
   if (xmlhttp.overrideMimeType) {
     xmlhttp.overrideMimeType('text/xml')
   }
   xmlhttp.send()
-  xmlDoc = xmlhttp.responseXML
-  return xmlDoc
+  return xmlhttp.responseXML
 }
 
 const createHeightChart = () => {
@@ -98,42 +96,6 @@ const createHeightChart = () => {
     rotation: 0,
     alight: 'right',
   }
-
-  // NOTE: old, works
-  // wayPoints = Array.prototype.slice.call(wayPoints, 0)
-  // wayPoints.forEach((wp, i) => {
-  //   let k = 0
-  //   let label = wp.children[0].innerHTML
-  //   let lat = wp.getAttribute('lat')
-  //   let lon = wp.getAttribute('lon')
-  //   let point = {
-  //     lat: lat,
-  //     lon: lon,
-  //   }
-  //   trackPointsArr.forEach((trkpt, i) => {
-  //     // TODO: optimize it
-  //     // NOTE: <wpt lat="43.68796" lon="13.09904">
-  //     // NOTE: <trkpt lat="42.88873402030438" lon="13.906940016378616">
-  //     const tplat = parseFloat(trkpt.getAttribute('lat'))
-  //     const tplon = parseFloat(trkpt.getAttribute('lon'))
-  //     const t1 = tplat * 100000
-  //     const trlat = Math.trunc(t1) / 100000
-  //     const t2 = tplon * 100000
-  //     const trlon = Math.trunc(t2) / 100000
-  //     let j = 1
-  //     if (trlat.toString() === lat && trlon.toString() === lon) {
-  //       j = j + 1
-  //       k = i
-  //     }
-  //   })
-  //
-  //   wayPointLabels[k] = {
-  //     enabled: true,
-  //     format: label,
-  //     rotation: 0,
-  //     alight: 'right',
-  //   }
-  // })
 
   // NOTE: new, optimized algorithm
   if (wayPoints.length !== 0) {
@@ -174,16 +136,17 @@ const createHeightChart = () => {
 
   // Iterate over the track points, get cumulative distance and elevation
   trackPointsArr.forEach((trkpt, i) => {
-    const ele = parseInt(trkpt.getElementsByTagName('ele')[0].textContent, 10),
-      lat = parseFloat(trkpt.getAttribute('lat')),
-      lon = parseFloat(trkpt.getAttribute('lon')),
-      point = {
-        lat: lat,
-        lon: lon,
-      },
-      distance = lastPoint ? getDistance(lastPoint, point) : 0
+    const ele = parseInt(trkpt.getElementsByTagName('ele')[0].textContent, 10)
+    const lat = parseFloat(trkpt.getAttribute('lat'))
+    const lon = parseFloat(trkpt.getAttribute('lon'))
+    const point = {
+      lat: lat,
+      lon: lon,
+    }
+    const distance = lastPoint ? getDistance(lastPoint, point) : 0
 
     totalDistance += distance
+    trkpt.setAttribute('totalDistance', totalDistance)
 
     /* console.log(
         'time', time,
