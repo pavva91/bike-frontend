@@ -26,10 +26,28 @@ npm install
 npm run dev
 ```
 
+### Compile and Hot-Reload for Development on LAN (test on real phone)
+
+```sh
+npm run lan
+```
+
+Or:
+
+```sh
+npm run lan
+```
+
 ### Compile and Minify for Production
 
 ```sh
 npm run build
+```
+
+#### To run the build on local (http://localhost:4173)
+
+```sh
+npm run preview
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
@@ -40,7 +58,8 @@ npm run lint
 
 # Multi-lingual
 
-Guide: 
+Guide:
+
 - [https://lokalise.com/blog/vue-i18n/](https://lokalise.com/blog/vue-i18n/)
 - [https://techvblogs.com/blog/create-multilingual-vuejs-apps](https://techvblogs.com/blog/create-multilingual-vuejs-apps)
 
