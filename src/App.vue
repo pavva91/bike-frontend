@@ -5,6 +5,30 @@ import MenuDesktop from './components/MenuDesktop.vue'
 import MenuMobile from './components/MenuMobile.vue'
 import FooterLinks from './components/footer/FooterLinks.vue'
 import FooterInfo from './components/footer/FooterInfo.vue'
+import i18n from './i18n'
+
+function setLanguageFromLocalStorageOrBrowserOrDefaultToEn() {
+  let userLang = localStorage.getItem('language')
+
+  if (userLang === null) {
+    const browserLang = navigator.language
+    if (browserLang.includes('it')) {
+      userLang = 'it'
+    }
+    if (browserLang.includes('fr')) {
+      userLang = 'fr'
+    }
+    if (browserLang.includes('nl')) {
+      userLang = 'nl'
+    }
+  }
+
+  if (userLang === null) {
+    userLang = 'en'
+  }
+
+  i18n.global.locale.value = userLang
+}
 
 const chartOptions = ref({
   series: [
@@ -29,6 +53,7 @@ function onResize() {
 }
 
 onMounted(() => {
+  setLanguageFromLocalStorageOrBrowserOrDefaultToEn()
   window.addEventListener('resize', onResize)
 })
 

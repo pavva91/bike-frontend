@@ -17,33 +17,7 @@
 <script lang="ts">
 import i18n from '../i18n'
 
-function setLanguageFromLocalStorageOrBrowserOrDefaultToEn() {
-  let userLang = localStorage.getItem('language')
-
-  if (userLang === null) {
-    const browserLang = navigator.language
-    if (browserLang.includes('it')) {
-      userLang = 'it'
-    }
-    if (browserLang.includes('fr')) {
-      userLang = 'fr'
-    }
-    if (browserLang.includes('nl')) {
-      userLang = 'nl'
-    }
-  }
-
-  if (userLang === null) {
-    userLang = 'en'
-  }
-
-  i18n.global.locale.value = userLang
-}
-
 export default {
-  mounted() {
-    setLanguageFromLocalStorageOrBrowserOrDefaultToEn()
-  },
   methods: {
     changeLanguage(obj) {
       localStorage.setItem('language', obj.target.value)
