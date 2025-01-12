@@ -72,6 +72,9 @@ function readXml(xmlFile) {
 const createHeightChart = () => {
   let urlGpx = '/gpx/' + props.type + '/' + props.type + props.id + '.gpx'
   let xml = readXml(urlGpx)
+  if (!xml) {
+    return
+  }
   let data = []
 
   let lastPoint
