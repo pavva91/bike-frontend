@@ -150,6 +150,7 @@ function changeSelectedMenuItem(event) {
 }
 
 #navbar-ul {
+  background: var(--vt-c-bg);
   height: 35px;
 }
 
