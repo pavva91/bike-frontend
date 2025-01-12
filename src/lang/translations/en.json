@@ -1,5 +1,12 @@
 {
+  "greeting":"hello, {name}",
   "company": "company name",
+  "street": "via delle vie",
+  "number": "12",
+  "zipcode": "61039",
+  "city": "San Costanzo",
+  "province": "PU",
+  "phone": "+39 1234567890",
   "mission": "Walking, hiking and biking and biking trips",
   "nav": {
     "home": "Home",
@@ -45,24 +52,18 @@
         "title": "I muri marchigiani",
         "tourist-info": "The muri marchigiani are a revival of the stage of the 2024 giro d'italia...",
         "technical-info": "Being a giro d'italia stage is very hard...",
-        "elevation": "2000m",
-        "distance": "120km",
         "rating": "5"
       },
       "2": {
         "title": "Urbino e Cesane",
         "tourist-info": "The Cesane mountain is a mountain between Urbino and Fossombrone....",
         "technical-info": "A small mountain, intermediate level...",
-        "elevation": "1500m",
-        "distance": "100km",
         "rating": "4"
       },
       "3": {
         "title": "San Bartolo",
         "tourist-info": "<p>The departure is from <b>Fano</b>, the city of Vitruvius. Here history takes center stage with its Roman roots still visible today: from the <b>Arch of Augustus</b> to the striking Roman walls. Start in the historic center, in front of the Teatro della Fortuna, pass by the former Church of San Francesco, a true open-air monument, and head north along the waterfront.</p><br><p>Pedaling along the beautiful bike path that runs parallel to the coast, with the sea at your side you reach Pesaro, a paradise for bike lovers thanks to its Bicipolitana, the “two-wheel metro.” The city, which is the Italian Capital of Culture in 2024 and a UNESCO Creative City of Music since 2017, is the birthplace of Gioacchino Rossini, an immortal genius to whom the Rossini Opera Festival is dedicated. From museums to theaters, libraries to villas on the hills, the cultural heritage here is endless.<br> From the port, cross the Foglia River and take the road uphill to one of the most beautiful experiences on Mount San Bartolo, from whose hills overlooking the Adriatic you can enjoy a wonderful panorama. Now a Regional Nature Park, it is a treasure where nature and culture blend together. The Panoramica has very little traffic and, between gentle curves and continuous ups and downs, offers a route that retains all the charm of both rural and coastal areas.<br>A break is recommended at Fiorenzuola di Focara, a small village-balcony on the sea, whose name derives from the “fires” that were lit to send signals to boats, or at Casteldimezzo and the archaeological area of Colombarone.</p><br><p>The route ends at Gabicce Monte, a village overlooking the sea, fascinating for its dual soul, where nature and seascape blend in perfect harmony.<br> A little further on, you can reach the \"Pantani turn\" where a mural depicts the champion, a tribute to the cyclist who loved to train along this scenic route.</p>",
         "technical-info": "From Fano to Pesaro there is a bicycle path that runs along the sea, beware of pedestrian and bicycle tourist traffic, especially in high season. From Pesaro then up through San Bartolo Park, the road becomes winding, watch out for traffic.",
-        "elevation": "800m",
-        "distance": "70km",
         "rating": "1",
         "original": "https://www.marcheoutdoor.it/Itinerari/Dettagli/ciclovia_adriatica_da_fano_a_gabicce_mare_un_viaggio_tra_la_cultura_la_musica_e_la_natura?bike=true#"
       },
@@ -70,8 +71,12 @@
         "title": "Fano",
         "tourist-info": "The bicycle touring route from Fano is an invitation to discover a varied and fascinating landscape, where the Adriatic Sea embraces the rolling hills of the Marche. Pedaling along this route, one starts from the coast of Fano, with its historic beaches and salty air, and then climbs inland, where the hills offer rural vistas and ancient villages that hold centuries-old traditions.",
         "technical-info": "Traffic on the Flaminia",
-        "elevation": "300m",
-        "distance": "63km",
+        "rating": "2"
+      },
+      "5": {
+        "title": "Montemaggiore",
+        "tourist-info": "",
+        "technical-info": "",
         "rating": "2"
       }
     },
@@ -80,14 +85,13 @@
         "title": "Monte Catria",
         "tourist-info": "asdf",
         "technical-info": "asdf",
-        "elevation": "1800m",
-        "distance": "45km",
         "rating": "5"
       },
       "2": {
-        "title": "Monte delle Cesane",
+        "title": "Mondolfo",
         "tourist-info": "asdf",
-        "technical-info": "asdf"
+        "technical-info": "asdf",
+        "rating": "3"
       }
     },
     "gravel": {
@@ -95,8 +99,6 @@
         "title": "Marotta-Mondolfo",
         "tourist-info": "asdf",
         "technical-info": "asdf",
-        "elevation": "1255m",
-        "distance": "39km",
         "rating": "2"
       },
       "2": {
