@@ -2,18 +2,18 @@
 <gpx version="1.0" creator="GPSBabel - https://www.gpsbabel.org" xmlns="http://www.topografix.com/GPX/1/0">
   <time>2024-04-16T06:07:49.900Z</time>
   <bounds minlat="43.734130000" minlon="12.853870000" maxlat="43.842700000" maxlon="13.054980000"/>
-  <wpt lat="43.842468000" lon="13.013730000">
-    <ele>0.000</ele>
-    <name>Inizio - Fano</name>
-    <cmt>Inizio - Fano</cmt>
-    <desc>Inizio - Fano</desc>
-  </wpt>
-  <wpt lat="43.842468000" lon="13.013730000">
-    <ele>0.000</ele>
-    <name>Fine - Fano</name>
-    <cmt>Fine - Fano</cmt>
-    <desc>Fine - Fano</desc>
-  </wpt>
+  <!-- <wpt lat="43.842468000" lon="13.013730000"> -->
+  <!--   <ele>0.000</ele> -->
+  <!--   <name>Inizio - Fano</name> -->
+  <!--   <cmt>Inizio - Fano</cmt> -->
+  <!--   <desc>Inizio - Fano</desc> -->
+  <!-- </wpt> -->
+  <!-- <wpt lat="43.842468000" lon="13.013730000"> -->
+  <!--   <ele>0.000</ele> -->
+  <!--   <name>Fine - Fano</name> -->
+  <!--   <cmt>Fine - Fano</cmt> -->
+  <!--   <desc>Fine - Fano</desc> -->
+  <!-- </wpt> -->
   <trk>
     <name>Pesaro Anello 4</name>
     <trkseg>
