@@ -151,3 +151,18 @@ systemctl start apache2
 2. `npm run build`
 3. `rsync -avn ~/bike-frontend/dist/ /var/www/html`
 4. `systemctl restart apache2.service`
+
+# update
+
+1. Check which packages are outdated:
+
+   - `npm outdated`
+
+2. Update to wished:
+   - npm update
+3. Update to latest:
+   - npm i <module>@latest
+
+## Vite update
+
+https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated
