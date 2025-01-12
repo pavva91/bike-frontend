@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onBeforeMount } from 'vue'
+
 interface Item {
   img: string
   desc: string
@@ -7,6 +9,11 @@ interface Item {
 }
 
 const props = defineProps<{
+  selectedTourId: {
+    type: number
+    required: false
+    default: -1
+  }
   items: Item[]
   withMaskGradient: {
     type: Boolean
@@ -18,9 +25,30 @@ const props = defineProps<{
     required: false
     default: false
   }
+  withShuffle: {
+    type: Boolean
+    required: false
+    default: false
+  }
 }>()
 
-const items = props.items
+const items = [...props.items]
+const selectedTourId = props.selectedTourId
+
+function shuffleArray(array) {
+  return array.sort(() => 0.5 - Math.random())
+}
+
+onBeforeMount(() => {
+  // NOTE: props.selectedTourId is undefined if it is not passed to the component
+  if (props.selectedTourId || props.selectedTourId !== -1) {
+    items.splice(selectedTourId - 1, 1)
+    // NOTE: props.withShuffle is undefined if it is not passed to the component
+  }
+  if (props.withShuffle) {
+    shuffleArray(items)
+  }
+})
 </script>
 
 <template>

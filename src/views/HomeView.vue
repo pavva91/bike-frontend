@@ -16,12 +16,18 @@ import RoadImg01 from '../assets/img/tours/road/road1.jpg'
 import RoadImg02 from '../assets/img/tours/road/road2.jpg'
 import RoadImg03 from '../assets/img/tours/road/road3.jpg'
 import RoadImg04 from '../assets/img/tours/road/road4.jpg'
+import RoadImg05 from '../assets/img/tours/road/road5.jpg'
 
 import MtbImg01 from '../assets/img/tours/mtb/mtb1.jpg'
+import MtbImg02 from '../assets/img/tours/mtb/mtb2.jpg'
 
 import GravelImg01 from '../assets/img/tours/gravel/gravel1.jpg'
 
 import resetSelection from '../utils/utils.js'
+
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n({ useScope: 'global' })
 
 const items = [
   {
@@ -41,37 +47,49 @@ const items = [
 const tourItems = [
   {
     img: RoadImg01,
-    desc: 'I muri marchigiani',
+    desc: t('tours.road.1.title'),
     id: 1,
     type: 'road',
   },
   {
     img: RoadImg02,
-    desc: 'Urbino e Cesane',
+    desc: t('tours.road.2.title'),
     id: 2,
     type: 'road',
   },
   {
     img: RoadImg03,
-    desc: 'Fano - San Bartolo',
+    desc: t('tours.road.3.title'),
     id: 3,
     type: 'road',
   },
   {
     img: RoadImg04,
-    desc: 'Fano tra onde e colline',
+    desc: t('tours.road.4.title'),
     id: 4,
     type: 'road',
   },
   {
+    img: RoadImg05,
+    desc: t('tours.road.5.title'),
+    id: 5,
+    type: 'road',
+  },
+  {
     img: MtbImg01,
-    desc: 'MTB',
+    desc: t('tours.mtb.1.title'),
     id: 1,
     type: 'mtb',
   },
   {
+    img: MtbImg02,
+    desc: t('tours.mtb.2.title'),
+    id: 2,
+    type: 'mtb',
+  },
+  {
     img: GravelImg01,
-    desc: 'GRAVEL',
+    desc: t('tours.gravel.1.title'),
     id: 1,
     type: 'gravel',
   },
@@ -104,6 +122,7 @@ onBeforeUnmount(() => {
     :withMaskGradient="false"
     :withZoomIn="true"
     :items="tourItems"
+    :withShuffle="false"
   >
   </RollCarousel>
   <!-- <CarouselHome></CarouselHome> -->

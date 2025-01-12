@@ -1,26 +1,32 @@
 <script setup>
 import TourImage from '../components/TourImage.vue'
 import RollCarousel from '../components/carousel/roll/RollCarousel.vue'
-import { onMounted, onBeforeUpdate } from 'vue'
 
 import RoadImg01 from '../assets/img/tours/road/road1.jpg'
 import RoadImg02 from '../assets/img/tours/road/road2.jpg'
 import RoadImg03 from '../assets/img/tours/road/road3.jpg'
 import RoadImg04 from '../assets/img/tours/road/road4.jpg'
+import RoadImg05 from '../assets/img/tours/road/road5.jpg'
 
 import MtbImg01 from '../assets/img/tours/mtb/mtb1.jpg'
+import MtbImg02 from '../assets/img/tours/mtb/mtb1.jpg'
+
 import GravelImg01 from '../assets/img/tours/gravel/gravel1.jpg'
 
 import LeafletMap from '../components/LeafletMap.vue'
 
-// import StravaApiService from '@/services/StravaApiService'
-import StravaApiService from '../services/StravaApiService.js'
-
-import Chart from '../components/Chart.vue'
-import ChartSimple from '../components/ChartSimple.vue'
 import HighChartHeightProfile from '../components/HighChartHeightProfile.vue'
 
-import { ref } from 'vue'
+import { ref, onBeforeUpdate } from 'vue'
+
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n({ useScope: 'global' })
+
+const componentKey = ref(true)
+const forceRerenderRollCarousel = () => {
+  componentKey.value = !componentKey.value
+}
 
 const chartOptions = ref({
   series: [
@@ -43,29 +49,32 @@ const props = defineProps({
 const roadItems = [
   {
     img: RoadImg01,
-    desc: 'I muri marchigiani',
+    desc: t('tours.road.1.title'),
     id: 1,
     type: 'road',
   },
   {
     img: RoadImg02,
-    desc: 'Urbino e Cesane',
+    desc: t('tours.road.2.title'),
     id: 2,
     type: 'road',
   },
   {
     img: RoadImg03,
-    desc: 'San Bartolo',
+    desc: t('tours.road.3.title'),
     id: 3,
     type: 'road',
   },
   {
     img: RoadImg04,
-    desc: 'Fano tra onde e colline',
+    desc: t('tours.road.4.title'),
     id: 4,
-    komoot_url:
-      '/tour/1855943062/embed?share_token=aRGOnN4ruECI61xrOwT3zHVc8es64DiVn5vLKdokP2f1RLRdWD&profile=1',
-    // komoot_url: 'https://www.komoot.com/it-it/tour/1855943062/embed?share_token=aRGOnN4ruECI61xrOwT3zHVc8es64DiVn5vLKdokP2f1RLRdWD&profile=1',
+    type: 'road',
+  },
+  {
+    img: RoadImg05,
+    desc: t('tours.road.5.title'),
+    id: 5,
     type: 'road',
   },
 ]
@@ -73,8 +82,14 @@ const roadItems = [
 const mtbItems = [
   {
     img: MtbImg01,
-    desc: 'MTB',
+    desc: t('tours.mtb.1.title'),
     id: 1,
+    type: 'mtb',
+  },
+  {
+    img: MtbImg02,
+    desc: t('tours.mtb.2.title'),
+    id: 2,
     type: 'mtb',
   },
 ]
@@ -82,133 +97,16 @@ const mtbItems = [
 const gravelItems = [
   {
     img: GravelImg01,
-    desc: 'GRAVEL',
+    desc: t('tours.gravel.1.title'),
     id: 1,
     type: 'gravel',
   },
 ]
 
-let lang = localStorage.getItem('language')
-let komoot_host = 'https://www.komoot.com/'
-let komoot_full = komoot_host + 'en-en' + roadItems[3].komoot_url
-
-function buildKomootURL(lang) {
-  switch (lang) {
-    case 'en':
-      komoot_full = komoot_host + 'en-en' + roadItems[3].komoot_url
-      break
-
-    case 'it':
-      komoot_full = komoot_host + 'it-it' + roadItems[3].komoot_url
-      break
-
-    case 'fr':
-      komoot_full = komoot_host + 'fr-fr' + roadItems[3].komoot_url
-      break
-
-    case 'nl':
-      komoot_full = komoot_host + 'nl-nl' + roadItems[3].komoot_url
-      break
-
-    default:
-      komoot_full = komoot_host + 'en-en' + roadItems[3].komoot_url
-      break
-  }
-}
-
-onMounted(() => {
-  buildKomootURL(lang)
+onBeforeUpdate(() => {
+  console.log('length items update:', roadItems)
+  forceRerenderRollCarousel()
 })
-
-async function getActivity() {
-  const alertButtons = [
-    {
-      text: 'Confirm',
-      role: 'confirm',
-      handler: () => {
-        // ApiService.getActivity(props.nft.walletId, props.nft.ID)
-        ApiService.getActivity('3217089606119650242')
-          .then(() => {
-            // const message = "Correctly Removed";
-            // Toast.show({
-            //   text: message,
-            // }).then(() => {
-            new Promise((r) => setTimeout(r, 2000)).then(() => {
-              location.reload()
-            })
-            // });
-          })
-          .catch((error) => {
-            console.log(error)
-            // TODO: Handle error
-            const message = 'An error happened during removal'
-            alert(message)
-            // Toast.show({
-            //   text: message,
-            // }).then(() => {
-            //   new Promise((r) => setTimeout(r, 2000)).then(() => {
-            //     location.reload();
-            //   });
-            // });
-          })
-      },
-    },
-    {
-      text: 'Abort',
-      role: 'abort',
-      // handler: () => {
-      //   router.push({
-      //     name: "Collections",
-      //   });
-      // },
-    },
-  ]
-
-  // const alertMsg =
-  //   "Are you sure of deleting NFT with contract: " +
-  //   props.nft.contract +
-  //   " and token Id: " +
-  //   props.nft["token-id"];
-
-  // const alertTx = await alertController.create({
-  //   header: "Confirm Delete",
-  //   subHeader: "NFT",
-  //   message: alertMsg,
-  //   buttons: alertButtons,
-  // });
-
-  // await alertTx.present();
-
-  StravaApiService.getActivity('3217089606119650242')
-    .then((res) => {
-      console.log('api response: ', res)
-      // TODO: do stuff with res
-      // return data
-      // const message = "Correctly Removed";
-      // Toast.show({
-      //   text: message,
-      // }).then(() => {
-
-      // new Promise((r) => setTimeout(r, 2000)).then(() => {
-      //   location.reload()
-      // })
-
-      // });
-    })
-    .catch((error) => {
-      console.log(error)
-      // TODO: Handle error
-      const message = 'An error happened during removal'
-      alert(message)
-      // Toast.show({
-      //   text: message,
-      // }).then(() => {
-      //   new Promise((r) => setTimeout(r, 2000)).then(() => {
-      //     location.reload();
-      //   });
-      // });
-    })
-}
 </script>
 <template>
   <div class="tours">
@@ -219,18 +117,27 @@ async function getActivity() {
       type="road"
       :withMaskGradient="true"
       :items="roadItems"
+      :selectedTourId="$props.id"
+      :withShuffle="true"
+      :key="componentKey"
     ></RollCarousel>
     <RollCarousel
       v-if="$props.type == 'mtb'"
       type="mtb"
       :withMaskGradient="true"
       :items="mtbItems"
+      :selectedTourId="$props.id"
+      :withShuffle="true"
+      :key="componentKey"
     ></RollCarousel>
     <RollCarousel
       v-if="$props.type == 'gravel'"
       type="gravel"
       :withMaskGradient="true"
       :items="gravelItems"
+      :selectedTourId="$props.id"
+      :withShuffle="true"
+      :key="componentKey"
     >
     </RollCarousel>
 
