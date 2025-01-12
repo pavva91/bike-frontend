@@ -6,8 +6,9 @@ import FullScreenCarousel from '../components/carousel/FullScreenCarousel.vue'
 import TopCarousel from '../components/carousel/TopCarousel.vue'
 import RollCarousel from '../components/carousel/roll/RollCarousel.vue'
 import AboutView from '../views/AboutView.vue'
-// import ContactsView from '../views/ContactsView.vue'
+
 // NOTE: Lazy Load Component
+// import ContactsView from '../views/ContactsView.vue'
 const ContactsView = defineAsyncComponent(() => import('../views/ContactsView.vue'))
 
 import SilderImg01 from '../assets/img/tours/road/road1.jpg'
