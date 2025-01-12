@@ -66,3 +66,10 @@ Guide:
 ```sh
 npm install vue-i18n@9 @intlify/unplugin-vue-i18n
 ```
+
+## Convert KML to GPX
+
+```sh
+gpsbabel -w -i kml -f ./public/gpx/urbino.kml -o gpx -F public/gpx/road/kml2gpx_urbino.gpx
+
+```
