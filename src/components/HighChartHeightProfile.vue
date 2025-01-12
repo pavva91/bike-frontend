@@ -194,7 +194,13 @@ const createHeightChart = () => {
 
     xAxis: {
       title: {
-        text: props.xAxisLabel + ' (km)',
+        // text: props.xAxisLabel + ' (km)',
+        text: '',
+      },
+      labels: {
+        formatter: function () {
+          return this.value + 'km'
+        },
       },
       minPadding: 0.05,
     },
@@ -204,9 +210,13 @@ const createHeightChart = () => {
       endOnTick: false,
       minPadding: 0,
       title: {
-        text: props.yAxisLabel + ' (m)',
+        // text: props.yAxisLabel + ' (m)',
+        text: '',
       },
       labels: {
+        formatter: function () {
+          return this.value + 'm'
+        },
         align: 'left',
         x: 0,
         y: -2,
@@ -265,12 +275,12 @@ const createHeightChart = () => {
 }
 
 .highcharts-yaxis-grid .highcharts-grid-line {
-  stroke-width: 1px;
+  stroke-width: 0.5px;
   stroke: var(--vt-c-text-1);
 }
 
 .highcharts-axis-line {
-  stroke-width: 1px;
+  stroke-width: 0px;
   stroke: var(--vt-c-text-1);
 }
 
@@ -290,7 +300,7 @@ const createHeightChart = () => {
 }
 
 .highcharts-tick {
-  stroke-width: 1px;
+  stroke-width: 0.5px;
   stroke: var(--vt-c-text-1);
 }
 
