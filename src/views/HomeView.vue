@@ -1,12 +1,14 @@
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue'
+import { onMounted, onBeforeUnmount, defineAsyncComponent } from 'vue'
 import BackgroundImageFullScreen from '../components/background_image/BackgroundImageFullScreen.vue'
 import CarouselHome from '../components/carousel/CarouselHome.vue'
 import FullScreenCarousel from '../components/carousel/FullScreenCarousel.vue'
 import TopCarousel from '../components/carousel/TopCarousel.vue'
 import RollCarousel from '../components/carousel/roll/RollCarousel.vue'
 import AboutView from '../views/AboutView.vue'
-import ContactsView from '../views/ContactsView.vue'
+// import ContactsView from '../views/ContactsView.vue'
+// NOTE: Lazy Load Component
+const ContactsView = defineAsyncComponent(() => import('../views/ContactsView.vue'))
 
 import SilderImg01 from '../assets/img/tours/road/road1.jpg'
 import SilderImg02 from '../assets/img/tours/mtb/mtb1.jpg'
