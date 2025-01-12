@@ -1,7 +1,9 @@
 <template>
   <div class="about">
     <h1>{{ $t('about.title') }}</h1>
-    <img class="inline m-50" src="../assets/img/about-us-1.jpg" alt="" />
+    <div class="img-container">
+      <img class="inline m-50" src="../assets/img/about-us-1.jpg" alt="" />
+    </div>
     <div class="about-text">
       <p v-html="$t('about.text')"></p>
     </div>
@@ -13,7 +15,17 @@
 <style>
 @media (min-width: 1024px) {
   .about {
+    width: 100%;
     padding-top: 10px;
+  }
+
+  .img-container {
+    max-height: 400px;
+    overflow: hidden;
+  }
+
+  .img-container img {
+    width: 100%;
   }
 
   .about-text {

@@ -52,16 +52,8 @@ const images = Object.fromEntries(
 
 <template>
   <div class="tour-image">
-    <!-- <img src="../assets/img/tours/gravel/01.jpg" alt="image route" /> -->
-    <!-- <img :src="images[`${props.type}+${props.id}`]" alt="image route" /> -->
     <img :src="images[`${imageName}`]" alt="image route" />
-    <div class="bottom-left">
-      <p>
-        <!-- <span>{{ images }}</span> -->
-        <!-- <span>{{ imageName }}</span> -->
-        <!-- <span>{{ props.type }}</span> -->
-      </p>
-    </div>
+    <div class="bottom-left"></div>
     <div class="top-left">
       <p>
         <span>{{ $t('tours.image.share') }}</span>
@@ -82,7 +74,6 @@ const images = Object.fromEntries(
         </span>
       </p>
     </div>
-    <!-- <div class="bottom-right">Bottom Right</div> -->
     <div class="centered">
       <h1>{{ $t('tours.' + props.type + '.' + props.id + '.title') }}</h1>
     </div>

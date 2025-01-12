@@ -25,7 +25,7 @@
 
 .background-image {
   /* The image used */
-  background: url('/public/img/home-background.jpg') no-repeat center center fixed;
+  background: url('/img/home-background.jpg') no-repeat center center fixed;
 
   /* Full height minus menu */
   height: calc(100vh - var(--vt-nav-height));
