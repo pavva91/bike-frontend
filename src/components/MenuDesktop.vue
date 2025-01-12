@@ -15,18 +15,18 @@ const storageKey = 'theme-appearance'
 const initLogo = () => {
   let userPreference = localStorage.getItem(storageKey) || 'dark'
   if (userPreference === 'light') {
-    initialImageSrc = '/src/assets/menu_logo_white.png'
+    initialImageSrc = '/menu_logo_white.png'
   } else {
-    initialImageSrc = '/src/assets/menu_logo.png'
+    initialImageSrc = '/menu_logo.png'
   }
 }
 
 const changeLogo = () => {
   let userPreference = localStorage.getItem(storageKey) || 'dark'
   if (userPreference === 'light') {
-    document.getElementById('enterprise-logo').src = '/src/assets/menu_logo_white.png'
+    document.getElementById('enterprise-logo').src = '/menu_logo_white.png'
   } else {
-    document.getElementById('enterprise-logo').src = '/src/assets/menu_logo.png'
+    document.getElementById('enterprise-logo').src = '/menu_logo.png'
   }
 }
 

@@ -9,9 +9,9 @@ const storageKey = 'theme-appearance'
 const initLogo = () => {
   let userPreference = localStorage.getItem(storageKey) || 'dark'
   if (userPreference === 'light') {
-    initialImageSrc = '/src/assets/menu_logo_white.png'
+    initialImageSrc = '/menu_logo_white.png'
   } else {
-    initialImageSrc = '/src/assets/menu_logo.png'
+    initialImageSrc = '/menu_logo.png'
   }
 }
 
@@ -27,8 +27,6 @@ onBeforeMount(() => {
           href="#"
           class="flex flex-wrap items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse logo-footer"
         >
-          <!-- <img src="@/assets/menu_logo.png" class="h-8" alt="Flowbite Logo" /> -->
-          <!-- <img src="@/assets/menu_logo.png" class="h-8" alt="Enterprise Logo" /> -->
           <img
             id="enterprise-logo-footer"
             :src="initialImageSrc"
