@@ -4,7 +4,12 @@
     <img class="inline m-50" src="../assets/img/contacts.jpg" alt="" />
     <span class="px-20">
       <div class="text-left">
-        <p><strong>BIKE SERVICE CORINALDO</strong><br />via Nevola, 5<br />60013 CORINALDO (AN)</p>
+        <p>{{ $t('greeting', { name: 'DIO' }) }}</p>
+        <p>
+          <strong>{{ $t('company') }}</strong
+          ><br />{{ $t('street') }}, {{ $t('number') }}<br />{{ $t('zipcode') }}
+          {{ $t('city') }} ({{ $t('province') }})
+        </p>
       </div>
     </span>
     <div class="text-left">
@@ -12,16 +17,16 @@
         <span
           style="color: rgb(136, 136, 136); --darkreader-inline-color: #9d9488"
           data-darkreader-inline-color=""
-          >Contatti</span
+          >{{ $t('contacts.title') }}</span
         >
       </p>
-      <h4>Tel: +39 071 67 697</h4>
+      <h4>Tel: {{ $t('phone') }}</h4>
       <p>
         <span
           style="color: rgb(136, 136, 136); --darkreader-inline-color: #9d9488"
           data-darkreader-inline-color=""
           >Mail: </span
-        ><a href="mailto:bikeservicecorinaldo@gmail.com">bikeservicecorinaldo@gmail.com</a>
+        ><a href="mailto:biketouringsanconstanzo@gmail.com">biketouringsanconstanzo@gmail.com</a>
       </p>
       <p>&nbsp;</p>
     </div>
