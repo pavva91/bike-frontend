@@ -12,7 +12,10 @@ const router = createRouter({
     }
     if (to.hash) {
       const style = getComputedStyle(document.body)
-      const navHeightPx = style.getPropertyValue('--vt-nav-height')
+      const navHeightPx =
+        window.innerWidth < 1024
+          ? style.getPropertyValue('--vt-nav-mobile-height')
+          : style.getPropertyValue('--vt-nav-height')
       const navHeight = navHeightPx.substring(0, navHeightPx.length - 2)
       return {
         el: to.hash,
