@@ -42,9 +42,16 @@ const GStore = inject('GStore')
 
 const width = ref(window.innerWidth)
 
-const componentKey = ref(true)
+const footerRerenderKey = ref(true)
+
 const forceRerenderFooter = () => {
-  componentKey.value = !componentKey.value
+  footerRerenderKey.value = !footerRerenderKey.value
+}
+
+const menuRerenderKey = ref(true)
+
+const setShowMenuToFalse = () => {
+  menuRerenderKey.value = !menuRerenderKey.value
 }
 
 // Update the width ref when the window is resized
@@ -73,30 +80,20 @@ const breakpoints = {
 const isSmall = computed(() => width.value < breakpoints.sm)
 const isMedium = computed(() => width.value >= breakpoints.sm && width.value < breakpoints.md)
 const isLarge = computed(() => width.value >= breakpoints.md && width.value < breakpoints.lg)
+const isAtLeastLarge = computed(() => width.value < breakpoints.lg)
 const isExtraLarge = computed(() => width.value >= breakpoints.lg)
 </script>
 
 <template>
   <div @click="forceRerenderFooter()" class="header-wrapper">
-    <div v-if="isSmall">
-      <MenuMobile></MenuMobile>
-    </div>
-    <div v-else-if="isMedium">
-      <MenuMobile></MenuMobile>
-    </div>
-    <div v-else-if="isLarge">
-      <MenuMobile></MenuMobile>
-    </div>
-    <div v-else-if="isExtraLarge">
-      <div class="MenuDesktop">
-        <MenuDesktop></MenuDesktop>
-      </div>
+    <div v-if="isAtLeastLarge">
+      <MenuMobile :key="menuRerenderKey"></MenuMobile>
     </div>
     <div v-else>
       <MenuDesktop></MenuDesktop>
     </div>
   </div>
-  <div id="layout">
+  <div @click="setShowMenuToFalse()" id="layout">
     <div id="flashMessage" v-if="GStore.flashMessage">
       {{ GStore.flashMessage }}
     </div>
@@ -111,7 +108,7 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
     <!-- <highcharts :options="chartOptions"></highcharts> -->
 
     <RouterView />
-    <FooterLinks :key="componentKey"></FooterLinks>
+    <FooterLinks :key="footerRerenderKey"></FooterLinks>
     <!-- <FooterInfo></FooterInfo> -->
   </div>
 </template>
@@ -140,7 +137,9 @@ const isExtraLarge = computed(() => width.value >= breakpoints.lg)
   /* height: var(--vt-nav-height); */
   background-color: var(--vt-c-bg);
   white-space: nowrap;
-  transition: border-color 0.5s, background-color 0.5s;
+  transition:
+    border-color 0.5s,
+    background-color 0.5s;
 }
 
 .MenuDesktop nav {
