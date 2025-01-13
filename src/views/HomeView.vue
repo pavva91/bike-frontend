@@ -97,12 +97,6 @@ const tourItems = [
     type: 'gravel',
   },
 ]
-const pictures = [
-  { src: '/img/11978_cucine-lube-agnese-style-7-1.webp', alt: 'Image 1' },
-  { src: '/img/tours/road/road1.jpg', alt: 'Image 1' },
-  { src: '/img/tours/gravel/gravel1.jpg', alt: 'Image 2' },
-  { src: '/img/tours/mtb/mtb1.jpg', alt: 'Image 3' },
-]
 
 function handleScroll() {
   let element = document.getElementById('about')
@@ -121,25 +115,14 @@ onBeforeUnmount(() => {
   <BackgroundImageFullScreen></BackgroundImageFullScreen>
   <RollCarousel
     @click="resetSelection()"
-    class="mx-auto bg-img-footer"
+    class="mx-auto"
     :withMaskGradient="false"
     :withZoomIn="true"
     :items="tourItems"
     :withShuffle="false"
   >
   </RollCarousel>
-  <!-- <CarouselHome></CarouselHome> -->
-  <!-- <FullScreenCarousel :pictures="pictures" slide :slide-interval="10000" /> -->
   <AboutView id="about"></AboutView>
   <TopCarousel :items="items" :noControls="false" :noIndicators="true" :duration="5000" />
   <ContactsView id="contacts"></ContactsView>
 </template>
-<style>
-@media (max-width: 480px) {
-  .bg-img-footer {
-    height: 10vh;
-    margin-top: 0px;
-    margin-bottom: 10px;
-  }
-}
-</style>

@@ -136,7 +136,7 @@ onBeforeMount(() => {
 @media (max-width: 480px) {
   .single {
     width: 250px;
-    height: 150px;
+    height: 155px;
   }
 
   .common {
