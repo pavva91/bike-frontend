@@ -1,18 +1,6 @@
 # Bike Frontend
 
-frontend of website.
-
-## Flowbite (Tailwind CSS)
-
-[https://flowbite.com/docs/getting-started/vue/](https://flowbite.com/docs/getting-started/vue/)
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Front-end of the website.
 
 ## Project Setup
 
@@ -26,6 +14,8 @@ npm install
 npm run dev
 ```
 
+Find the development website on: [http://localhost:5173](http://localhost:5173)
+
 ### Compile and Hot-Reload for Development on LAN (test on real phone)
 
 ```sh
@@ -38,17 +28,19 @@ Or:
 npm run lan
 ```
 
-### Compile and Minify for Production
+### Compile and minify for production
 
 ```sh
 npm run build
 ```
 
-#### To run the build on local (http://localhost:4173)
+#### To run the build on local (try production on local)
 
 ```sh
 npm run preview
 ```
+
+Find the development website on: [http://localhost:4173](http://localhost:4173)
 
 ### Lint with [ESLint](https://eslint.org/)
 
@@ -75,71 +67,75 @@ gpsbabel -w -i kml -f ./public/gpx/urbino.kml -o gpx -F public/gpx/road/kml2gpx_
 
 # Deploy on debian Apache server
 
-1. Install 'nvm'
-2. Install node lts
+1. Install 'nvm':
+
+   - [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+
+2. Install node lts:
 
 ```sh
 nvm install --lts
 ```
 
-3. Use node lts
+3. Use node lts:
 
 ```sh
 nvm use --lts
 ```
 
-4. Clone repo
+4. Clone repo:
 
 ```sh
 git clone repo 'https://github.com/pavva91/bike-frontend.git'
 ```
 
-5. Install npm packages
+5. Install npm packages:
 
 ```sh
 npm i
 ```
 
-6. Build for production
+6. Build for production:
 
 ```sh
 npm run build
 ```
 
-7. install apache2
+7. Install apache2:
 
 ```sh
 apt install apache2
 ```
 
-8. copy dist into /var/www/html (use rsync)
+8. copy dist into `/var/www/html` (use rsync):
 
-on debian:
+   - On debian:
 
-```sh
-rsync -avn dist/ /var/www/html
-```
+   ```sh
+   rsync -avn dist/ /var/www/html
+   ```
 
-on arch:
+   - On arch:
 
-```sh
-rsync -avn dist/ /srv/http
-```
+   ```sh
+   rsync -avn dist/ /srv/http
+   ```
 
-9. configure apache for redirecting to index.html (by default the refresh will break the app)
-   In arch:
+9. Configure apache for redirecting to index.html (by default the refresh will break the app):
 
-   - /etc/httpd/conf/httpd.conf
-   - add line:
-     - FallbackResource /index.html
+   - On arch:
 
-   In debian:
+     - `/etc/httpd/conf/httpd.conf`
+     - add line:
+       - `FallbackResource /index.html`
 
-   - /etc/apache2/apache2.conf
-   - add line:
-     - FallbackResource /index.html
+   - On debian:
 
-10. start apache2
+     - `/etc/apache2/apache2.conf`
+     - add line:
+       - `FallbackResource /index.html`
+
+10. Start apache2:
 
 ```sh
 systemctl start apache2
@@ -152,17 +148,29 @@ systemctl start apache2
 3. `rsync -avn ~/bike-frontend/dist/ /var/www/html`
 4. `systemctl restart apache2.service`
 
-# update
+# Update project dependencies
 
 1. Check which packages are outdated:
 
    - `npm outdated`
 
 2. Update to wished:
-   - npm update
+   - `npm update`
 3. Update to latest:
-   - npm i <module>@latest
+   - `npm i <module>@latest`
 
 ## Vite update
 
 https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated
+
+## Flowbite (Tailwind CSS)
+
+[https://flowbite.com/docs/getting-started/vue/](https://flowbite.com/docs/getting-started/vue/)
+
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
